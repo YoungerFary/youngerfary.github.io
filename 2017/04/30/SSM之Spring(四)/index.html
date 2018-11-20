@@ -1,0 +1,310 @@
+<!DOCTYPE HTML>
+<html lang="">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="Hexo">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://yoursite.com">
+    <!--SEO-->
+
+
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+    <!--Title-->
+
+
+<title>SSM之Spring(四) | Hexo</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header" style="background-image:url(http://7xpw2b.com1.z0.glb.clouddn.com/hexo-sinppet/img/banner.jpg)">
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title="John Doe">
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                <h2> 一路过来，不过游牧自己。。 </h2>
+            
+    	</div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://yoursite.com">Hexo</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>Home</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/前端/"><i class="fa "></i>About me</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/后端/"><i class="fa "></i>后端</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/工具/"><i class="fa "></i>工具</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/archives/"><i class="fa "></i>时间轴</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="SSM之Spring(四)">
+            
+	            SSM之Spring(四)
+            
+        </h1>
+        <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/ ">
+             
+        </a>
+    </span>
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+                    <a href="/tags/Spring" title="Spring">
+                        Spring
+                    </a>
+                
+            
+        </span>
+    </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2017/04/30</span>
+        </span>
+    
+</div>
+
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <p><img src="http://ono5i4nh6.bkt.clouddn.com/Spring.jpg" alt=""><br>这节主要讲bean的作用域和bean的自动装配，内容比较少，也比较简单！<br><a id="more"></a></p>
+<h2 id="1、bean的作用域"><a href="#1、bean的作用域" class="headerlink" title="1、bean的作用域"></a>1、bean的作用域</h2><p>关于bean的作用域，主要有以下几种：<br>        singleton单列  整个容器中只有一个对象实例，在一般情况下默认是单列<br>        prototype原型 每次获取bean都产生一个新的对象<br>        request 每次请求时创建一个新的对象<br>        session 在会话的范围内时一个对象<br>        global session 只在portlet下有用，表示是application<br>        application 在应用范围中一个对象<br>  注意：在整合Structs和Spring的时候，需要将action设为scope=”prototype”</p>
+<h2 id="2、bean的自动装配"><a href="#2、bean的自动装配" class="headerlink" title="2、bean的自动装配"></a>2、bean的自动装配</h2><h4 id="（1）byName自动装配"><a href="#（1）byName自动装配" class="headerlink" title="（1）byName自动装配"></a>（1）byName自动装配</h4><p>我们说每次写程序都要写一大堆配置文件，是不是很烦，那有什么方法可以简化这种操作么？自动装配autowire就是这样一个东西，简化了Spring的一个配置！<br>我们采取前面那个userDao的例子<br>下面来看一个例子：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;bean id=<span class="string">"userDao"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"cn.dao.impl.UserDaoMysqlimpl"</span>/&gt;</span><br><span class="line">           &lt;bean id=<span class="string">"service"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"cn.service.impl.UserServiceimpl"</span> autowire=<span class="string">"byName"</span>&gt;</span><br><span class="line">           &lt;/bean&gt;</span><br></pre></td></tr></table></figure></p>
+<p>如果将这个配置文件写成这样，那运行的结果就是：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Mysql获取用户数据</span><br></pre></td></tr></table></figure></p>
+<p>为什么会是这样呢？因为这里我们用了autowire的关键字！！autowire=“byName”这样我们就可以按照Name去自动装配！执行过程就是先在Test中中装载Service类，这样就会找到id=service的，然后找到UserServiceimpl；UserServiceimpl有什么呢？<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">UserServiceimpl</span> <span class="keyword">implements</span> <span class="title">UserService</span> </span>&#123;</span><br><span class="line">	<span class="keyword">private</span>  UserDao userDao=<span class="keyword">null</span>;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setUserDao</span><span class="params">(UserDao userdao)</span></span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.userDao=userdao;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">getuser</span><span class="params">()</span></span>&#123;</span><br><span class="line">		userDao.getuser();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>可以看到，这时候我们就会去找userdao,找到userdao的bean时,我们找到的是UserDaoMysqlimpl，所以得到的是一个UserDaoMysqlimpl对象，这时候调用它的getuser输出的就是Mysql获取用户数据！<br>如果我们改一下：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;bean id=<span class="string">"mysql"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"cn.dao.impl.UserDaoMysqlimpl"</span>/&gt;</span><br><span class="line">           &lt;bean id=<span class="string">"service"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"cn.service.impl.UserServiceimpl"</span> autowire=<span class="string">"byName"</span>&gt;</span><br><span class="line">           &lt;/bean&gt;</span><br></pre></td></tr></table></figure></p>
+<p>这样其实加载到那个UserServiceimpl的时候，那个userdao是找不到的！所以这个时候会报错！<br>autowire自动装配，简化Spring的操作：<br>byName根据名称（set方法去掉set后面的那个名字）去查找相应的bean,如果有则装配上!<br>但是如果每个都这么写，其实也是很麻烦的，那怎么办呢？很简单，在头文件最后的xsi:schemaLocation=最后写上<br>default-autowire=”byName”，就是<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">xsi:schemaLocation=<span class="string">"http://www.springframework.org/schema/beans</span></span><br><span class="line"><span class="string">       http://www.springframework.org/schema/beans/spring-beans.xsd"</span> <span class="keyword">default</span>-autowire=<span class="string">"byName"</span>&gt;</span><br></pre></td></tr></table></figure></p>
+<p>这样全局看来就是全部设的是自动byName装配！</p>
+<h4 id="（2）byType自动装配"><a href="#（2）byType自动装配" class="headerlink" title="（2）byType自动装配"></a>（2）byType自动装配</h4><p>根据类型进行自动装配，不用去管bean的id,这什么意思呢？<br>下面看这个配置：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;bean <span class="class"><span class="keyword">class</span></span>=<span class="string">"cn.dao.impl.UserDaoMysqlimpl"</span>/&gt;</span><br><span class="line">           &lt;bean id=<span class="string">"service"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"cn.service.impl.UserServiceimpl"</span> autowire=<span class="string">"byType"</span>&gt;</span><br><span class="line">           &lt;/bean&gt;</span><br></pre></td></tr></table></figure></p>
+<p>这时候，可以看到，运行的结果还是：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Mysql获取用户数据</span><br></pre></td></tr></table></figure></p>
+<p>因为这个时候运行到userDao的时候，他会自动去找，然后找到UserDaoMysqlimpl，就会有这个结果<br>但是这种方法有很大的缺陷：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;bean <span class="class"><span class="keyword">class</span></span>=<span class="string">"cn.dao.impl.UserDaoMysqlimpl"</span>/&gt;</span><br><span class="line">        &lt;bean <span class="class"><span class="keyword">class</span></span>=<span class="string">"cn.dao.impl.UserDaoOracleimpl"</span>/&gt;</span><br><span class="line">        		&lt;bean id=<span class="string">"service"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"cn.service.impl.UserServiceimpl"</span> autowire=<span class="string">"byType"</span>&gt;</span><br><span class="line">        		&lt;/bean&gt;</span><br></pre></td></tr></table></figure></p>
+<p>如果采用这种呢，同一种类型有两种bean,这时候程序就会报错！所以建议慎用byType！</p>
+<h4 id="（3）constructor自动装配"><a href="#（3）constructor自动装配" class="headerlink" title="（3）constructor自动装配"></a>（3）constructor自动装配</h4><p>constructor当通过构造器实例注入bean时，适用byType的方式装配构造方法，其实于原理都是一样的，只不过换了一种方式，原来是set方法来装载bean,但也可以通过构造方法去构造！<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">UserServiceimpl</span><span class="params">(UserDao userDao)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">super</span>();</span><br><span class="line">		<span class="keyword">this</span>.userDao = userDao;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure></p>
+<p>然后在配置文件中修改：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;bean id=<span class="string">"userDao"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"cn.dao.impl.UserDaoMysqlimpl"</span>/&gt;</span><br><span class="line">           &lt;bean id=<span class="string">"service"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"cn.service.impl.UserServiceimpl"</span> autowire=<span class="string">"constructor"</span>&gt;</span><br><span class="line">           &lt;/bean&gt;</span><br></pre></td></tr></table></figure></p>
+<p>这个时候也可以输出结果：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Mysql获取用户数据</span><br></pre></td></tr></table></figure></p>
+<p>这节基本结束，往下就要学习代理这一重要思想！</p>
+<p>学习之路漫漫长，多走路，多思考！<br>                                                                                                                                                                                                       ——————YoungerFary</p>
+
+    </div>
+
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">fang</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/2017/04/30/SSM之Spring(五)/" class="pre-post btn btn-default" title="SSM之Spring(五)">
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">SSM之Spring(五)</span>
+        </a>
+    
+    
+        <a href="/2017/04/29/SSM之Spring(三)/" class="next-post btn btn-default" title="SSM之Spring(三)">
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">SSM之Spring(三)</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+    
+    <div id="vcomments" class="valine"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/assets/valine.min.js"></script>
+
+    <script>
+        new Valine({
+            av: AV,
+            el: '#vcomments',
+            appId: 'xOKV9J4UeQAtVkvnJC7Kq2Jn-gzGzoHsz',
+            appKey: 'erIpQac4azoCmgfBB7Dl9maa',
+            placeholder: '说点什么吧',
+            notify: false,
+            verify: false,
+            avatar: 'mm',
+            meta: 'nick,mail'.split(','),
+            pageSize: '10',
+            path: window.location.pathname,
+            lang: ''.toLowerCase()
+        })
+    </script>
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">Table of Contents</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1、bean的作用域"><span class="toc-text">1、bean的作用域</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2、bean的自动装配"><span class="toc-text">2、bean的自动装配</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#（1）byName自动装配"><span class="toc-text">（1）byName自动装配</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#（2）byType自动装配"><span class="toc-text">（2）byType自动装配</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#（3）constructor自动装配"><span class="toc-text">（3）constructor自动装配</span></a></li></ol></li></ol>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12"> 
+                <span>Copyright &copy; 2018
+                </span> | 
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> | 
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+
+</body>
+</html>

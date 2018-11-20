@@ -1,0 +1,308 @@
+<!DOCTYPE HTML>
+<html lang="">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="Hexo">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://yoursite.com">
+    <!--SEO-->
+
+
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+    <!--Title-->
+
+
+<title>SSM之MyBatis（一） | Hexo</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header" style="background-image:url(http://7xpw2b.com1.z0.glb.clouddn.com/hexo-sinppet/img/banner.jpg)">
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title="John Doe">
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                <h2> 一路过来，不过游牧自己。。 </h2>
+            
+    	</div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://yoursite.com">Hexo</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>Home</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/前端/"><i class="fa "></i>About me</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/后端/"><i class="fa "></i>后端</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/工具/"><i class="fa "></i>工具</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/archives/"><i class="fa "></i>时间轴</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="SSM之MyBatis（一）">
+            
+	            SSM之MyBatis（一）
+            
+        </h1>
+        <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/ ">
+             
+        </a>
+    </span>
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+                    <a href="/tags/MyBatis" title="MyBatis">
+                        MyBatis
+                    </a>
+                
+            
+        </span>
+    </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2017/05/04</span>
+        </span>
+    
+</div>
+
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <p><img src="http://ono5i4nh6.bkt.clouddn.com/mybatis.jpg" alt=""><br>MyBatis是一个针对数据库进行操作的一个框架，通过MyBatis可以对数据库进行一系列操作，MyBatis的性能优劣与程序员使用数据库水平有很大的关系！所以学好框架也是一种提高性能的有效方式！<br><a id="more"></a></p>
+<h2 id="1、MyBatis介绍"><a href="#1、MyBatis介绍" class="headerlink" title="1、MyBatis介绍"></a>1、MyBatis介绍</h2><p>MyBatis是支持普通SQL查询，存储过程和高级映射的优秀持久层框架。MyBatis消除了几乎所有的JDBC代码和参数的手工设置以及对结果集的检索封装。MyBatis可以使用简单的XML或注解用于配置和原始映射，将接口和Java的POJO（Plain Old Java Objects，普通的Java对象）映射成数据库中的记录.<br>关于几个是数据库操作工具之间的关系大概如下：<br>JDBC-&gt;dbutils(自动封装)-&gt;MyBatis-&gt;Hibernate</p>
+<h2 id="2、MyBatis快速入门"><a href="#2、MyBatis快速入门" class="headerlink" title="2、MyBatis快速入门"></a>2、MyBatis快速入门</h2><p>我们先通过一个实例来切实感受下mybatis是什么东西：</p>
+<h4 id="（1）添加jar包："><a href="#（1）添加jar包：" class="headerlink" title="（1）添加jar包："></a>（1）添加jar包：</h4><p>【mybatis】包：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mybatis-<span class="number">3.1</span>.1.jar</span><br></pre></td></tr></table></figure></p>
+<p>【MYSQL驱动包】：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql-connector-java-<span class="number">5.1</span>.7-bin.jar</span><br></pre></td></tr></table></figure></p>
+<h4 id="2-数据库建表："><a href="#2-数据库建表：" class="headerlink" title="(2)数据库建表："></a>(2)数据库建表：</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">create database mybatis;</span><br><span class="line">use mybatis;</span><br><span class="line"><span class="function">CREATE TABLE <span class="title">users</span><span class="params">(id INT PRIMARY KEY AUTO_INCREMENT, NAME VARCHAR(<span class="number">20</span>)</span>, age INT)</span>;</span><br><span class="line"><span class="function">INSERT INTO <span class="title">users</span><span class="params">(NAME, age)</span> <span class="title">VALUES</span><span class="params">(<span class="string">'Tom'</span>, <span class="number">12</span>)</span></span>;</span><br><span class="line"><span class="function">INSERT INTO <span class="title">users</span><span class="params">(NAME, age)</span> <span class="title">VALUES</span><span class="params">(<span class="string">'Jack'</span>, <span class="number">11</span>)</span></span>;</span><br></pre></td></tr></table></figure>
+<p>这里我们建了一张用户表，里面的id是主键，还有name和age的属性<br>然后插入两条记录，下面我们就要通过这个作为基础数据然后进行操作！</p>
+<h4 id="（3）添加MyBatis的配置文件conf-xml"><a href="#（3）添加MyBatis的配置文件conf-xml" class="headerlink" title="（3）添加MyBatis的配置文件conf.xml"></a>（3）添加MyBatis的配置文件conf.xml</h4><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=<span class="string">"1.0"</span> encoding=<span class="string">"UTF-8"</span>?&gt;</span><br><span class="line">&lt;!DOCTYPE configuration PUBLIC <span class="string">"-//mybatis.org//DTD Config 3.0//EN"</span> <span class="string">"http://mybatis.org/dtd/mybatis-3-config.dtd"</span>&gt;</span><br><span class="line">&lt;configuration&gt;</span><br><span class="line">	&lt;environments <span class="keyword">default</span>=<span class="string">"development"</span>&gt;</span><br><span class="line">		&lt;environment id=<span class="string">"development"</span>&gt;</span><br><span class="line">			&lt;transactionManager type=<span class="string">"JDBC"</span> /&gt;</span><br><span class="line">			&lt;dataSource type=<span class="string">"POOLED"</span>&gt;</span><br><span class="line">				&lt;property name=<span class="string">"driver"</span> value=<span class="string">"com.mysql.jdbc.Driver"</span> /&gt;</span><br><span class="line">				&lt;property name=<span class="string">"url"</span> value=<span class="string">"jdbc:mysql://localhost:3306/mybatis"</span> /&gt;</span><br><span class="line">				&lt;property name=<span class="string">"username"</span> value=<span class="string">"root"</span> /&gt;</span><br><span class="line">				&lt;property name=<span class="string">"password"</span> value=<span class="string">"root"</span> /&gt;</span><br><span class="line">			&lt;/dataSource&gt;</span><br><span class="line">		&lt;/environment&gt;</span><br><span class="line">	&lt;/environments&gt;</span><br><span class="line">&lt;/configuration&gt;</span><br></pre></td></tr></table></figure>
+<p>如上所示，我们定义这个environments为development，其实这里主要是定义一些property,要加载驱动driver，还有链接地址url和数据库的用户名和密码，这个每个人都不一样，所以注意要修改好</p>
+<h4 id="（4）定义表的实体类"><a href="#（4）定义表的实体类" class="headerlink" title="（4）定义表的实体类"></a>（4）定义表的实体类</h4><p>我们说数据库表中对应的数据都应该有一个对象来接受，所以我们定义一个属性一致的Class来表示：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">User</span> </span>&#123;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">int</span> id;</span><br><span class="line">	<span class="keyword">private</span> String name;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">int</span> age;</span><br><span class="line">    <span class="comment">//get,set方法</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="5-定义操作user表的sql映射文件userMapper"><a href="#5-定义操作user表的sql映射文件userMapper" class="headerlink" title="(5)定义操作user表的sql映射文件userMapper"></a>(5)定义操作user表的sql映射文件userMapper</h4><p>在MyBatis中，一切数据库操作都是配置封装好的，通过一个例子来讲解：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=<span class="string">"1.0"</span> encoding=<span class="string">"UTF-8"</span> ?&gt;</span><br><span class="line">&lt;!DOCTYPE mapper PUBLIC <span class="string">"-//mybatis.org//DTD Mapper 3.0//EN"</span> <span class="string">"http://mybatis.org/dtd/mybatis-3-mapper.dtd"</span>&gt;</span><br><span class="line">&lt;mapper namespace=<span class="string">"com.atguigu.mybatis_test.test1.userMapper"</span>&gt;</span><br><span class="line">	&lt;select id=<span class="string">"getUser"</span> parameterType=<span class="string">"int"</span></span><br><span class="line">		resultType=<span class="string">"com.atguigu.mybatis_test.test1.User"</span>&gt;</span><br><span class="line">		select * from users where id=#&#123;id&#125;</span><br><span class="line">	&lt;/select&gt;</span><br><span class="line">&lt;/mapper&gt;</span><br></pre></td></tr></table></figure></p>
+<p>注意下我们这个各个字段代表什么意思！ com.atguigu.mybatis_test.test1.userMapper这是一个执行空间，是一个执行单位，我们要执行就从这开始！这是装在mapper之中的！ select表示这是一条查询语句！id是这个方法的标识，parameterType表示的是参数的类型是int型，resultType表示返回的是什么类型，然后编写语句！</p>
+<h4 id="（6）在conf-xml中去注册userMapper-xml文件"><a href="#（6）在conf-xml中去注册userMapper-xml文件" class="headerlink" title="（6）在conf.xml中去注册userMapper.xml文件"></a>（6）在conf.xml中去注册userMapper.xml文件</h4><p>在con.xml中去加入语句：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&lt;mappers&gt;</span><br><span class="line">	&lt;mapper resource=<span class="string">"com/atguigu/mybatis_test/test1/userMapper.xml"</span>/&gt;</span><br><span class="line">&lt;/mappers&gt;</span><br><span class="line">表示这个要加载的mapper文件在哪</span><br><span class="line">#### （7）编写测试代码</span><br><span class="line">```java</span><br><span class="line">ublic <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">		String resource = <span class="string">"conf.xml"</span>;</span><br><span class="line">		<span class="comment">//加载mybatis的配置文件（它也加载关联的映射文件）</span></span><br><span class="line">		Reader reader = Resources.getResourceAsReader(resource);</span><br><span class="line">		<span class="comment">//构建sqlSession的工厂</span></span><br><span class="line">		SqlSessionFactory sessionFactory = <span class="keyword">new</span> SqlSessionFactoryBuilder().build(reader);</span><br><span class="line">		<span class="comment">//创建能执行映射文件中sql的sqlSession</span></span><br><span class="line">		SqlSession session = sessionFactory.openSession();</span><br><span class="line">		<span class="comment">//映射sql的标识字符串</span></span><br><span class="line">		String statement = <span class="string">"com.atguigu.mybatis.bean.userMapper"</span>+<span class="string">".getUser"</span>;</span><br><span class="line">		<span class="comment">//执行查询返回一个唯一user对象的sql</span></span><br><span class="line">		User user = session.selectOne(statement, <span class="number">1</span>);</span><br><span class="line">		System.out.println(user);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>如上所示，首先要加载的就是con.xml文件，这时候其实他会一起加载userMapper.xml文件，然后定义一个SqlSession，这是印射文件，然后利用这个进行操作：<br>selectOne，里面指定要用的语句id和插入参数；然后看其返回类型接受，输出！<br>从这个例子我们可以很明确看到思路很清晰，一个模块化的数据库操作和映射，简单而又持久灵活！</p>
+<p>多走路，多思考，越努力，越幸运！<br>                                                                                                                            ———————————————YoungerFary</p>
+
+    </div>
+
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">fang</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/2017/05/08/SSM之MyBatis（二）/" class="pre-post btn btn-default" title="SSM之MyBatis（二）">
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">SSM之MyBatis（二）</span>
+        </a>
+    
+    
+        <a href="/2017/05/03/SSM之Spring(六)/" class="next-post btn btn-default" title="SSM之Spring(六)">
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">SSM之Spring(六)</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+    
+    <div id="vcomments" class="valine"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/assets/valine.min.js"></script>
+
+    <script>
+        new Valine({
+            av: AV,
+            el: '#vcomments',
+            appId: 'xOKV9J4UeQAtVkvnJC7Kq2Jn-gzGzoHsz',
+            appKey: 'erIpQac4azoCmgfBB7Dl9maa',
+            placeholder: '说点什么吧',
+            notify: false,
+            verify: false,
+            avatar: 'mm',
+            meta: 'nick,mail'.split(','),
+            pageSize: '10',
+            path: window.location.pathname,
+            lang: ''.toLowerCase()
+        })
+    </script>
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">Table of Contents</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1、MyBatis介绍"><span class="toc-text">1、MyBatis介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2、MyBatis快速入门"><span class="toc-text">2、MyBatis快速入门</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#（1）添加jar包："><span class="toc-text">（1）添加jar包：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-数据库建表："><span class="toc-text">(2)数据库建表：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#（3）添加MyBatis的配置文件conf-xml"><span class="toc-text">（3）添加MyBatis的配置文件conf.xml</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#（4）定义表的实体类"><span class="toc-text">（4）定义表的实体类</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-定义操作user表的sql映射文件userMapper"><span class="toc-text">(5)定义操作user表的sql映射文件userMapper</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#（6）在conf-xml中去注册userMapper-xml文件"><span class="toc-text">（6）在conf.xml中去注册userMapper.xml文件</span></a></li></ol></li></ol>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12"> 
+                <span>Copyright &copy; 2018
+                </span> | 
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> | 
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+
+</body>
+</html>

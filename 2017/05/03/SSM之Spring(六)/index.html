@@ -1,0 +1,317 @@
+<!DOCTYPE HTML>
+<html lang="">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="Hexo">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://yoursite.com">
+    <!--SEO-->
+
+
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+    <!--Title-->
+
+
+<title>SSM之Spring(六) | Hexo</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header" style="background-image:url(http://7xpw2b.com1.z0.glb.clouddn.com/hexo-sinppet/img/banner.jpg)">
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title="John Doe">
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                <h2> 一路过来，不过游牧自己。。 </h2>
+            
+    	</div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://yoursite.com">Hexo</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>Home</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/前端/"><i class="fa "></i>About me</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/后端/"><i class="fa "></i>后端</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/工具/"><i class="fa "></i>工具</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/archives/"><i class="fa "></i>时间轴</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="SSM之Spring(六)">
+            
+	            SSM之Spring(六)
+            
+        </h1>
+        <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/ ">
+             
+        </a>
+    </span>
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+                    <a href="/tags/Spring" title="Spring">
+                        Spring
+                    </a>
+                
+            
+        </span>
+    </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2017/05/03</span>
+        </span>
+    
+</div>
+
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <p><img src="http://ono5i4nh6.bkt.clouddn.com/Spring.jpg" alt=""><br>Ioc是Spring的一个重要概念，在Spring中，还有另外一个重要思想：AOP（面向切面的编程）！<br><a id="more"></a></p>
+<h2 id="一、AOP简介"><a href="#一、AOP简介" class="headerlink" title="一、AOP简介"></a>一、AOP简介</h2><p>1、AOP：Aspect Oriented Programming(面向切面的编程)<br>2、aop在Spring中的作用：提供声明式服务，允许用户自定义切面<br>3、AOP由来：在不改变原有代码的情况下增加新的功能，通过代理的方式来实现<br>传统的编程都是自上而下，纵向编程，如图所示：<br>！<a href="http://ono5i4nh6.bkt.clouddn.com/QQ%E6%88%AA%E5%9B%BE20170503213243.png" target="_blank" rel="noopener">传统编程</a><br>AOP模式：AOP就是在某一个点从横向切过来，加了一部分功能，是横向的编程，例如：<br>！<a href="http://ono5i4nh6.bkt.clouddn.com/QQ%E6%88%AA%E5%9B%BE20170503213738.png" target="_blank" rel="noopener">AOP模式</a><br>4、AOP的优点，和静态代理有异曲同工之妙：<br>a)使得真实角色处理的业务更加纯粹，不再去关注一些公共的事情<br>b)公共的业务由代理完成，实现了业务的分工<br>c)公共业务发生拓展时变得更加集中和方便<br>5、关于一些名词的解释：<br>    a)关注点：增加的某个业务 如：日志，安全，事务，缓存等<br>    b)切面：某个关注点的模块化，一般就是将这部分功能抽出来作为一个类<br>    c)连接点：一个方法的执行<br>    d)通知：在切面的某个特定的连接点上执行特定的动作<br>    e)织入：把切面链接到其他应用程序的过程</p>
+<h2 id="二、使用Spring来实现AOP"><a href="#二、使用Spring来实现AOP" class="headerlink" title="二、使用Spring来实现AOP"></a>二、使用Spring来实现AOP</h2><p>这里讲三种实现AOP的方式，分别是：通过Spring API来实现、自定义实现AOP和使用注解去实现AOP</p>
+<h3 id="1、通过Spring-API去实现"><a href="#1、通过Spring-API去实现" class="headerlink" title="1、通过Spring API去实现"></a>1、通过Spring API去实现</h3><p>下面通过一个代码例子来说明一下如何去利用API去实现AOP:<br>首先我们先去写一个接口，把公共部分提取出来：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">UserService</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span>  <span class="keyword">void</span>  <span class="title">add</span><span class="params">()</span></span>;</span><br><span class="line">	<span class="function"><span class="keyword">public</span>  <span class="keyword">void</span>  <span class="title">update</span><span class="params">(<span class="keyword">int</span> a)</span></span>;</span><br><span class="line">	<span class="function"><span class="keyword">public</span>  <span class="keyword">void</span>  <span class="title">delete</span><span class="params">()</span></span>;</span><br><span class="line">	<span class="function"><span class="keyword">public</span>  <span class="keyword">void</span>  <span class="title">search</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>然后我们去写实现：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">UserServiceImpl</span> <span class="keyword">implements</span> <span class="title">UserService</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">add</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"添加用户"</span>);</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">update</span><span class="params">(<span class="keyword">int</span> a)</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"修改用户"</span>);</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">delete</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"删除用户"</span>);</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">search</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"查找用户"</span>);</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>为了体现AOP，从横切面切入这种思想，我们先得定义这么个东西，这个东西才能切入进来：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BeforeLog</span> <span class="keyword">implements</span>  <span class="title">MethodBeforeAdvice</span></span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">before</span><span class="params">(Method method, Object[] arg1, Object target)</span></span></span><br><span class="line"><span class="function">			<span class="keyword">throws</span> Throwable </span>&#123;</span><br><span class="line"></span><br><span class="line">		System.out.println(target.getClass().getName()+<span class="string">"的"</span>+method.getName()+<span class="string">"方法被执行"</span>);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>从名称可以清楚的看到，这是一个方法前的一个log日志， before(Method method, Object[] arg1, Object target)里面的method，是指切入的方法，arg1是指切入的参数，target是指切入的对象！<br>之后我们得去写这样一个配置文件，这个配置文件告诉我们要怎样去切入：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=<span class="string">"1.0"</span> encoding=<span class="string">"UTF-8"</span>?&gt;</span><br><span class="line">&lt;beans xmlns=<span class="string">"http://www.springframework.org/schema/beans"</span></span><br><span class="line">    xmlns:xsi=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span></span><br><span class="line">    xmlns:aop=<span class="string">"http://www.springframework.org/schema/aop"</span></span><br><span class="line">    xsi:schemaLocation=<span class="string">"http://www.springframework.org/schema/beans</span></span><br><span class="line"><span class="string">    http://www.springframework.org/schema/beans/spring-beans.xsd</span></span><br><span class="line"><span class="string">    http://www.springframework.org/schema/aop</span></span><br><span class="line"><span class="string">    http://www.springframework.org/schema/aop/spring-aop.xsd"</span>&gt;</span><br><span class="line">    &lt;bean id=<span class="string">"userService"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"cn.ServiceImpl.UserServiceImpl"</span>/&gt;</span><br><span class="line">    &lt;bean id=<span class="string">"Beforelog"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"cn.log.BeforeLog"</span>/&gt;</span><br><span class="line">    &lt;aop:config&gt;</span><br><span class="line">    	&lt;aop:pointcut expression=<span class="string">"execution(* cn.ServiceImpl.*.*(..))"</span> id=<span class="string">"pointcut"</span>/&gt;</span><br><span class="line">    	&lt;aop:advisor advice-ref=<span class="string">"Beforelog"</span> pointcut-ref=<span class="string">"pointcut"</span>/&gt;</span><br><span class="line">    &lt;/aop:config&gt;</span><br><span class="line">&lt;/beans&gt;</span><br></pre></td></tr></table></figure></p>
+<p>如上所示，我们要知道切入点，定义为pointcut，这个切入点是expression,cn.ServiceImpl.<em>.</em>(..)这个事指作用范围，cn.ServiceImpl的所有类的所有方法，···是指所有的参数，就是说这里面的所有方法都可以用！<br>后面的advisor是指切入的东西，advice-ref=”Beforelog”指切入的是Beforelog，pointcut-ref=”pointcut”，pointcut是指切入到哪里！<br>这样就什么都有了！<br>最后我们再写一个Test调用一下这个函数：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		ApplicationContext ac = <span class="keyword">new</span> ClassPathXmlApplicationContext(<span class="string">"beans.xml"</span>);</span><br><span class="line">		UserService userService = (UserService)ac.getBean(<span class="string">"userService"</span>);</span><br><span class="line">		userService.update(<span class="number">2</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>这是指调用的是userService这个bean，这时候调用bean,就会执行aop，返回一个对象之后，执行方法时就会将AOP效果显示出来！<br>结果就是：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cn.ServiceImpl.UserServiceImpl的update方法被执行</span><br><span class="line">修改用户</span><br></pre></td></tr></table></figure></p>
+<p>前面的那句：cn.ServiceImpl.UserServiceImpl的update方法被执行<br>是before方法执行的，是AOP插入的方法的信息的打印！<br>“修改用户”就是update方法的一个展示！</p>
+<h3 id="2、自定义实现AOP"><a href="#2、自定义实现AOP" class="headerlink" title="2、自定义实现AOP"></a>2、自定义实现AOP</h3><p>这里我们定义的类就不实现什么接口什么东西的了，所以我们先定义一个Log类<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Log</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">before</span><span class="params">()</span></span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"方法执行前"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">after</span><span class="params">()</span></span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"方法执行后"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>这样看，这就有两种方法，我们的想法就是将这两个方法切入到方法的前后，怎样去做呢，其实最主要知道的是怎样去写这个配置文件：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">    &lt;bean id=<span class="string">"userService"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"cn.ServiceImpl.UserServiceImpl"</span>/&gt;</span><br><span class="line">    &lt;bean id=<span class="string">"log"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"cn.log.Log"</span>/&gt;</span><br><span class="line">    &lt;aop:config&gt;</span><br><span class="line">    	&lt;aop:aspect ref=<span class="string">"log"</span>&gt;</span><br><span class="line">    	&lt;aop:pointcut expression=<span class="string">"execution(* cn.ServiceImpl.*.*(..))"</span> id=<span class="string">"pointcut"</span>/&gt;</span><br><span class="line">    	&lt;aop:before method=<span class="string">"before"</span> pointcut-ref=<span class="string">"pointcut"</span>/&gt;</span><br><span class="line">    	&lt;aop:after method=<span class="string">"after"</span> pointcut-ref=<span class="string">"pointcut"</span>/&gt;</span><br><span class="line">    	 &lt;/aop:aspect&gt;</span><br><span class="line">    &lt;/aop:config&gt;</span><br><span class="line">&lt;/beans&gt;</span><br></pre></td></tr></table></figure></p>
+<p>这样，利用before,after参数定义了这么个东西实现的位置，实在前实现log的before参数，在之后实现after参数，这样就会得到这样的结果：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">方法执行前</span><br><span class="line">修改用户</span><br><span class="line">方法执行后</span><br></pre></td></tr></table></figure></p>
+<p>这样的切面方法可以使我们更加灵活的定义我们的方法！</p>
+<h3 id="3、利用注解实现AOP"><a href="#3、利用注解实现AOP" class="headerlink" title="3、利用注解实现AOP"></a>3、利用注解实现AOP</h3><p>这是我觉着目前最容易理解和最方便使用的一种方式，话不多说，自己看：<br>首先写配置文件：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;bean id=<span class="string">"userService"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"cn.ServiceImpl.UserServiceImpl"</span>/&gt;</span><br><span class="line">	 &lt;bean id=<span class="string">"log"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"cn.log.Log"</span>/&gt;</span><br><span class="line">	 &lt;aop:aspectj-autoproxy/&gt;</span><br></pre></td></tr></table></figure></p>
+<p><a href="aop:aspectj-autoproxy/" target="_blank" rel="noopener">aop:aspectj-autoproxy/</a>这是一个自动装配aop的过程，但是他怎么知道要装配什么呢？我们必须要写注解，注解写在哪呢，写在要切入的方法前，如下：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Aspect</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Log</span> </span>&#123;</span><br><span class="line">	<span class="meta">@Before</span>(<span class="string">"execution(* cn.ServicelImpl.*.*(..))"</span>)</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">before</span><span class="params">()</span></span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"方法执行前"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="meta">@After</span>(<span class="string">"execution(* cn.ServicelImpl.*.*(..))"</span>)</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">after</span><span class="params">()</span></span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"方法执行后"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>这里的@Aspect是指这是一个切面！@Before(“execution(<em> cn.ServicelImpl.</em>.*(..))”)表示装配到哪里的方法之前！<br>然后Test:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		ApplicationContext ac = <span class="keyword">new</span> ClassPathXmlApplicationContext(<span class="string">"beans.xml"</span>);</span><br><span class="line">		UserService userService = (UserService)ac.getBean(<span class="string">"userService"</span>);</span><br><span class="line">		userService.add();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>输出结果是：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">方法执行前</span><br><span class="line">添加用户</span><br><span class="line">方法执行后</span><br></pre></td></tr></table></figure>
+<p>感觉是不是很简单明了，没有那么多复杂的结构，我们还可以加一个环绕通知：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">@Around</span>(<span class="string">"execution(* cn.ServicelImpl.*.*(..))"</span>)</span><br><span class="line"><span class="function"><span class="keyword">public</span> Object <span class="title">aroud</span><span class="params">(ProceedingJoinPoint jp)</span> <span class="keyword">throws</span> Throwable</span>&#123;</span><br><span class="line">	System.out.println(<span class="string">"环绕前"</span>);</span><br><span class="line">	System.out.println(<span class="string">"签名："</span>+jp.getSignature());</span><br><span class="line">	<span class="comment">//执行目标方法</span></span><br><span class="line">	 Object result = jp.proceed();</span><br><span class="line">	System.out.println(<span class="string">"环绕后"</span>);</span><br><span class="line">	<span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>套路都是一样的，但是，这里的ProceedingJoinPoint是什么意思呢？那是因为：如果不用这个，那么就会不去执行函数，而直接执行环绕前和环绕后这两个输出函数，输出结果没有函数结果，所以，加的jp.proceed()就是让他执行函数！</p>
+<p>总之，AOP采用的是分离的一种思想，分离程度越高，表示越难，设计要求也就越高！<br>Spring AOP本质：是动态代理的一个框架，我们手动写代理还是很麻烦的，所以我们就把这部分抽离出来，然后采用AOP配置去切入，这样就可以在不改变原有代码的情况下，增加一些新功能！</p>
+<p>多思考，所走路，越努力，越幸运！<br>                                                                                                                                ————-YoungerFary</p>
+
+    </div>
+
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">fang</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/2017/05/04/SSM之Mybatis（一）/" class="pre-post btn btn-default" title="SSM之MyBatis（一）">
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">SSM之MyBatis（一）</span>
+        </a>
+    
+    
+        <a href="/2017/04/30/SSM之Spring(五)/" class="next-post btn btn-default" title="SSM之Spring(五)">
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">SSM之Spring(五)</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+    
+    <div id="vcomments" class="valine"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/assets/valine.min.js"></script>
+
+    <script>
+        new Valine({
+            av: AV,
+            el: '#vcomments',
+            appId: 'xOKV9J4UeQAtVkvnJC7Kq2Jn-gzGzoHsz',
+            appKey: 'erIpQac4azoCmgfBB7Dl9maa',
+            placeholder: '说点什么吧',
+            notify: false,
+            verify: false,
+            avatar: 'mm',
+            meta: 'nick,mail'.split(','),
+            pageSize: '10',
+            path: window.location.pathname,
+            lang: ''.toLowerCase()
+        })
+    </script>
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">Table of Contents</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#一、AOP简介"><span class="toc-text">一、AOP简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、使用Spring来实现AOP"><span class="toc-text">二、使用Spring来实现AOP</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、通过Spring-API去实现"><span class="toc-text">1、通过Spring API去实现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、自定义实现AOP"><span class="toc-text">2、自定义实现AOP</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3、利用注解实现AOP"><span class="toc-text">3、利用注解实现AOP</span></a></li></ol></li></ol>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12"> 
+                <span>Copyright &copy; 2018
+                </span> | 
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> | 
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+
+</body>
+</html>

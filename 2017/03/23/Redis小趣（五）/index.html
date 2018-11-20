@@ -1,0 +1,321 @@
+<!DOCTYPE HTML>
+<html lang="">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="Hexo">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://yoursite.com">
+    <!--SEO-->
+
+
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+    <!--Title-->
+
+
+<title>Redis小趣（五） | Hexo</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header" style="background-image:url(http://7xpw2b.com1.z0.glb.clouddn.com/hexo-sinppet/img/banner.jpg)">
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title="John Doe">
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                <h2> 一路过来，不过游牧自己。。 </h2>
+            
+    	</div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://yoursite.com">Hexo</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>Home</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/前端/"><i class="fa "></i>About me</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/后端/"><i class="fa "></i>后端</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/工具/"><i class="fa "></i>工具</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/archives/"><i class="fa "></i>时间轴</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="Redis小趣（五）">
+            
+	            Redis小趣（五）
+            
+        </h1>
+        <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/ ">
+             
+        </a>
+    </span>
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+                    <a href="/tags/Redis" title="Redis">
+                        Redis
+                    </a>
+                
+            
+        </span>
+    </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2017/03/23</span>
+        </span>
+    
+</div>
+
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <p><img src="http://ono5i4nh6.bkt.clouddn.com/redis.png" alt=""><br>本节主要讲redis的集群模式！<br><a id="more"></a></p>
+<h2 id="一、Redis集群"><a href="#一、Redis集群" class="headerlink" title="一、Redis集群"></a>一、Redis集群</h2><p>集群分类：<br>主从复制 Replication<br>高可用 Sentinel<br>集群 Cluster<br>分布式 twemproxy</p>
+<h3 id="1、主从复制："><a href="#1、主从复制：" class="headerlink" title="1、主从复制："></a>1、主从复制：</h3><p>一个redis服务可以有多个服务的复制品，这个服务称为这个服务的复制品，这个Redis服务称为Master,其他复制品称为slaves<br>只要网络连接正常，Master会一直将机子的数据同步更新给slaves,保持主从同步<br>只有Master可以执行写命令，slaves只能执行读命令，所以可以从slave和master中去读<br>从服务器执行客户端发送的读命令，比如GET，LRANGE,SMEMMBERS，HGET,ZRANGE等等<br>客户端可以链接slava进行读命令，来降低Master的读压力<br>操作：<br>redis-server slaveof<master-ip><master-port>配置当前服务称为某redis服务的slave<br>例：redis-server –port 6380 –slaveof 127.0.0.1 6379(当谁的从)</master-port></master-ip></p>
+<p>SLAVEOF host port 命令，将当前服务器状态从Master修改为别的服务器Slave<br>例：redis&gt;SLAVEOF 192.168.1.1 6379 将服务器转换为Slave<br>redis&gt;SLAVEOF NO ONE,将服务器重新回复到Master,不会丢弃已同步的数据</p>
+<p>配置方式：启动时，服务器读取配置文件，并自动成为指定服务器的从服务器<br>slaveof <masterip><masterport><br>slaveof 127.0.0.1 6379</masterport></masterip></p>
+<h3 id="2、主从复制问题："><a href="#2、主从复制问题：" class="headerlink" title="2、主从复制问题："></a>2、主从复制问题：</h3><p>一个Master可以有多个Slaves<br>Slave下线，只是读请求性能下线<br>Master下线，写请求无法执行<br>其中一台Slave使用slaveof no one 命令成为Master，其他slave执行SLaveof命令指向这个新的Master，从他这里同步数据<br>以上是手动实现的，能够实现自动，这就需要sentine哨兵，实现故障转移failover操作</p>
+<h3 id="3、Sentinel"><a href="#3、Sentinel" class="headerlink" title="3、Sentinel"></a>3、Sentinel</h3><p>高可用sentinel（master挂了之后，会选新的出来，这样让其他slaved连过来）<br>官方提供的高可用方案，可以用它管理多个redis服务实例<br>编译后产生的redis-sentine程序文件<br>redis Sentinel是一个分布式系统，可以在一个架构中运行多个Sentinel进程</p>
+<h4 id="（1）启动Sentinel"><a href="#（1）启动Sentinel" class="headerlink" title="（1）启动Sentinel"></a>（1）启动Sentinel</h4><p>将src目录下产生的redis-sentinel程序文件复制到$REDIS_HOME/bin<br>启动一个运行在sentinel模式下的服务实例<br>redis-sentinel<br>redis-server /path/to/sentinel.conf –sentinel<br>Redis Sentinel是一个分布式系统，可以在一个架构中运行多个Sentinel进程</p>
+<h4 id="2-监控monitoring"><a href="#2-监控monitoring" class="headerlink" title="(2)监控monitoring"></a>(2)监控monitoring</h4><p>Sentinel会不断检查Master和Slave是否正常<br>每一个Sentinel可以监控多个Master和该Master下的Slaves<br>sentinel网络：<br>监控同一个 Master的Sentinel会自动链接，组成分布式的一个sentinel网络，互相通信并交换彼此关于被监控服务器的信息<br>这里面有个投票机制，要投票才可以解决，超过半数可以</p>
+<h4 id="（3）服务器下线："><a href="#（3）服务器下线：" class="headerlink" title="（3）服务器下线："></a>（3）服务器下线：</h4><p>当一个sentinel认为自己监控的服务器已经下线时，会向网络中的其他sentinel进行确认，判断该服务是否真的下线<br>如果下线的是主服务器，那么sentinel网络将 对下线进行自动故障转移，通过将下线主服务器的某个从服务器提升为主服务器，让从服务器复制主服务器，让系统重新回到<br>上线状态，若主服务器又起来了，那自动沦为从</p>
+<h4 id="4-sentinel配置文件："><a href="#4-sentinel配置文件：" class="headerlink" title="(4)sentinel配置文件："></a>(4)sentinel配置文件：</h4><p>至少包含一个监控选项，用于被指定监控Master的信息<br>Sentinel monitor <name><ip><port><quorum>,例如<br>sentinel monitor mymaster 127.0.0.1 6379 2<br>监视mymaster，IP和端口，至少要2个sentinel同意才下线有效，多数sentinel同意才会转移<br>Sentinel会根据MASTER的配置自动发现Master的slaves<br>Sentinel的默认端口号：26379<br>就在端口前加个2</quorum></port></ip></name></p>
+<p>Sentinel配置举例:<br>执行以下两条命令，将创建两个监视主服务器S1的sentinel实例<br>$redis-sentinel sential1.conf<br>$redis-sentinel  sentinel2.conf<br>其中，sentinel1.conf内容为：<br>port 26379<br>Sentinel monitor s1 127.0.0.1 6379 2<br>sentinel2.conf内容为：<br>port 26380<br>sentinel monitor s1 127.0.0.1 6379 2<br>启动sentinel:redis-sentinel sentinel.conf</p>
+<h4 id="5-sentinel总结："><a href="#5-sentinel总结：" class="headerlink" title="(5)sentinel总结："></a>(5)sentinel总结：</h4><p>主从复制：解决了读请求分担，从节点下线，会使得读请求能力有所下降<br>master只有一个，写请求单点问题<br>Sentinel会在Master下线之后自动只想failover操作，提升一台slave为吗stew人，让其它的Slave重新成为Master的slave<br>主从复制+哨兵Sentinel只解决了读性能和高可用问题，但没有解决写性能问题（局限性）</p>
+<h2 id="二、集群—Redis-Twemproxy"><a href="#二、集群—Redis-Twemproxy" class="headerlink" title="二、集群—Redis Twemproxy"></a>二、集群—Redis Twemproxy</h2><h3 id="1、问题引出："><a href="#1、问题引出：" class="headerlink" title="1、问题引出："></a>1、问题引出：</h3><p>主从对写压力没有分担<br>解决思路就是，使用多个节点分担，将写请求分散到不同节点处理<br>分片Sharing:多节点分担的思路就是关系型数据库处理大表的水平切分思路<br>（用分片机制）用户只要和代理沟通，twitter出的</p>
+<h3 id="2、twemproxy"><a href="#2、twemproxy" class="headerlink" title="2、twemproxy:"></a>2、twemproxy:</h3><p>tWitter来开发，代理用户的读写请求<br>twitter开发的服务器，兼容redis和memcached，允许用户将多个redis服务器添加到一个服务器池（pool）里面，并通过用户原则的散列函数和分布函数，来将来自<br>客户端的命令请求分发给服务器池的各个服务器<br>通过使用twemproxy，我们可以将数据库分片到多台redis服务器上面，并使用这些服务器来分担系统压力及数据库容量，在硬件条件相同的情况下，对于一个包含N个<br>redis服务器的池来说，池中每台平均1/N的客户端命令请求<br>向池中添加更多的服务器可以线性拓展系统处理命令请求的命令，以及系统能够保存的数据量<br>一个代理里面管理有好多池子！</p>
+<h3 id="3、twemproxy安装"><a href="#3、twemproxy安装" class="headerlink" title="3、twemproxy安装;"></a>3、twemproxy安装;</h3><p>见安装文档(可以去百度)<br>automake   autoconf twemproxy，libtool(有.ac和.am文件却没有makefile文件，就要安装automake和autoconf)等包<br>twemproxy配置说明：<br>sxt：               服务器池的名字，支持创建多个服务器池<br>listen:192.168.56.201:22121  这个服务器池的监听地址和端口号<br>hash:fnvla_64  hash选择的hash算法<br>distribution:ketama  选择的分布式算法<br>auto_eject_hosts:true  这个区间段，连不上就拒绝<br>redis:true   代理redis命令请求，不给定时默认代理memcached请求<br>server_retry_timeout:2000  重试的时间<br>server_failure_limit:3 twemproxy连续三次向同一个服务器发送请求命令都遇到错误时，twemproxy就会将该服务器标记为下线，并交由其他在线服务器处理<br>servers:     池中个服务器的地址和端口号及权重</p>
+<ul>
+<li>192.168.56.201:6379:1</li>
+<li>192.168.56.202:6379:1</li>
+<li>192.168.56.203:6379:1<br>twemproxy运行：<br>nutcracker -d -c /opt/sxt/twemproxyconf/nutcracker.sxt.yml(-d表示daemon后台，tewmproxy代理了redis协议，伪装成redis)<br>redis-cli -p 22121 -h 192.168.56.201</li>
+</ul>
+<p>代理池的概念：一个twemproxy可以有多个池，不同端口对应不同的池</p>
+<p>ss -tanl 查看端口<br>但使用代理有个问题，不同步，所以要考虑主从，但是使用哨兵，这两个没法通信，<br>问题：<br>集群没法拓展，没法容错（下线了，就必须重启起来，不能把服务器A里的带到B里面）<br>总结:<br>前端使用twemproxy做代理，后端Redis数据基本上可以按照key来进行比较均衡的分布<br>后台一台redis挂掉后，twemproxy能够自动摘除，恢复后，可以自动识别，恢复并重新加到redis组中重新使用<br>redis挂掉以后，后端数据是否丢失依据Redis本身的持久化策略配置，与twemproxy无关<br>如果要新增一台redis,twemproxy必须重启才可以生效，并且数据不会自动重新reblance，需要人工单独写脚本来实现<br>如果原来已经有2个节点Redis,后续有增加2个redis,则数据分布计算与原来的redistribution分布无关，现有数据如果需要均匀分布的化，需要人工单独处理<br>如果twemproxy的后端节点数量发生变化，twemproxy相同算法的前提下，原来的数据必须重新处理分布，否则会存在找不着key值的情况<br>不管twemproxy后端有几台redis,前端的单个twemproxy的性能最大也只能和单台的redis差不多<br>如同时部署多台twemproxy配置一样，客户端分别链接多台twemproxy可以在一定条件下提高性能<br>如果你觉着很麻烦，那我们中国人就提供了一种整合方案<br>redis-mgr<br>整合了通过了整合复制，sentinel以及twemproxy等组件，提供了一站式的redis服务器部署，监控，迁移等功能，网址：<a href="https://github.com/changyibiao/" target="_blank" rel="noopener">https://github.com/changyibiao/</a><br>redis-mgr</p>
+<p>Redis原生集群:<br>刚出来每多久。3.0支持<br>由多个redis服务器组成的分布式网络服务集群<br>每一个Redis服务器称为节点NOde,节点之间会相互通信，两两相连（网络io较多，所以不建议使用节点较多）<br>redis集群无中心节点（无主从概念）</p>
+<h2 id="三、redis集群节点复制："><a href="#三、redis集群节点复制：" class="headerlink" title="三、redis集群节点复制："></a>三、redis集群节点复制：</h2><p>redis集群的每个节点都有两种角色可以选：主节点master node ,从节点 slave node ,其中主节点主要用于存储数据，而从节点则是某个主节点的复制品<br>当用户需要处理更多读请求的时候，添加从节点可以拓展系统读性能，因为redis集群重用了单机redis复制特性的代码，所以集群的复制行为和我们之前介绍的单机复制特性<br>是完全一样的<br>一般是6个节点，3个主，3个从，自带哨兵机制’<br>redis故障转移：<br>方法和sentinel相同，但是故障转移由其他主节点负责，所以集群不必使用redis sentinel<br>redis集群分批分片：<br>集群将整个数据库分为16384个槽位slot,所有key都数据这些slot中的一个，key的槽位公式：slot number=crc16(key)%16384其中crc16为16位循环冗余校验和函数<br>集群中的每个主节点都可以处理0个志16383个槽，当16384个槽都有某个节点在负责处理时，集群进入上线状态，并开始处理客户端发送的数据命令请求<br>举例：<br>三个主节点7000，7001，7002平均分片16384个slot槽位<br>节点7000指派的槽位位0到5460<br>节点7001指派的槽位位5461到10922<br>节点7002指派的槽位位10923到16383</p>
+<p>redis集群Resirect转向：<br>由于Redis集群无中心节点，请求会发给任意主节点<br>主节点只会处理自己负责槽位的命令请求，其他命令槽位请求，该主节点会返回客户端一个转向错误‘<br>客户端根据错误中包含的地址和端口重新向正确的负责的主节点发起命令请求</p>
+<p>redis集群搭建：<br>创建多个主节点<br>为每个节点指派slot,将多个节点连接起来，组成一个集群<br>槽位分片完成后，集群进入上线状态<br>6个节点：3个主节点，每个主节点有一个从节点</p>
+<p>多走路，多思考，越努力，越幸运！<br>                                                              ———————————————YoungerFary</p>
+
+    </div>
+
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">fang</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/2017/04/01/关于博客/" class="pre-post btn btn-default" title="关于博客">
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">关于博客</span>
+        </a>
+    
+    
+        <a href="/2017/03/21/Redis小趣（四）/" class="next-post btn btn-default" title="Redis小趣（四）">
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">Redis小趣（四）</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+    
+    <div id="vcomments" class="valine"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/assets/valine.min.js"></script>
+
+    <script>
+        new Valine({
+            av: AV,
+            el: '#vcomments',
+            appId: 'xOKV9J4UeQAtVkvnJC7Kq2Jn-gzGzoHsz',
+            appKey: 'erIpQac4azoCmgfBB7Dl9maa',
+            placeholder: '说点什么吧',
+            notify: false,
+            verify: false,
+            avatar: 'mm',
+            meta: 'nick,mail'.split(','),
+            pageSize: '10',
+            path: window.location.pathname,
+            lang: ''.toLowerCase()
+        })
+    </script>
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">Table of Contents</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#一、Redis集群"><span class="toc-text">一、Redis集群</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、主从复制："><span class="toc-text">1、主从复制：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、主从复制问题："><span class="toc-text">2、主从复制问题：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3、Sentinel"><span class="toc-text">3、Sentinel</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#（1）启动Sentinel"><span class="toc-text">（1）启动Sentinel</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-监控monitoring"><span class="toc-text">(2)监控monitoring</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#（3）服务器下线："><span class="toc-text">（3）服务器下线：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-sentinel配置文件："><span class="toc-text">(4)sentinel配置文件：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-sentinel总结："><span class="toc-text">(5)sentinel总结：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、集群—Redis-Twemproxy"><span class="toc-text">二、集群—Redis Twemproxy</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、问题引出："><span class="toc-text">1、问题引出：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、twemproxy"><span class="toc-text">2、twemproxy:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3、twemproxy安装"><span class="toc-text">3、twemproxy安装;</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三、redis集群节点复制："><span class="toc-text">三、redis集群节点复制：</span></a></li></ol>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12"> 
+                <span>Copyright &copy; 2018
+                </span> | 
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> | 
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+
+</body>
+</html>

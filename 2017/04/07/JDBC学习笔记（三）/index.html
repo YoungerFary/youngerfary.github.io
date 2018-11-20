@@ -1,0 +1,329 @@
+<!DOCTYPE HTML>
+<html lang="">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="Hexo">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://yoursite.com">
+    <!--SEO-->
+
+
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+    <!--Title-->
+
+
+<title>JDBC初学笔记（三） | Hexo</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header" style="background-image:url(http://7xpw2b.com1.z0.glb.clouddn.com/hexo-sinppet/img/banner.jpg)">
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title="John Doe">
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                <h2> 一路过来，不过游牧自己。。 </h2>
+            
+    	</div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://yoursite.com">Hexo</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>Home</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/前端/"><i class="fa "></i>About me</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/后端/"><i class="fa "></i>后端</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/工具/"><i class="fa "></i>工具</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/archives/"><i class="fa "></i>时间轴</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="JDBC初学笔记（三）">
+            
+	            JDBC初学笔记（三）
+            
+        </h1>
+        <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/ ">
+             
+        </a>
+    </span>
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+                    <a href="/tags/JAVA" title="JAVA">
+                        JAVA
+                    </a>
+                
+            
+        </span>
+    </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2017/04/07</span>
+        </span>
+    
+</div>
+
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <p><img src="http://ono5i4nh6.bkt.clouddn.com/timg%20%281%29.jpg" alt=""><br>下面主要学习一下Stetement语句！<br><a id="more"></a></p>
+<h2 id="1-Statement"><a href="#1-Statement" class="headerlink" title="1.Statement"></a>1.Statement</h2><p>Ststement:Statement语句是SQL语句的描述，使用它就可以操作各种各样的SQL语句，包括DDL，DML和DCL等！</p>
+<p>那如何去创建这种语句呢，下面步骤看仔细了：</p>
+<ol>
+<li><p>创建：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//创建语句：</span></span><br><span class="line">Connection con=DBUtils.open();</span><br><span class="line">String str=<span class="string">"create table UserTbl(id int primary key auto_increasement)"</span>;</span><br><span class="line">Statement stmt=con.createStatement();</span><br><span class="line">stmt.execute(str);</span><br><span class="line">DBUtils.close(con);</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>2.更新：这里要注意 的就是不管是Update和delete,insert都是用的executeUpdate</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Connection con=DBUtils.open();</span><br><span class="line">String str=<span class="string">"insert into  UserTbl(name) values(Tom) "</span>;</span><br><span class="line">Statement stmt=con.createStatement();</span><br><span class="line">stmt.executeUpdate(str);</span><br></pre></td></tr></table></figure>
+<p>3查询：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">Connection con=DBUtils.open();</span><br><span class="line">String sql=<span class="string">"select * from userinfo;"</span>;</span><br><span class="line">Statement stmt= con.createStatement();</span><br><span class="line">ResultSet rs=stmt.executeQuery(sql);</span><br><span class="line"><span class="comment">//遍历结果集</span></span><br><span class="line"><span class="keyword">while</span>(rs.next())&#123;</span><br><span class="line">	<span class="keyword">int</span> id=rs.getInt(<span class="number">1</span>);</span><br><span class="line">	String  name=rs.getString(<span class="number">2</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">while</span>(con!=<span class="keyword">null</span>)&#123;</span><br><span class="line">	DBUtils.close(con);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="2-Result结果集"><a href="#2-Result结果集" class="headerlink" title="2.Result结果集"></a>2.Result结果集</h2><p>这个东西又是用来干什么的呢？所谓的结果集，其必然是一个结果，功能就是用来获得一个查询结果集，所以他是针对Query的，其实在这个方法里主要是和next()来一起用，一般会用getXXX的方式来获得所要了解的资料，查询方法见上面代码，不再赘述！</p>
+<h2 id="3-PreparedStatement语句"><a href="#3-PreparedStatement语句" class="headerlink" title="3.PreparedStatement语句"></a>3.PreparedStatement语句</h2><p>这个主要是预定义语句，是一种静态操作语句，其用法主要如下：</p>
+<p>其实我们要弄清楚他这个区别与原来的更改，这个区别就是他的参数是不确定的，用占位符？来表示值，这样对于我们来说，只要是用SetXXX就可以为表内元素赋值，这是一种非常灵活的方式！</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Connection con=DBUtils.open();</span><br><span class="line">String str=<span class="string">"insert into  CustomerTbl(name,email) values(?,?) "</span>;</span><br><span class="line">PreparedStatement psmt=con.prepareStatement(str);</span><br><span class="line">psmt.setString(<span class="number">1</span>, <span class="string">"Amy"</span>);</span><br><span class="line">psmt.setString(<span class="number">2</span>, <span class="string">"10086@qq.com"</span>);</span><br><span class="line">psmt.executeUpdate();</span><br><span class="line">DBUtils.close(con);</span><br></pre></td></tr></table></figure>
+<p>再来一个关于查询的例子：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">Connection con=DBUtils.open();</span><br><span class="line">String str=<span class="string">"select id,name,email from CustomeTbl where id=?"</span>;</span><br><span class="line">PreparedStatement psmt=con.prepareStatement(str);</span><br><span class="line">psmt.setInt(<span class="number">1</span>, <span class="number">4</span>);</span><br><span class="line">ResultSet rSet=psmt.executeQuery();</span><br><span class="line"><span class="keyword">while</span>(rSet.next())&#123;</span><br><span class="line">	String name=rSet.getNString(<span class="number">2</span>);</span><br><span class="line">	String email=rSet.getString(<span class="number">3</span>);</span><br><span class="line"><span class="comment">//将数据存入一个对象</span></span><br><span class="line">	Customer c=<span class="keyword">new</span> Customer() ;</span><br><span class="line">	c.setId(<span class="number">4</span>);</span><br><span class="line">	c.setName(name);</span><br><span class="line">	c.setEmail(email);</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="4-CallableStatement语句"><a href="#4-CallableStatement语句" class="headerlink" title="4.CallableStatement语句"></a>4.CallableStatement语句</h2><p>CallableStatement 主要继承自PreparedStatement,调用了存储过程的能力，其用法主要是：</p>
+<ul>
+<li><p>调用简单的存储过程</p>
+</li>
+<li><p>调用有参数的存储过程</p>
+</li>
+<li><p>调用的输入，输出过程的存储过程</p>
+<p>可理解为执行一个运算之后返回一个结果，即定义了一系列过程，然后将这个操作过程进行了封装，然后调用就行。</p>
+<p>例如：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//在命令行输入</span></span><br><span class="line"><span class="function">Create procedure <span class="title">all_customer</span><span class="params">()</span> select * from CustomerTbl</span>;</span><br><span class="line"><span class="function">call <span class="title">all_customer</span><span class="params">()</span></span>;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Connection con=DBUtils.open();</span><br><span class="line">CallableStatement cstmt=con.prepareCall(<span class="string">"call all_customers()"</span>);</span><br></pre></td></tr></table></figure>
+<p>下面的语句就和其他的没啥区别了！</p>
+<p>还是再举一个栗子吧，下面看看例二：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//在命令行输入</span></span><br><span class="line"><span class="function">Create Procedure <span class="title">insert_customer</span><span class="params">(in myname varchar(<span class="number">20</span>)</span>；in mymail <span class="title">vachar</span><span class="params">(<span class="number">20</span>)</span>) insert into CustomerTbl（name,email） <span class="title">value</span> <span class="params">(myname,myemmail)</span></span>;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//执行</span></span><br><span class="line">Connection con=DBUtils.open();</span><br><span class="line">CallableStatement cstmt=con.prepareCall(<span class="string">"call insert_customer(?,?)"</span>);</span><br><span class="line">cstmt.setString(<span class="number">1</span>, <span class="string">"tom"</span>);</span><br><span class="line">cstmt.setString(<span class="number">2</span>, <span class="string">"10086@qq.com"</span>);</span><br><span class="line"><span class="keyword">int</span> r=cstmt.executeUpdate();</span><br><span class="line">System.out.println(r);</span><br></pre></td></tr></table></figure>
+<p>好啦，就到这吧，这只是一些基础的操作，JAVA中还有很多精彩的内容等待我们去探索和发现，与君同进步！</p>
+
+    </div>
+
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">fang</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/2017/04/08/深入理解JAVA中的垃圾回收机制和gc原理/" class="pre-post btn btn-default" title="深入理解JAVA中的垃圾回收机制和gc原理">
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">深入理解JAVA中的垃圾回收机制和gc原理</span>
+        </a>
+    
+    
+        <a href="/2017/04/03/JDBC初学笔记（二）/" class="next-post btn btn-default" title="JDBC初学笔记（二）">
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">JDBC初学笔记（二）</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+    
+    <div id="vcomments" class="valine"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/assets/valine.min.js"></script>
+
+    <script>
+        new Valine({
+            av: AV,
+            el: '#vcomments',
+            appId: 'xOKV9J4UeQAtVkvnJC7Kq2Jn-gzGzoHsz',
+            appKey: 'erIpQac4azoCmgfBB7Dl9maa',
+            placeholder: '说点什么吧',
+            notify: false,
+            verify: false,
+            avatar: 'mm',
+            meta: 'nick,mail'.split(','),
+            pageSize: '10',
+            path: window.location.pathname,
+            lang: ''.toLowerCase()
+        })
+    </script>
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">Table of Contents</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Statement"><span class="toc-text">1.Statement</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Result结果集"><span class="toc-text">2.Result结果集</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-PreparedStatement语句"><span class="toc-text">3.PreparedStatement语句</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-CallableStatement语句"><span class="toc-text">4.CallableStatement语句</span></a></li></ol>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12"> 
+                <span>Copyright &copy; 2018
+                </span> | 
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> | 
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+
+</body>
+</html>

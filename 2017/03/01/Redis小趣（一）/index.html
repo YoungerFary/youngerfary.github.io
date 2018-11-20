@@ -1,0 +1,311 @@
+<!DOCTYPE HTML>
+<html lang="">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="Hexo">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://yoursite.com">
+    <!--SEO-->
+
+
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+    <!--Title-->
+
+
+<title>Redis小趣 | Hexo</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header" style="background-image:url(http://7xpw2b.com1.z0.glb.clouddn.com/hexo-sinppet/img/banner.jpg)">
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title="John Doe">
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                <h2> 一路过来，不过游牧自己。。 </h2>
+            
+    	</div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://yoursite.com">Hexo</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>Home</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/前端/"><i class="fa "></i>About me</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/后端/"><i class="fa "></i>后端</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/工具/"><i class="fa "></i>工具</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/archives/"><i class="fa "></i>时间轴</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="Redis小趣">
+            
+	            Redis小趣
+            
+        </h1>
+        <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/ ">
+             
+        </a>
+    </span>
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+                    <a href="/tags/Redis" title="Redis">
+                        Redis
+                    </a>
+                
+            
+        </span>
+    </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2017/03/01</span>
+        </span>
+    
+</div>
+
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <p><img src="http://ono5i4nh6.bkt.clouddn.com/redis.png" alt=""><br>关于Redis,应该是非常好用的一个NOSql数据库了，学习完之后真的感慨太强大了，特别是他的数据表达方式，特别适合数据量大的时候的思维方式，而且提供的方法也非常实用于数据处理！来看看怎么学习他<br><a id="more"></a></p>
+<h2 id="一、Redis初探"><a href="#一、Redis初探" class="headerlink" title="一、Redis初探"></a>一、Redis初探</h2><h4 id="（1）简介"><a href="#（1）简介" class="headerlink" title="（1）简介"></a>（1）简介</h4><p>使用C语言编写的，基于内存的且支持持久化的，高性能的KEY-Value的 NOsql数据库，开源（BSD协议：没有那么多限制）<br>支持数据类型丰富：如字符串，散列（hashs），列表（lists）,集合（sets）,有序集合（sorted sets）与查找范围，bitmaps,hyperloglogs和空间，地理索引半径查询（例如微信附近的人，嘀嘀打车的范围内车辆等）<br>丰富的支持主流语言的客户端，c,c++,python等<br>用途：缓存（stackoverFLow）、数据库（微博），消息中间件（微博）内容存到mysql,关系技术存在mysql,整合使用</p>
+<h4 id="（2）NOsql分类"><a href="#（2）NOsql分类" class="headerlink" title="（2）NOsql分类"></a>（2）NOsql分类</h4><p>kv存储：Redis,memcached,简介：使用key快速查到values,memcached支持String类型的value，Redis支持String,set\hash、sortset list等类型<br>文档存储：MongoDB,CouchDB,简介：使用json或者类似JSON的BJSOn结构，存储内容为文档型，能实现部分关系型数据库的功能<br>列存储：HBase,Cassandra 简介：按照列进行存储，便于存储结构化和半结构化（例如日志）的数据，方便做数据压缩<br>图存储：Neo4J，FlockDB,简介：图形关系的存储，能很好弥补关系型数据库存储图片数据的不足<br>对象的存储：Db4o，Versant,简介：通过类似面向对象的语言操作数据库，通过对象的方式存储<br>XML数据库：BaseX,Berkeley DB XML,简介：高效存储XML数据，支持XML内部的查询语法，如XQuery, Xpath</p>
+<h4 id="注意：Redis一般偶数结尾的都是稳定版本"><a href="#注意：Redis一般偶数结尾的都是稳定版本" class="headerlink" title="注意：Redis一般偶数结尾的都是稳定版本"></a>注意：Redis一般偶数结尾的都是稳定版本</h4><h4 id="（3）优点、特点："><a href="#（3）优点、特点：" class="headerlink" title="（3）优点、特点："></a>（3）优点、特点：</h4><p>A:存在内存，不存在硬盘，所以不受io限制<br>B:独特的键值对模型<br>WHY?我们知道很多数据库只能处理一种数据结构:<br>SQL数据库—表格<br>Memcached—键值对数据库，键值都是字符串<br>文档数据库（MongoDB,CouchDB）—-由json\bson组成的文档<br>当然不是说他们不好，只是说一旦数据可提供的数据结构并不适合去做某些事的话，程序写起来就会麻烦和不自然<br>C:redis其值可以是五种数据结构中的任一种，方便你解决问题！</p>
+<h4 id="（4）其他"><a href="#（4）其他" class="headerlink" title="（4）其他"></a>（4）其他</h4><p>数据库有两种：存硬盘，存内存<br>硬盘：把值存在硬盘，在内存中建立存储索引<br>基于内存的直接不用建索引，直接找值，读写不受硬盘io速度的限制</p>
+<h4 id="5-附加功能："><a href="#5-附加功能：" class="headerlink" title="(5)附加功能："></a>(5)附加功能：</h4><p>持久化功能:将数据存储在内存里面的数据保存到硬盘里面，保证数据安全，方便进行数据备份和恢复<br>发布和订阅功能：将消息同时分发给多个客户端，用于构建广播系统<br>过期键功能：为键设置一个过期时间，让他在指定的的时间后被删除<br>事务功能：原子的执行多个操作，并提供乐观锁功能，保证数据处理的安全性<br>Lua脚本功能：在服务端原子的执行多个操作，形成复杂功能，并减少客户端与服务端之间的通信往返次数<br>复制：为指定的redis服务器创建一个或多个复制品，用于提升数据安全，分担请求负载<br>Sentinet:<br>监控Redis服务器的状态,并在服务器发生故障时，自行进行故障转移<br>集群：创建分布式数据库，每个服务器分别执行一部分写操作和读操作<br>简单，有完善文档，易学</p>
+<p>示例：<br>twitter用redis来存储用户时间线，usertimeline<br>StackOverFlow用Redis来进行缓存和消息分发<br>Github用Redis来作为持久化的键值对数据库<br>新浪用Redis,集群规模32Tb,使用Redis来实现计数器，反向索引，排行榜、消息队列，并存储用户关系<br>知乎用Redis进行计数，缓存，消息分发和任务调度</p>
+<h2 id="二、安装"><a href="#二、安装" class="headerlink" title="二、安装"></a>二、安装</h2><p>学习环境：centos,redis2.8版本<br>安装命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">tar xf redis-2.8.18.tar.gz(解压安装)</span><br><span class="line">cd redis-2.8.18</span><br><span class="line">yum install gcc tcl -y</span><br><span class="line">make(编译)</span><br><span class="line">mkdir -p /usr/redis</span><br><span class="line">make PREFTX=/usr/redis install （指定安装路径）</span><br><span class="line">这时候redis里面就只有bin</span><br><span class="line">cd redis-2.8.18/src</span><br><span class="line">cp redis-sentinel /usr/redis/bin</span><br><span class="line">vim ~/.bash_profile</span><br><span class="line">进去profile之后，要修改：</span><br><span class="line">export REDIS_HOME=/usr/redis</span><br><span class="line">export PATH=$PATH:$REDIS_HOME/bin</span><br><span class="line"></span><br><span class="line">source ~/.bash_profile</span><br><span class="line"></span><br><span class="line">测试：redis-sever --help</span><br><span class="line">做成后台daemon</span><br><span class="line">cd redis-2.8.18/utils/</span><br><span class="line">./install sever.sh</span><br><span class="line">把编译好的redis作为一个服务，把6379.conf放到了/etc/init.d/redis_6379</span><br><span class="line">cd /etd/init.d</span><br><span class="line">mv redis_6379 redisd</span><br><span class="line">(chkconfig --add redisd)</span><br><span class="line">service redisd start</span><br><span class="line">ss -tanl(看端口判断是否有启动)</span><br><span class="line"></span><br><span class="line">redis-cli --help(通过redis-cli练上去)</span><br><span class="line">-h 连上哪台机器</span><br><span class="line">-p 一台机子上有多个redis服务，多个端口对应多个服务，新浪至少开四个</span><br><span class="line">-n database number 多个数据库，默认16个库（在/etc/redis/6379.conf中  database 16），每个库相互隔离</span><br><span class="line">vim /etc/redis/6379.conf</span><br><span class="line">redis-cli(链接)</span><br><span class="line">redis-cli -n 0</span><br><span class="line">set mykey 123（写了一个键，建：mykey  值：123）</span><br><span class="line">get mykey</span><br><span class="line"></span><br><span class="line">select  15(0-15,切换到第16个数据库)</span><br></pre></td></tr></table></figure></p>
+<p>如果在这个数据库中get mykey 会返回 nil(数据库与数据库之间是隔离的)</p>
+<h2 id="三、命令"><a href="#三、命令" class="headerlink" title="三、命令"></a>三、命令</h2><h3 id="1、字符串数据类型String-指值"><a href="#1、字符串数据类型String-指值" class="headerlink" title="1、字符串数据类型String(指值)"></a>1、字符串数据类型String(指值)</h3><p>set msg “goodbye” nx(nx是不存在的时候才往里写，如果存在了就不写，就不会覆盖原来的值)<br>set msg “goodbye” xx(键不存在的时候不能设置)<br>set key value [ex seconds] [px milliseconds]<br>例：set temp “temp”  ex 10  （表示10秒之后自动删除。px是毫秒，设置过期时间）缓存<br>mset key value [key ….value] 表示可以获得多个值<br>mset a 1 b 2 c 3<br>mget a b c</p>
+<p>msetnx key value [key…value] 如果至少有一个是存在的，则不执行任何设置操作，具有原子性<br>key * 可以看所有的键<br>getset key new-value 将字符串的键的值设置为new-value ,并返回字符串键所设新值之前的值<br>append key value :将值value插入到字符串键key已存储内容的末尾：set myphone “nokia” append myphone “1000”  get myphone —-nokia1000<br>strlen key :所对应的值的长度<br>字符串索引和范围操作<br>字符串索引从0开始，从末尾开始从-1开始</p>
+<p>setrange key index value ,值从index值开始替换<br>getrange KEY ；例如：getrange msg -1 -5</p>
+<h3 id="2、数字的操作"><a href="#2、数字的操作" class="headerlink" title="2、数字的操作"></a>2、数字的操作</h3><p>redis 可以存储数字，redis有一些命令可以专门处理这些数字的值，只要存储在字符串键里面的值可以被解释为64位整数，那就可以用命令<br>去对数字进行操作<br>条件：（1）是数字（2）64位以内 （3）不支持科学计数</p>
+<p>减少或增加整数数字的值：INCRBY增加值，DECRBY减少值，若key原先不存在，则会先生成一个key为键，value为0的键值对，再进行增减操作<br>INCRBY num 100<br>DECRBY num 19<br>增1减1这种操作很普遍，所以用 INCR表示增1，DECR表示减1： INCR NUM ,DECR num(例如微博点赞数)<br>减少或增加浮点数数字的值：INCRBYFLOAT NUM 3.14，但是没有减的版本，所以传入负数达到效果：INCRBYFLOAT NUM -3.14</p>
+<p>注意事项：即使存储的值是数字，他也可以执行APPEND，STRLEN,SETRANGE和GETRANGE，当用户针对数字执行这些命令时会将数值转化为字符串，然后<br>再执行命令</p>
+<h3 id="3、键的命名："><a href="#3、键的命名：" class="headerlink" title="3、键的命名："></a>3、键的命名：</h3><p>因为Redis的数据库不能出现两个同名的键，所以我们通常使用file1::file2::file3 这样的格式来区分同一类型的多个字符串键<br>例如：fang::email  fang::hphonenumber  userA::10086::info<br>news::sport::cache  这个就有可能是体育新闻分类的一个缓存</p>
+<p>要看命令的操作要看：help @string ,help @sadd 等<br>redis key值是二进制安全的，这意味着可以用任何一个二进制序列作为key值，从字符串，到PJPEG文件内容都可以，空字符串也是有效key值<br>key取值原则：<br>（1）不要太长，消耗内存，查找成本高<br>（2）不宜过短，可读性较差<br>不要太多键，会带很多附属空间，所以能存更少的数据value,这也是它比memcache更好的原因，它可以存列表，散列等</p>
+<p>字符串是最基本的Redis值类型，Redis字符串是二进制安全的，这意味着Redis字符串能包含任意类型的数据，例如：一张JPEG格式的图片或者序列化的<br>Ruby对象<br>一个字符串类型的值最多能存储512M字节的内容</p>
+<p>Redis有库的概念，没有表的概念<br> 图形界面客户端：Redis Desktop Manager–connnection(name host port等test connection)<br> 通过pip install redis 就可以安装最新的redist</p>
+<p> 在pyDEV中<br> 测试代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"> import redis</span><br><span class="line"> r=redis.Redis(host=&quot;192.168.80.21&quot;,port=6379,db=0)</span><br><span class="line">r.set(&quot;testbin&quot;,0b01100010)//0b表示二进制</span><br><span class="line">print r.get(&quot;testbin&quot;)</span><br><span class="line">rset(&quot;tb&quot;,0x62)//0x表示16进制</span><br><span class="line">print r.get(&quot;tb&quot;)</span><br><span class="line">//这里都是等价的</span><br><span class="line">r.set(0b0011,0b01100011)</span><br><span class="line">print r.get(0b0011)</span><br><span class="line">print r.get(3)</span><br><span class="line">print r.get(&apos;3&apos;)</span><br><span class="line"></span><br><span class="line">print bin(int(r.get(3)))//bin函数表示转化成二进制</span><br><span class="line">print bin(int(r.get(&apos;3&apos;)))</span><br><span class="line"></span><br><span class="line">print</span><br><span class="line">pritn r.key(&quot;*&quot;)</span><br></pre></td></tr></table></figure></p>
+<p>结果：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">98</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">99</span><br><span class="line">0b1100011</span><br><span class="line">0b1100011</span><br><span class="line">[&apos;testbin&apos;,&apos;tb&apos;,&apos;msg&apos;,&apos;b&apos;]</span><br></pre></td></tr></table></figure></p>
+<p>flushdb(删除所有键值，清空了)</p>
+<p>多走路，多思考，越努力，越幸运！<br>                                                                                                                            ———————————————YoungerFary</p>
+
+    </div>
+
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">fang</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/2017/03/07/Redis小趣（二）/" class="pre-post btn btn-default" title="Redis小趣（二）">
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">Redis小趣（二）</span>
+        </a>
+    
+    
+</div>
+
+
+    <div id="comments">
+        
+    
+    <div id="vcomments" class="valine"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/assets/valine.min.js"></script>
+
+    <script>
+        new Valine({
+            av: AV,
+            el: '#vcomments',
+            appId: 'xOKV9J4UeQAtVkvnJC7Kq2Jn-gzGzoHsz',
+            appKey: 'erIpQac4azoCmgfBB7Dl9maa',
+            placeholder: '说点什么吧',
+            notify: false,
+            verify: false,
+            avatar: 'mm',
+            meta: 'nick,mail'.split(','),
+            pageSize: '10',
+            path: window.location.pathname,
+            lang: ''.toLowerCase()
+        })
+    </script>
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">Table of Contents</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#一、Redis初探"><span class="toc-text">一、Redis初探</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#（1）简介"><span class="toc-text">（1）简介</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#（2）NOsql分类"><span class="toc-text">（2）NOsql分类</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#注意：Redis一般偶数结尾的都是稳定版本"><span class="toc-text">注意：Redis一般偶数结尾的都是稳定版本</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#（3）优点、特点："><span class="toc-text">（3）优点、特点：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#（4）其他"><span class="toc-text">（4）其他</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-附加功能："><span class="toc-text">(5)附加功能：</span></a></li></ol></li></ol><li class="toc-item toc-level-2"><a class="toc-link" href="#二、安装"><span class="toc-text">二、安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三、命令"><span class="toc-text">三、命令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、字符串数据类型String-指值"><span class="toc-text">1、字符串数据类型String(指值)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、数字的操作"><span class="toc-text">2、数字的操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3、键的命名："><span class="toc-text">3、键的命名：</span></a></li></ol></li>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12"> 
+                <span>Copyright &copy; 2018
+                </span> | 
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> | 
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+
+</body>
+</html>

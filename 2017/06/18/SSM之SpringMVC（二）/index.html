@@ -1,0 +1,305 @@
+<!DOCTYPE HTML>
+<html lang="">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="Hexo">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://yoursite.com">
+    <!--SEO-->
+
+
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+    <!--Title-->
+
+
+<title>SSM之SpringMVC（二） | Hexo</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header" style="background-image:url(http://7xpw2b.com1.z0.glb.clouddn.com/hexo-sinppet/img/banner.jpg)">
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title="John Doe">
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                <h2> 一路过来，不过游牧自己。。 </h2>
+            
+    	</div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://yoursite.com">Hexo</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>Home</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/前端/"><i class="fa "></i>About me</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/后端/"><i class="fa "></i>后端</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/工具/"><i class="fa "></i>工具</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/archives/"><i class="fa "></i>时间轴</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="SSM之SpringMVC（二）">
+            
+	            SSM之SpringMVC（二）
+            
+        </h1>
+        <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/ ">
+             
+        </a>
+    </span>
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+                    <a href="/tags/SpringMVC" title="SpringMVC">
+                        SpringMVC
+                    </a>
+                
+            
+        </span>
+    </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2017/06/18</span>
+        </span>
+    
+</div>
+
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <p><img src="http://ono5i4nh6.bkt.clouddn.com/springmvc.jpg" alt=""><br>上篇博文就是为了让你有一个对流程的了解，实际过程中，我们会采用更简单的方式注解开发去投入生产过程，所以还是要继续学习才行！<br><a id="more"></a></p>
+<h2 id="2、使用注解进行开发"><a href="#2、使用注解进行开发" class="headerlink" title="2、使用注解进行开发"></a>2、使用注解进行开发</h2><h3 id="1-导入jar包"><a href="#1-导入jar包" class="headerlink" title="(1)导入jar包"></a>(1)导入jar包</h3><h3 id="2-web-xml配置"><a href="#2-web-xml配置" class="headerlink" title="(2)web.xml配置"></a>(2)web.xml配置</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;servlet&gt;</span><br><span class="line">  	&lt;servlet-name&gt;mvc&lt;/servlet-name&gt;</span><br><span class="line">  	&lt;servlet-<span class="class"><span class="keyword">class</span>&gt;<span class="title">org</span>.<span class="title">springframework</span>.<span class="title">web</span>.<span class="title">servlet</span>.<span class="title">DispatcherServlet</span>&lt;/<span class="title">servlet</span>-<span class="title">class</span>&gt;</span></span><br><span class="line"><span class="class">  	&lt;<span class="title">init</span>-<span class="title">param</span>&gt;</span></span><br><span class="line"><span class="class">  		&lt;<span class="title">param</span>-<span class="title">name</span>&gt;<span class="title">contextConfigLocation</span>&lt;/<span class="title">param</span>-<span class="title">name</span>&gt;</span></span><br><span class="line">  		&lt;param-value&gt;classpath:mvc.xml&lt;/param-value&gt;</span><br><span class="line">  	&lt;/init-param&gt;</span><br><span class="line">  	&lt;load-on-startup&gt;1&lt;/load-on-startup&gt;</span><br><span class="line">  &lt;/servlet&gt;</span><br><span class="line">  &lt;servlet-mapping&gt;</span><br><span class="line">  	&lt;servlet-name&gt;mvc&lt;/servlet-name&gt;</span><br><span class="line">  	&lt;url-pattern&gt;*.do&lt;/url-pattern&gt;</span><br><span class="line">  &lt;/servlet-mapping&gt;</span><br></pre></td></tr></table></figure>
+<p>注意：<init-param>配置指明mvc的配置文件位置在（src/mvc.xml）</init-param></p>
+<h3 id="3-Controller"><a href="#3-Controller" class="headerlink" title="(3)Controller"></a>(3)Controller</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Controller</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloController</span> </span>&#123;</span><br><span class="line">	<span class="meta">@RequestMapping</span>(value=<span class="string">"/hi.do"</span>)</span><br><span class="line">	<span class="function"><span class="keyword">public</span> ModelAndView <span class="title">hello</span><span class="params">()</span></span>&#123;</span><br><span class="line">		ModelAndView mv = <span class="keyword">new</span> ModelAndView();</span><br><span class="line">		mv.setViewName(<span class="string">"hello"</span>);</span><br><span class="line">		mv.addObject(<span class="string">"msg"</span>, <span class="string">"annotation ------"</span>);</span><br><span class="line">		<span class="keyword">return</span> mv;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="4-Springmvc配置"><a href="#4-Springmvc配置" class="headerlink" title="(4)Springmvc配置"></a>(4)Springmvc配置</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 配置handerAdapter  适配器 --&gt;</span><br><span class="line"> &lt;bean <span class="class"><span class="keyword">class</span></span>=<span class="string">"org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter"</span>/&gt;</span><br><span class="line"></span><br><span class="line"> &lt;bean id=<span class="string">"jspViewResolver"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"org.springframework.web.servlet.view.InternalResourceViewResolver"</span>&gt;</span><br><span class="line">     &lt;property name=<span class="string">"viewClass"</span> value=<span class="string">"org.springframework.web.servlet.view.JstlView"</span>/&gt;</span><br><span class="line">     &lt;!-- 将视图名 渲染后视图的前缀 --&gt;</span><br><span class="line">     &lt;property name=<span class="string">"prefix"</span> value=<span class="string">"/WEB-INF/jsp/"</span>/&gt;</span><br><span class="line">     &lt;!-- 渲染后视图的后缀 --&gt;</span><br><span class="line">     &lt;property name=<span class="string">"suffix"</span> value=<span class="string">".jsp"</span>/&gt;</span><br><span class="line">     &lt;!-- 例：视图名为:hello   渲染后：/WEB-INF/jsp/hello.jsp 该页面--&gt;</span><br><span class="line"> &lt;/bean&gt;</span><br><span class="line"> &lt;!-- spring容器扫描指定包下的所有类，如果类上有注解  那么根据注解产生相应bean对象已经映射信息 --&gt;</span><br><span class="line"> &lt;context:component-scan base-<span class="keyword">package</span>=<span class="string">"cn.sxt.controller"</span>/&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="3、Controller配置总结"><a href="#3、Controller配置总结" class="headerlink" title="3、Controller配置总结"></a>3、Controller配置总结</h2><h3 id="（1）URL对应Bean"><a href="#（1）URL对应Bean" class="headerlink" title="（1）URL对应Bean"></a>（1）URL对应Bean</h3><p> 如果要使用这种配置方式，需要在xml中做出如下样式配置<br> <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;bean <span class="class"><span class="keyword">class</span></span>=<span class="string">"org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping"</span>/&gt;  </span><br><span class="line">&lt;bean name=<span class="string">"/he.do"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"cn.sxt.controller.HelloController"</span>/&gt;</span><br></pre></td></tr></table></figure></p>
+<p> 以上配置，访问/hello.do就会寻找/hello.do的bean,此类方式适用于小型的应用系统</p>
+<h3 id="2-为URL分配Bean"><a href="#2-为URL分配Bean" class="headerlink" title="(2)为URL分配Bean"></a>(2)为URL分配Bean</h3><p> 使用一个统一配置集合，对各个URL对应的Controller做关系映射<br> <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">bean <span class="class"><span class="keyword">class</span></span>=<span class="string">"org.springframework.web.servlet.handler.SimpleUrlHandlerMapping"</span>&gt;  </span><br><span class="line">	 &lt;property name=<span class="string">"mappings"</span>&gt;  </span><br><span class="line">		  &lt;props&gt;  </span><br><span class="line">		  	 &lt;!-- key 对应url   value对应 自定义控制器的id --&gt;</span><br><span class="line">		   	&lt;prop key="/hello.do"&gt;helloController&lt;/prop&gt;  </span><br><span class="line">		  &lt;/props&gt;  </span><br><span class="line">	 &lt;/property&gt;  </span><br><span class="line">&lt;/bean&gt;  </span><br><span class="line">&lt;bean id=<span class="string">"helloController"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"cn.sxt.controller.HelloController"</span>/&gt;</span><br></pre></td></tr></table></figure></p>
+<p>下面的value值要和下面的id符合，此类配置还可以使用通配符，访问/hello.do时，Spring会把请求分配给HelloController进行处理</p>
+<h3 id="（3）URL匹配bean"><a href="#（3）URL匹配bean" class="headerlink" title="（3）URL匹配bean"></a>（3）URL匹配bean</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--请求为hello*.<span class="keyword">do</span>都将被匹配--&gt;</span><br><span class="line">bean id=<span class="string">"helloController"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"cn.sxt.controller.HelloController"</span>/&gt;</span><br><span class="line">	&lt;bean class="org.springframework.web.servlet.mvc.support.ControllerClassNameHandlerMapping"&gt;&lt;/bean&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="（4）注解"><a href="#（4）注解" class="headerlink" title="（4）注解"></a>（4）注解</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;context:component-scan base-<span class="keyword">package</span>=<span class="string">"cn.sxt.controller"</span>/&gt;</span><br></pre></td></tr></table></figure>
+<p>加入扫描注解的包就行了！！<br>Controller代码中，要写对应的注解，见上面一个类的描写！</p>
+
+    </div>
+
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">fang</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/2017/06/25/SSM之SpringMVC（三）/" class="pre-post btn btn-default" title="SSM之SpringMVC（三）">
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">SSM之SpringMVC（三）</span>
+        </a>
+    
+    
+        <a href="/2017/06/15/SSM之SpringMVC（一）/" class="next-post btn btn-default" title="SSM之SpringMVC（一）">
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">SSM之SpringMVC（一）</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+    
+    <div id="vcomments" class="valine"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/assets/valine.min.js"></script>
+
+    <script>
+        new Valine({
+            av: AV,
+            el: '#vcomments',
+            appId: 'xOKV9J4UeQAtVkvnJC7Kq2Jn-gzGzoHsz',
+            appKey: 'erIpQac4azoCmgfBB7Dl9maa',
+            placeholder: '说点什么吧',
+            notify: false,
+            verify: false,
+            avatar: 'mm',
+            meta: 'nick,mail'.split(','),
+            pageSize: '10',
+            path: window.location.pathname,
+            lang: ''.toLowerCase()
+        })
+    </script>
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">Table of Contents</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#2、使用注解进行开发"><span class="toc-text">2、使用注解进行开发</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-导入jar包"><span class="toc-text">(1)导入jar包</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-web-xml配置"><span class="toc-text">(2)web.xml配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-Controller"><span class="toc-text">(3)Controller</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-Springmvc配置"><span class="toc-text">(4)Springmvc配置</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3、Controller配置总结"><span class="toc-text">3、Controller配置总结</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#（1）URL对应Bean"><span class="toc-text">（1）URL对应Bean</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-为URL分配Bean"><span class="toc-text">(2)为URL分配Bean</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（3）URL匹配bean"><span class="toc-text">（3）URL匹配bean</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（4）注解"><span class="toc-text">（4）注解</span></a></li></ol></li></ol>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12"> 
+                <span>Copyright &copy; 2018
+                </span> | 
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> | 
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+
+</body>
+</html>

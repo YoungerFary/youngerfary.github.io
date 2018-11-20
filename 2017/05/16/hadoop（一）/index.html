@@ -1,0 +1,318 @@
+<!DOCTYPE HTML>
+<html lang="">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="Hexo">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://yoursite.com">
+    <!--SEO-->
+
+
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+    <!--Title-->
+
+
+<title>Hadoop生态系统简介 | Hexo</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header" style="background-image:url(http://7xpw2b.com1.z0.glb.clouddn.com/hexo-sinppet/img/banner.jpg)">
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title="John Doe">
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                <h2> 一路过来，不过游牧自己。。 </h2>
+            
+    	</div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://yoursite.com">Hexo</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>Home</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/前端/"><i class="fa "></i>About me</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/后端/"><i class="fa "></i>后端</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/工具/"><i class="fa "></i>工具</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/archives/"><i class="fa "></i>时间轴</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="Hadoop生态系统简介">
+            
+	            Hadoop生态系统简介
+            
+        </h1>
+        <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/ ">
+             
+        </a>
+    </span>
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+                    <a href="/tags/Hadoop" title="Hadoop">
+                        Hadoop
+                    </a>
+                
+            
+        </span>
+    </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2017/05/16</span>
+        </span>
+    
+</div>
+
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <p><img src="http://ono5i4nh6.bkt.clouddn.com/hadoop.jpg" alt=""><br>在实验室一直牵涉到大数据hadoop和spark这方面的研究，一直没有时间整理，今天就把这些东西零零散散的都整理了吧，我们整理的路线就从了解Hadoop起源，Hadoop构成，架构体系，以及各部分组件的具体作用一点点说起!<br>如:HDFS、MapReduce、Yarn、Zookeeper、Hive、Hbase、Oozie、Mahout、Pig、Flume、Sqoop等组件！<br><a id="more"></a></p>
+<h2 id="一、Hadoop的起源"><a href="#一、Hadoop的起源" class="headerlink" title="一、Hadoop的起源"></a>一、Hadoop的起源</h2><p>Doug Cutting是Hadoop之父 ，起初他开创了一个开源软件Lucene（用Java语言编写，提供了全文检索引擎的架构，与Google类似），Lucene后来面临与Google同样的错误。于是，Doug Cutting学习并模仿Google解决这些问题的办法，产生了一个Lucene的微缩版Nutch。<br>后来，Doug Cutting等人根据2003-2004年Google公开的部分GFS和Mapreduce思想的细节，利用业余时间实现了GFS和Mapreduce的机制，从而提高了Nutch的性能。由此Hadoop产生了。<br>Hadoop于2005年秋天作为Lucene的子项目Nutch的一部分正式引入Apache基金会。2006年3月份，Map-Reduce和Nutch Distributed File System(NDFS)分别被纳入Hadoop的项目中。<br>关于Hadoop名字的来源，是Doug Cutting儿子的玩具大象。</p>
+<h2 id="二、什么是Hadoop"><a href="#二、什么是Hadoop" class="headerlink" title="二、什么是Hadoop"></a>二、什么是Hadoop</h2><p>Hadoop是一个开源框架，可编写和运行分布式应用处理大规模数据。 Hadoop框架的核心是HDFS和MapReduce。其中 HDFS 是分布式文件系统，MapReduce 是分布式数据处理模型和执行环境。</p>
+<p>在一个宽泛而不断变化的分布式计算领域，Hadoop凭借什么优势能脱颖而出呢？</p>
+<ol>
+<li>运行方便：Hadoop是运行在由一般商用机器构成的大型集群上。Hadoop在云计算服务层次中属于PaaS(Platform-as-a- Service)：平台即服务。</li>
+<li>健壮性：Hadoop致力于在一般的商用硬件上运行，能够从容的处理类似硬件失效这类的故障。</li>
+<li>可扩展性：Hadoop通过增加集群节点，可以线性地扩展以处理更大的数据集。</li>
+<li>简单：Hadoop允许用户快速编写高效的并行代码。<h2 id="三、Hadoop生态系统概况"><a href="#三、Hadoop生态系统概况" class="headerlink" title="三、Hadoop生态系统概况"></a>三、Hadoop生态系统概况</h2>Hadoop是一个能够对大量数据进行分布式处理的软件框架。具有可靠、高效、可伸缩的特点。<br>Hadoop的核心是HDFS和Mapreduce，hadoop2.0还包括YARN。<br>下面看这张Hadoop家族图：<br><img src="http://ono5i4nh6.bkt.clouddn.com/Hadoop%E7%BB%84%E6%88%90.jpg" alt="Hadoop家族图"><br>1)浏览器<br>2) Nutch，互联网数据及Nutch搜索引擎应用<br>3) HDFS,Hadoop的分布式文件系统<br>5) MapReduce,分布式计算框架<br>6) Flume、Scribe，Chukwa数据收集，收集非结构化数据的工具。<br>7） Hiho、Sqoop,讲关系数据库中的数据导入HDFS的工具<br>8） Hive数据仓库，pig分析数据的工具<br>10）Oozie作业流调度引擎<br>11）Hue，Hadoop自己的监控管理工具<br>12）Avro 数据序列化工具<br>13）mahout数据挖掘工具<br>14)Hbase分布式的面向列的开源数据库<br>其特点是：<br>源代码开源、社区活跃、参与者众多、涉及分布式存储和计算的方方面面、已得到企业界验证<br>下图为hadoop的生态系统结构图，2.0版：<br><img src="http://ono5i4nh6.bkt.clouddn.com/Hadoop%E6%9E%84%E9%80%A0%E5%9B%BE.jpg" alt="生态系统结构图"><h4 id="hadoop核心包括以下几个部分"><a href="#hadoop核心包括以下几个部分" class="headerlink" title="hadoop核心包括以下几个部分"></a>hadoop核心包括以下几个部分</h4><img src="http://ono5i4nh6.bkt.clouddn.com/x40qGJk.jpg" alt="hadoop核心"><br>由上图可以看出Hadoop1.0与Hadoop2.0的区别。Hadoop1.0的核心由HDFS（Hadoop Distributed File System）和MapReduce(分布式计算框架)构成。而在Hadoop2.0中增加了Yarn(Yet Another Resource Negotiator),来负责集群资源的统一管理和调度。<h3 id="1、HDFS（Hadoop分布式文件系统）"><a href="#1、HDFS（Hadoop分布式文件系统）" class="headerlink" title="1、HDFS（Hadoop分布式文件系统）"></a>1、HDFS（Hadoop分布式文件系统）</h3>源自于Google的GFS论文，发表于2003年10月，HDFS是GFS克隆版。<br>是Hadoop体系中数据存储管理的基础。它是一个高度容错的系统，能检测和应对硬件故障，用于在低成本的通用硬件上运行。HDFS简化了文件的一致性模型，通过流式数据访问，提供高吞吐量应用程序数据访问功能，适合带有大型数据集的应用程序。<br><img src="http://ono5i4nh6.bkt.clouddn.com/HDFS.jpg" alt="HDFS"><br>Client：切分文件；访问HDFS；与NameNode交互，获取文件位置信息；与DataNode交互，读取和写入数据。<br>NameNode：Master节点，在hadoop1.X中只有一个，管理HDFS的名称空间和数据块映射信息，配置副本策略，处理客户端请求。<br>DataNode：Slave节点，存储实际的数据，汇报存储信息给NameNode。<br>Secondary NameNode：辅助NameNode，分担其工作量；定期合并fsimage和fsedits，推送给NameNode；紧急情况下，可辅助恢复NameNode，但Secondary NameNode并非NameNode的热备。<h3 id="2、Mapreduce（分布式计算框架）"><a href="#2、Mapreduce（分布式计算框架）" class="headerlink" title="2、Mapreduce（分布式计算框架）"></a>2、Mapreduce（分布式计算框架）</h3>源自于google的MapReduce论文，发表于2004年12月，Hadoop MapReduce是google MapReduce 克隆版。<br>源自于google的MapReduce论文<br>MapReduce是一种计算模型，用以进行大数据量的计算。其中Map对数据集上的独立元素进行指定的操作，生成键-值对形式中间结果。Reduce则对中间结果中相同“键”的所有“值”进行规约，以得到最终结果。MapReduce这样的功能划分，非常适合在大量计算机组成的分布式并行环境里进行数据处理。<br><img src="http://ono5i4nh6.bkt.clouddn.com/MapReduce.jpg" alt="MapReduce"><br>JobTracker：Master节点，只有一个，管理所有作业，作业/任务的监控、错误处理等；将任务分解成一系列任务，并分派给TaskTracker。<br>TaskTracker：Slave节点，运行Map Task和Reduce Task；并与JobTracker交互，汇报任务状态。<br>Map Task：解析每条数据记录，传递给用户编写的map(),并执行，将输出结果写入本地磁盘(如果为map-only作业，直接写入HDFS)。<br>Reducer Task：从Map Task的执行结果中，远程读取输入数据，对数据进行排序，将数据按照分组传递给用户编写的reduce函数执行。<br>Mapreduce处理流程，以wordCount为例：<br><img src="http://ono5i4nh6.bkt.clouddn.com/wc.jpg" alt="WC"><h3 id="3、Yarn-资源管理系统"><a href="#3、Yarn-资源管理系统" class="headerlink" title="3、Yarn(资源管理系统)"></a>3、Yarn(资源管理系统)</h3>Yarn是Hadoop2.0新增的系统，负责集群的资源管理和调度，使得多种计算框架可以运行在一个集群中。<br>此处只是Yarn的概述，如果想了解Yarn详情,请查看《Yarn详解》这篇文章。</li>
+</ol>
+<p>Yarn具有如下特点：<br>良好的扩展性、高可用性<br>对多种数据类型的应用程序进行统一管理和资源调度<br>自带了多种用户调度器，适合共享集群环境<br><img src="http://ono5i4nh6.bkt.clouddn.com/d70zXQK.jpg" alt="Yarn"></p>
+<h3 id="4、Hive-基于MR的数据仓库"><a href="#4、Hive-基于MR的数据仓库" class="headerlink" title="4、Hive(基于MR的数据仓库)"></a>4、Hive(基于MR的数据仓库)</h3><p>Hive由facebook开源，最初用于解决海量结构化的日志数据统计问题；是一种ETL(Extraction-Transformation-Loading)工具。它也是构建在Hadoop之上的数据仓库；数据计算使用MR,数据存储使用HDFS。<br>Hive定义了一种类似SQL查询语言的HiveQL查询语言，除了不支持更新、索引和实物，几乎SQL的其他特征都能支持。它通常用于离线数据处理（采用MapReduce);我们可以认为Hive的HiveQL语言是MapReduce语言的翻译器，把MapReduce程序简化为HiveQL语言。但有些复杂的MapReduce程序是无法用HiveQL来描述的。<br>Hive提供shell、JDBC/ODBC、Thrift、Web等接口。</p>
+<p>此处只是Hive的概述，如果想了解Hive详情,请查看&lt;Hive详解&gt;这篇文章。</p>
+<p>Hive应用场景:<br>日志分析：统计一个网站一个时间段内的pv、uv ；比如百度。淘宝等互联网公司使用hive进行日志分析<br>多维度数据分析<br>海量结构化数据离线分析<br>低成本进行数据分析（不直接编写MR）<br><img src="http://ono5i4nh6.bkt.clouddn.com/hive.jpg" alt="Hive"></p>
+<h3 id="5、Pig-数据仓库"><a href="#5、Pig-数据仓库" class="headerlink" title="5、Pig(数据仓库)"></a>5、Pig(数据仓库)</h3><p>Pig由yahoo!开源，设计动机是提供一种基于MapReduce的ad-hoc数据分析工具。它通常用于进行离线分析。<br>Pig是构建在Hadoop之上的数据仓库，定义了一种类似于SQL的数据流语言–Pig Latin,Pig Latin可以完成排序、过滤、求和、关联等操作，可以支持自定义函数。Pig自动把Pig Latin映射为MapReduce作业，上传到集群运行，减少用户编写Java程序的苦恼。<br>Pig有三种运行方式：Grunt shell、脚本方式、嵌入式。<br>此处只是Pig的概述，如果想了解Pig详情,请查看&lt;Pig详解&gt;这篇文章。</p>
+<p>Pig与Hive的比较:<br><img src="http://ono5i4nh6.bkt.clouddn.com/90OiAtM.jpg" alt=""></p>
+<h3 id="6、Hbase（分布式列存数据库）"><a href="#6、Hbase（分布式列存数据库）" class="headerlink" title="6、Hbase（分布式列存数据库）"></a>6、Hbase（分布式列存数据库）</h3><p>源自Google的Bigtable论文，发表于2006年11月，HBase是Google Bigtable克隆版<br>HBase是一个针对结构化数据的可伸缩、高可靠、高性能、分布式和面向列的动态模式数据库。和传统关系数据库不同，HBase采用了BigTable的数据模型：增强的稀疏排序映射表（Key/Value），其中，键由行关键字、列关键字和时间戳构成。HBase提供了对大规模数据的随机、实时读写访问，同时，HBase中保存的数据可以使用MapReduce来处理，它将数据存储和并行计算完美地结合在一起。<br>数据模型：Schema–&gt;Table–&gt;Column Family–&gt;Column–&gt;RowKey–&gt;TimeStamp–&gt;Value<br>HBase的特点</p>
+<p>高可靠性、高性能、面向列、良好的扩展性<br><img src="http://ono5i4nh6.bkt.clouddn.com/hbase.jpg" alt=""><br>Table（表）：类似于传统数据库中的表<br>Column Family(列簇)：Table在水平方向有一个或者多个Column Family组成；一个Column Family 中可以由任意多个Column组成。<br>Row Key(行健)：Table的主键；Table中的记录按照Row Key排序。<br>Timestamp（时间戳）：每一行数据均对应一个时间戳；也可以当做版本号。</p>
+<h3 id="7、Zookeeper-分布式协作服务"><a href="#7、Zookeeper-分布式协作服务" class="headerlink" title="7、Zookeeper(分布式协作服务)"></a>7、Zookeeper(分布式协作服务)</h3><p>Zookeeper源自Google发表于2006年11月的Chubby论文，也就是说Zookeeper是Chubby的克隆版。<br>Zookeeper解决分布式环境下数据管理问题：<br>（1）统一命名（2）状态同步（3）集群管理（4）配置同步<br>Zookeeper的应用：<br>HDFS、Yarn、Storm、HBase、Flume、Dubbo、Metaq</p>
+<h3 id="8、Sqoop（数据同步工具）"><a href="#8、Sqoop（数据同步工具）" class="headerlink" title="8、Sqoop（数据同步工具）"></a>8、Sqoop（数据同步工具）</h3><p>Sqoop是连接Hadoop与传统数据库之间的桥梁，它支持多种数据库，包括MySQL、DB2等；插拔式，用户可以根据需要支持新的数据库。<br>Sqoop实质上是一个MapReduce程序，充分利用MR并行的特点,充分利用MR的容错性。<br><img src="http://ono5i4nh6.bkt.clouddn.com/aNVqEER.jpg" alt=""></p>
+<h3 id="9、Mahout-数据挖掘库"><a href="#9、Mahout-数据挖掘库" class="headerlink" title="9、Mahout(数据挖掘库)"></a>9、Mahout(数据挖掘库)</h3><p>Mahout起源于2008年，最初是Apache Lucent的子项目，它在极短的时间内取得了长足的发展，现在是Apache的顶级项目。<br>Mahout的主要目标是创建一些可扩展的机器学习领域经典算法的实现，旨在帮助开发人员更加方便快捷地创建智能应用程序。Mahout现在已经包含了聚类、分类、推荐引擎（协同过滤）和频繁集挖掘等广泛使用的数据挖掘方法。除了算法，Mahout还包含数据的输入/输出工具、与其他存储系统（如数据库、MongoDB 或Cassandra）集成等数据挖掘支持架构。<br><img src="http://ono5i4nh6.bkt.clouddn.com/2kMHImL.jpg" alt="Mahout"></p>
+<h3 id="10、Flume-日志收集工具"><a href="#10、Flume-日志收集工具" class="headerlink" title="10、Flume(日志收集工具)"></a>10、Flume(日志收集工具)</h3><p>Cloudera开源的日志收集系统，具有分布式、高可靠、高容错、易于定制和扩展的特点。<br>它将数据从产生、传输、处理并最终写入目标的路径的过程抽象为数据流，在具体的数据流中，数据源支持在Flume中定制数据发送方，从而支持收集各种不同协议数据。同时，Flume数据流提供对日志数据进行简单处理的能力，如过滤、格式转换等。此外，Flume还具有能够将日志写往各种数据目标（可定制）的能力。总的来说，Flume是一个可扩展、适合复杂环境的海量日志收集系统。</p>
+<p>下面是我在组会上做的关于这个的ppt的一个资源分享，有需要的可以下载：链接：<a href="http://pan.baidu.com/s/1pKMVBzt" target="_blank" rel="noopener">http://pan.baidu.com/s/1pKMVBzt</a> 密码：mdbr</p>
+<p>这些只是粗略的一个查资料的过程，其中很多小细节也不是特别清楚，所以还需后期继续努力啊！</p>
+<p>多走路，多思考，越努力，越幸运！<br>                                                                                                                            ———————————————YoungerFary</p>
+
+    </div>
+
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">fang</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/2017/05/16/SSM之MyBatis（五）/" class="pre-post btn btn-default" title="SSM之MyBatis（五）">
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">SSM之MyBatis（五）</span>
+        </a>
+    
+    
+        <a href="/2017/05/15/SSM之MyBatis（四）/" class="next-post btn btn-default" title="SSM之MyBatis（四）">
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">SSM之MyBatis（四）</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+    
+    <div id="vcomments" class="valine"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/assets/valine.min.js"></script>
+
+    <script>
+        new Valine({
+            av: AV,
+            el: '#vcomments',
+            appId: 'xOKV9J4UeQAtVkvnJC7Kq2Jn-gzGzoHsz',
+            appKey: 'erIpQac4azoCmgfBB7Dl9maa',
+            placeholder: '说点什么吧',
+            notify: false,
+            verify: false,
+            avatar: 'mm',
+            meta: 'nick,mail'.split(','),
+            pageSize: '10',
+            path: window.location.pathname,
+            lang: ''.toLowerCase()
+        })
+    </script>
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">Table of Contents</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#一、Hadoop的起源"><span class="toc-text">一、Hadoop的起源</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、什么是Hadoop"><span class="toc-text">二、什么是Hadoop</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三、Hadoop生态系统概况"><span class="toc-text">三、Hadoop生态系统概况</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#hadoop核心包括以下几个部分"><span class="toc-text">hadoop核心包括以下几个部分</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1、HDFS（Hadoop分布式文件系统）"><span class="toc-text">1、HDFS（Hadoop分布式文件系统）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、Mapreduce（分布式计算框架）"><span class="toc-text">2、Mapreduce（分布式计算框架）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3、Yarn-资源管理系统"><span class="toc-text">3、Yarn(资源管理系统)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4、Hive-基于MR的数据仓库"><span class="toc-text">4、Hive(基于MR的数据仓库)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5、Pig-数据仓库"><span class="toc-text">5、Pig(数据仓库)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6、Hbase（分布式列存数据库）"><span class="toc-text">6、Hbase（分布式列存数据库）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7、Zookeeper-分布式协作服务"><span class="toc-text">7、Zookeeper(分布式协作服务)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8、Sqoop（数据同步工具）"><span class="toc-text">8、Sqoop（数据同步工具）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9、Mahout-数据挖掘库"><span class="toc-text">9、Mahout(数据挖掘库)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10、Flume-日志收集工具"><span class="toc-text">10、Flume(日志收集工具)</span></a></li></ol>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12"> 
+                <span>Copyright &copy; 2018
+                </span> | 
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> | 
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+
+</body>
+</html>

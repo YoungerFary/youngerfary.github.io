@@ -1,0 +1,307 @@
+<!DOCTYPE HTML>
+<html lang="">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="Hexo">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://yoursite.com">
+    <!--SEO-->
+
+
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+    <!--Title-->
+
+
+<title>SSM之SpringMVC（六） | Hexo</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header" style="background-image:url(http://7xpw2b.com1.z0.glb.clouddn.com/hexo-sinppet/img/banner.jpg)">
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title="John Doe">
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                <h2> 一路过来，不过游牧自己。。 </h2>
+            
+    	</div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://yoursite.com">Hexo</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>Home</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/前端/"><i class="fa "></i>About me</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/后端/"><i class="fa "></i>后端</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/工具/"><i class="fa "></i>工具</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/archives/"><i class="fa "></i>时间轴</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="SSM之SpringMVC（六）">
+            
+	            SSM之SpringMVC（六）
+            
+        </h1>
+        <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/ ">
+             
+        </a>
+    </span>
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+                    <a href="/tags/SpringMVC" title="SpringMVC">
+                        SpringMVC
+                    </a>
+                
+            
+        </span>
+    </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2017/07/07</span>
+        </span>
+    
+</div>
+
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <p><img src="http://ono5i4nh6.bkt.clouddn.com/springmvc.jpg" alt=""><br>在Spring中如何去处理Ajax这种请求呢，可以借鉴以前的思路，一用httpservlet response去处理，还有关于拦截器，SpringMVC也做的很棒！<br><a id="more"></a></p>
+<h2 id="7、SpringMVC中的ajax处理"><a href="#7、SpringMVC中的ajax处理" class="headerlink" title="7、SpringMVC中的ajax处理"></a>7、SpringMVC中的ajax处理</h2><h4 id="（1）使用HttpServletResponse来处理–不需要配置解析器"><a href="#（1）使用HttpServletResponse来处理–不需要配置解析器" class="headerlink" title="（1）使用HttpServletResponse来处理–不需要配置解析器"></a>（1）使用HttpServletResponse来处理–不需要配置解析器</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RequestMapping</span>(<span class="string">"/ajax"</span>)</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">ajax</span><span class="params">(String name,HttpServletResponse resp)</span> <span class="keyword">throws</span> IOException</span>&#123;</span><br><span class="line">		<span class="keyword">if</span>(<span class="string">"siddy"</span>.equals(name))&#123;</span><br><span class="line">			resp.getWriter().print(<span class="string">"true"</span>);</span><br><span class="line">		&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">			resp.getWriter().print(<span class="string">"false"</span>);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+<p>在前台，javascript代码：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=<span class="string">"text/javascript"</span> src=<span class="string">"js/jquery-1.11.3.min.js"</span>&gt;&lt;/script&gt;</span><br><span class="line">  	&lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line">  	$(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  		$(<span class="string">'#btn'</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  			$.post(<span class="string">"ajax.do"</span>,&#123;<span class="string">'name'</span>:$(<span class="string">"#btn"</span>).val()&#125;,<span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;</span><br><span class="line">  				$(<span class="string">"#content"</span>).html(data);</span><br><span class="line">  			&#125;);</span><br><span class="line">  		&#125;);</span><br><span class="line">  	&#125;);</span><br><span class="line">  	&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h4 id="（2）Springmvc处理json数据"><a href="#（2）Springmvc处理json数据" class="headerlink" title="（2）Springmvc处理json数据"></a>（2）Springmvc处理json数据</h4><p>a）导入jar包<br>    jackson-annotations-2.5.4.jar<br>    jackson-core-2.5.4.jar<br>    jackson-databind-2.5.4.jar<br>b)配置json转换器，没必要记下来<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--  json配置 --&gt;</span><br><span class="line">  &lt;!-- 用于将对象转换为 JSON  --&gt;  </span><br><span class="line">   &lt;bean id=<span class="string">"stringConverter"</span>  </span><br><span class="line">       <span class="class"><span class="keyword">class</span></span>=<span class="string">"org.springframework.http.converter.StringHttpMessageConverter"</span>&gt;  </span><br><span class="line">       &lt;property name=<span class="string">"supportedMediaTypes"</span>&gt;  </span><br><span class="line">           &lt;list&gt;  </span><br><span class="line">               &lt;value&gt;text/plain;charset=UTF-8&lt;/value&gt;  </span><br><span class="line">           &lt;/list&gt;  </span><br><span class="line">       &lt;/property&gt;  </span><br><span class="line">   &lt;/bean&gt;  </span><br><span class="line">   &lt;bean id=<span class="string">"jsonConverter"</span>  </span><br><span class="line">       class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter"&gt;&lt;/bean&gt;  </span><br><span class="line"></span><br><span class="line">   &lt;bean  </span><br><span class="line">       <span class="class"><span class="keyword">class</span></span>=<span class="string">"org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter"</span>&gt;  </span><br><span class="line">       &lt;property name=<span class="string">"messageConverters"</span>&gt;  </span><br><span class="line">           &lt;list&gt;  </span><br><span class="line">               &lt;ref bean=<span class="string">"stringConverter"</span> /&gt;  </span><br><span class="line">               &lt;ref bean=<span class="string">"jsonConverter"</span> /&gt;  </span><br><span class="line">           &lt;/list&gt;  </span><br><span class="line">       &lt;/property&gt;  </span><br><span class="line">   &lt;/bean&gt;</span><br></pre></td></tr></table></figure></p>
+<p>c）Controlle代码<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RequestMapping</span>(<span class="string">"/json.do"</span>)</span><br><span class="line">	<span class="meta">@ResponseBody</span><span class="comment">/*把你的内容相响应成主题内容*/</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> List&lt;User&gt; <span class="title">json</span><span class="params">()</span></span>&#123;</span><br><span class="line">		List&lt;User&gt; list = <span class="keyword">new</span> ArrayList&lt;User&gt;();</span><br><span class="line">		list.add(<span class="keyword">new</span> User(<span class="number">1</span>,<span class="string">"zhansan"</span>,<span class="number">22</span>));</span><br><span class="line">		list.add(<span class="keyword">new</span> User(<span class="number">2</span>,<span class="string">"wangwu"</span>,<span class="number">21</span>));</span><br><span class="line">		list.add(<span class="keyword">new</span> User(<span class="number">3</span>,<span class="string">"zhaosi"</span>,<span class="number">33</span>));</span><br><span class="line">		list.add(<span class="keyword">new</span> User(<span class="number">4</span>,<span class="string">"wangdana"</span>,<span class="number">14</span>));</span><br><span class="line">		<span class="keyword">return</span> list;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure></p>
+<p>然后在前台将数据显示处理啊就好<br>这就非常爽了，想用json,就把他转化成json</p>
+<h2 id="8、拦截器"><a href="#8、拦截器" class="headerlink" title="8、拦截器"></a>8、拦截器</h2><h4 id="1-拦截器概念和struts2一致。"><a href="#1-拦截器概念和struts2一致。" class="headerlink" title="(1)拦截器概念和struts2一致。"></a>(1)拦截器概念和struts2一致。</h4><p>拦截我们的请求，处理之后再拦截一遍，处理方式却有不同</p>
+<h4 id="2-实现拦截器"><a href="#2-实现拦截器" class="headerlink" title="(2)实现拦截器"></a>(2)实现拦截器</h4><pre><code>a)实现HandlerInterceptor接口
+b)需要配置拦截器
+</code></pre><h4 id="（3）这里我们提出一个问题：如果被拦截-能否到达指定的页面？"><a href="#（3）这里我们提出一个问题：如果被拦截-能否到达指定的页面？" class="headerlink" title="（3）这里我们提出一个问题：如果被拦截-能否到达指定的页面？"></a>（3）这里我们提出一个问题：如果被拦截-能否到达指定的页面？</h4><p>使用HttpServletRespons或者HttpServletRequest可以实现转发和重定向</p>
+<h4 id="（4）登陆实例"><a href="#（4）登陆实例" class="headerlink" title="（4）登陆实例"></a>（4）登陆实例</h4><p>首先我们要写一个登陆实例Controller:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">@Controller</span></span><br><span class="line"><span class="meta">@SessionAttributes</span>(<span class="string">"user"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">LoginController</span> </span>&#123;</span><br><span class="line">	<span class="meta">@RequestMapping</span>(<span class="string">"/login.do"</span>)</span><br><span class="line">	<span class="function"><span class="keyword">public</span> String <span class="title">loginUser</span><span class="params">(String name,ModelMap map)</span></span>&#123;</span><br><span class="line">		map.addAttribute(<span class="string">"user"</span>, name);</span><br><span class="line">		<span class="keyword">return</span> <span class="string">"forward:/WEB-INF/jsp/index.jsp"</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="meta">@RequestMapping</span>(<span class="string">"/toLogin.do"</span>)</span><br><span class="line">	<span class="function"><span class="keyword">public</span> String <span class="title">toLogin</span><span class="params">()</span></span>&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="string">"forward:/WEB-INF/jsp/login.jsp"</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="meta">@RequestMapping</span>(<span class="string">"/hello.do"</span>)</span><br><span class="line">	<span class="function"><span class="keyword">public</span> String <span class="title">hello</span><span class="params">()</span></span>&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="string">"forward:/WEB-INF/jsp/hello.jsp"</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>然后写过滤器：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">LoginInterceptor</span> <span class="keyword">implements</span> <span class="title">HandlerInterceptor</span></span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * 在请求处理的方法之前执行，如果返回true,那么执行下一个拦截器，</span></span><br><span class="line"><span class="comment">	 * 如果是false,则不执行下一个拦截器</span></span><br><span class="line"><span class="comment">	 * */</span></span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">preHandle</span><span class="params">(HttpServletRequest req, HttpServletResponse resp,</span></span></span><br><span class="line"><span class="function"><span class="params">			Object object)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">		<span class="comment">/**</span></span><br><span class="line"><span class="comment">		 * 要明确哪些需要被拦截，哪些不需要被拦截</span></span><br><span class="line"><span class="comment">		 */</span></span><br><span class="line">		HttpSession session = req.getSession();</span><br><span class="line">		<span class="keyword">if</span>(session.getAttribute(<span class="string">"user"</span>)!=<span class="keyword">null</span>)</span><br><span class="line">			<span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">		String path=req.getRequestURI();</span><br><span class="line">		<span class="keyword">if</span>(path.endsWith(<span class="string">"toLogin.do"</span>)||path.endsWith(<span class="string">"login.do"</span>))</span><br><span class="line">			<span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">		resp.sendRedirect(<span class="string">"toLogin.do"</span>);</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * 在请求处理的方法执行之后执行</span></span><br><span class="line"><span class="comment">	 * */</span></span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">postHandle</span><span class="params">(HttpServletRequest arg0, HttpServletResponse arg1,</span></span></span><br><span class="line"><span class="function"><span class="params">			Object arg2, ModelAndView arg3)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * 在DispacherServlet处理后执行---清理工作</span></span><br><span class="line"><span class="comment">	 * */</span></span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">afterCompletion</span><span class="params">(HttpServletRequest arg0,</span></span></span><br><span class="line"><span class="function"><span class="params">			HttpServletResponse arg1, Object arg2, Exception arg3)</span></span></span><br><span class="line"><span class="function">			<span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>这里很多注释都是很有意义的！<br>然后去写配置：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 拦截器的配置 --&gt;</span><br><span class="line">	&lt;mvc:interceptors&gt;</span><br><span class="line">	&lt;!-- 在 mvc:interceptors中可以配置多个拦截器</span><br><span class="line">		多个拦截器按顺序一一执行</span><br><span class="line">	--&gt;</span><br><span class="line">		&lt;mvc:interceptor&gt;</span><br><span class="line"></span><br><span class="line">			&lt;mvc:mapping path=<span class="string">"/**"</span>/&gt;</span><br><span class="line">			&lt;!-- 指定拦截器的位置 --&gt;</span><br><span class="line">			&lt;bean class="cn.sxt.interceptor.LoginInterceptor"&gt;&lt;/bean&gt;</span><br><span class="line">		&lt;/mvc:interceptor&gt;</span><br><span class="line"></span><br><span class="line">	&lt;/mvc:interceptors&gt;</span><br></pre></td></tr></table></figure></p>
+<p>其中： 指明哪些请求需要被拦截<br>  /login.do 表示login.do需要被拦截<br>  /user/add.do 表示/user/add.do请求要被拦截<br>  /* 表示项目路径下的所有请求被拦截<br>    可以拦截： /login.do  /add.do  /user.do /sys.do等<br>  /**表示项目路径及其子路径下的所有请求被拦截=所有请求被拦截<br>    可以拦截： /login.do  /add.do  /user.do /sys.do<br>    /user/add.do</p>
+
+    </div>
+
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">fang</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/2017/08/12/雨夜手记/" class="pre-post btn btn-default" title="雨夜手记">
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">雨夜手记</span>
+        </a>
+    
+    
+        <a href="/2017/07/03/SSM之SpringMVC（五）/" class="next-post btn btn-default" title="SSM之SpringMVC（五）">
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">SSM之SpringMVC（五）</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+    
+    <div id="vcomments" class="valine"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/assets/valine.min.js"></script>
+
+    <script>
+        new Valine({
+            av: AV,
+            el: '#vcomments',
+            appId: 'xOKV9J4UeQAtVkvnJC7Kq2Jn-gzGzoHsz',
+            appKey: 'erIpQac4azoCmgfBB7Dl9maa',
+            placeholder: '说点什么吧',
+            notify: false,
+            verify: false,
+            avatar: 'mm',
+            meta: 'nick,mail'.split(','),
+            pageSize: '10',
+            path: window.location.pathname,
+            lang: ''.toLowerCase()
+        })
+    </script>
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">Table of Contents</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#7、SpringMVC中的ajax处理"><span class="toc-text">7、SpringMVC中的ajax处理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#（1）使用HttpServletResponse来处理–不需要配置解析器"><span class="toc-text">（1）使用HttpServletResponse来处理–不需要配置解析器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#（2）Springmvc处理json数据"><span class="toc-text">（2）Springmvc处理json数据</span></a></li></ol></li></ol><li class="toc-item toc-level-2"><a class="toc-link" href="#8、拦截器"><span class="toc-text">8、拦截器</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-拦截器概念和struts2一致。"><span class="toc-text">(1)拦截器概念和struts2一致。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-实现拦截器"><span class="toc-text">(2)实现拦截器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#（3）这里我们提出一个问题：如果被拦截-能否到达指定的页面？"><span class="toc-text">（3）这里我们提出一个问题：如果被拦截-能否到达指定的页面？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#（4）登陆实例"><span class="toc-text">（4）登陆实例</span></a></li></ol></li>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12"> 
+                <span>Copyright &copy; 2018
+                </span> | 
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> | 
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+
+</body>
+</html>

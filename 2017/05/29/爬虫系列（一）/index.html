@@ -1,0 +1,300 @@
+<!DOCTYPE HTML>
+<html lang="">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="Hexo">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://yoursite.com">
+    <!--SEO-->
+
+
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+    <!--Title-->
+
+
+<title>爬虫系列（一） | Hexo</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header" style="background-image:url(http://7xpw2b.com1.z0.glb.clouddn.com/hexo-sinppet/img/banner.jpg)">
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title="John Doe">
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                <h2> 一路过来，不过游牧自己。。 </h2>
+            
+    	</div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://yoursite.com">Hexo</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>Home</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/前端/"><i class="fa "></i>About me</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/后端/"><i class="fa "></i>后端</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/工具/"><i class="fa "></i>工具</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/archives/"><i class="fa "></i>时间轴</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="爬虫系列（一）">
+            
+	            爬虫系列（一）
+            
+        </h1>
+        <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/ ">
+             
+        </a>
+    </span>
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+                    <a href="/tags/python&amp;Scrapy" title="python&amp;Scrapy">
+                        python&amp;Scrapy
+                    </a>
+                
+            
+        </span>
+    </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2017/05/29</span>
+        </span>
+    
+</div>
+
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <p><img src="http://ono5i4nh6.bkt.clouddn.com/%E7%88%AC%E8%99%AB.jpg" alt=""><br>最近爬了很多网站，一路走来收获不少，当然这个入门进阶的过程也十分有趣，我写下来，也希望以笔记的方式看到自己学习的过程，经常温故而知新，这样收获更多！<br><a id="more"></a><br>在这之前，我一直在搜索以什么样的学习路线比较好，后来在结合了知乎大神的一些方案之后，我渐渐整理出了自己的学习思路，大概就是如下：<br>爬虫综述——&gt;爬虫基础了解——&gt;Urllib使用——&gt;URLError异常处理——&gt;Cookie的使用——&gt;正则表达式的使用——&gt;几个实战小例子——&gt;Xpath,css selector的使用——&gt;Scrapy框架爬虫<br>当然这貌似并不是所有东西，以后的我们边学边用吧！</p>
+<h2 id="一、爬虫综述"><a href="#一、爬虫综述" class="headerlink" title="一、爬虫综述"></a>一、爬虫综述</h2><p>首先爬虫基本都是用python写的，所以，必须要知道python语法是必要的，推荐当然是廖雪峰Python教程了，自己及上网搜吧，可以搜得到，但是我也只是匆匆看了一遍，写爬虫知道那些基本的语法我觉着就可以了，当然后期还是要深入学习的！<br>然后是Python urllib和urllib2 库的用法，，利用这两个库我们可以得到网页的内容，并对内容用正则表达式提取分析，得到我们想要的结果。<br>然后是Python 正则表达式，这个只能作为一个工具，后面我们会有更好的方法去匹配！<br>最后就是学习一下Python框架吧，我选择的框架是Scrapy框架。因为他真的很强大，有很多优点，有什么优点，大家可以去看官方文档，当然主要是因为我们实验室在用这个爬，而且效率很不错！</p>
+<h2 id="二、爬虫基础了解"><a href="#二、爬虫基础了解" class="headerlink" title="二、爬虫基础了解"></a>二、爬虫基础了解</h2><h3 id="1-什么是爬虫"><a href="#1-什么是爬虫" class="headerlink" title="1.什么是爬虫"></a>1.什么是爬虫</h3><p>朋友说程序猿是很有意思的一种人，连起名字都这么有趣！不可否认，爬虫这个名字和他实际的作用简直不要太像！爬虫，就是一只大蜘蛛，他活动在一张大网上，因特网，一旦遇到自己感兴趣的资源，就会爬下来，一张网，总是四通八达，这样就可以通过各种路径去寻找资源，然后按照规则爬取下来，当然规则是人制定的，由人来掌控！</p>
+<h3 id="2、浏览网页的基本过程"><a href="#2、浏览网页的基本过程" class="headerlink" title="2、浏览网页的基本过程"></a>2、浏览网页的基本过程</h3><p>基本上就是根据链接去请求经过DNS服务器，找到服务器主机，向服务器发出一个请求，服务器经过解析之后，发送给用户的浏览器 HTML、JS、CSS 等文件，浏览器解析出来，这样就可以找到我们想要的内容了。其实我们爬取得就是这些html代码，然后在这些代码中将内容提取出来！</p>
+<h3 id="3、URL的含义"><a href="#3、URL的含义" class="headerlink" title="3、URL的含义"></a>3、URL的含义</h3><p>URL，即统一资源定位符，也就是我们说的网址，统一资源定位符是对可以从互联网上得到的资源的位置和访问方法的一种简洁的表示，是互联网上标准资源的地址。互联网上的每个文件都有一个唯一的URL，它包含的信息指出文件的位置以及浏览器应该怎么处理它。<br>URL的格式由三部分组成：<br>①第一部分是协议(或称为服务方式)。<br>②第二部分是存有该资源的主机IP地址(有时也包括端口号)。<br>③第三部分是主机资源的具体地址，如目录和文件名等<br>爬虫爬取数据时必须要有一个目标的URL才可以获取数据，因此，它是爬虫获取数据的基本依据，准确理解它的含义对爬虫学习有很大帮助。</p>
+<h3 id="4、环境的配置"><a href="#4、环境的配置" class="headerlink" title="4、环境的配置"></a>4、环境的配置</h3><p>学习Python，当然少不了环境的配置，最初我用的是Notepad++，不过发现它的提示功能实在是太弱了，于是，我就用了PyCharm!</p>
+<p>多走路，多思考，越努力，越幸运！<br>                                                                                                                            ———————————————YoungerFary</p>
+
+    </div>
+
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">fang</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/2017/05/31/爬虫系列（二）/" class="pre-post btn btn-default" title="爬虫系列（二）">
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">爬虫系列（二）</span>
+        </a>
+    
+    
+        <a href="/2017/05/28/爬虫手记/" class="next-post btn btn-default" title="爬虫手记">
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">爬虫手记</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+    
+    <div id="vcomments" class="valine"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/assets/valine.min.js"></script>
+
+    <script>
+        new Valine({
+            av: AV,
+            el: '#vcomments',
+            appId: 'xOKV9J4UeQAtVkvnJC7Kq2Jn-gzGzoHsz',
+            appKey: 'erIpQac4azoCmgfBB7Dl9maa',
+            placeholder: '说点什么吧',
+            notify: false,
+            verify: false,
+            avatar: 'mm',
+            meta: 'nick,mail'.split(','),
+            pageSize: '10',
+            path: window.location.pathname,
+            lang: ''.toLowerCase()
+        })
+    </script>
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">Table of Contents</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#一、爬虫综述"><span class="toc-text">一、爬虫综述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、爬虫基础了解"><span class="toc-text">二、爬虫基础了解</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-什么是爬虫"><span class="toc-text">1.什么是爬虫</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、浏览网页的基本过程"><span class="toc-text">2、浏览网页的基本过程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3、URL的含义"><span class="toc-text">3、URL的含义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4、环境的配置"><span class="toc-text">4、环境的配置</span></a></li></ol></li></ol>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12"> 
+                <span>Copyright &copy; 2018
+                </span> | 
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> | 
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+
+</body>
+</html>

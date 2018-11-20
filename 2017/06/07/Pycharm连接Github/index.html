@@ -1,0 +1,298 @@
+<!DOCTYPE HTML>
+<html lang="">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="Hexo">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://yoursite.com">
+    <!--SEO-->
+
+
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+    <!--Title-->
+
+
+<title>Pycharm连接Github | Hexo</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header" style="background-image:url(http://7xpw2b.com1.z0.glb.clouddn.com/hexo-sinppet/img/banner.jpg)">
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title="John Doe">
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                <h2> 一路过来，不过游牧自己。。 </h2>
+            
+    	</div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://yoursite.com">Hexo</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>Home</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/前端/"><i class="fa "></i>About me</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/后端/"><i class="fa "></i>后端</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/工具/"><i class="fa "></i>工具</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/archives/"><i class="fa "></i>时间轴</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="Pycharm连接Github">
+            
+	            Pycharm连接Github
+            
+        </h1>
+        <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/ ">
+             
+        </a>
+    </span>
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+                    <a href="/tags/python&amp;Scrapy" title="python&amp;Scrapy">
+                        python&amp;Scrapy
+                    </a>
+                
+            
+        </span>
+    </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2017/06/07</span>
+        </span>
+    
+</div>
+
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <p><img src="http://ono5i4nh6.bkt.clouddn.com/pycharm.jpg" alt=""><br>昨天刚用pycharm绑定了Github,我觉得有必要记录下！<br><a id="more"></a></p>
+<h2 id="一、绑定账号"><a href="#一、绑定账号" class="headerlink" title="一、绑定账号"></a>一、绑定账号</h2><h4 id="1、File-gt-Settings-gt-Version-Control-gt-Github"><a href="#1、File-gt-Settings-gt-Version-Control-gt-Github" class="headerlink" title="1、File-&gt;Settings-&gt;Version Control-&gt;Github"></a>1、File-&gt;Settings-&gt;Version Control-&gt;Github</h4><p><img src="http://ono5i4nh6.bkt.clouddn.com/pycharm1.png" alt=""><br>会出现github，然后在旁边输入你github的用户名和密码，可以点击”test”测试一下，如果出现：Connection successful,则代表连接成功了。<br><img src="http://ono5i4nh6.bkt.clouddn.com/pycharm2.png" alt=""></p>
+<h4 id="2、选择Git安装路径"><a href="#2、选择Git安装路径" class="headerlink" title="2、选择Git安装路径"></a>2、选择Git安装路径</h4><p>设置github后选择git，输入你git.exe的安装位置路径,下面是我的git.exe的位置：D:\Git\bin\git.exe,然后点击OK。<br><img src="http://ono5i4nh6.bkt.clouddn.com/pycharm3.png" alt=""></p>
+<h2 id="二、创建Github的仓库"><a href="#二、创建Github的仓库" class="headerlink" title="二、创建Github的仓库"></a>二、创建Github的仓库</h2><h4 id="1、VCS-gt-Import-Into-Version-Control-gt-Share-Project-On-Github"><a href="#1、VCS-gt-Import-Into-Version-Control-gt-Share-Project-On-Github" class="headerlink" title="1、VCS-&gt;Import Into Version Control-&gt;Share Project On Github"></a>1、VCS-&gt;Import Into Version Control-&gt;Share Project On Github</h4><p><img src="http://ono5i4nh6.bkt.clouddn.com/pycharm5.png" alt=""><br>然后会弹出框让你输入一个仓库名（不能为中文）<br><img src="http://ono5i4nh6.bkt.clouddn.com/pycharm6.png" alt=""><br>然后点击share<br><img src="http://ono5i4nh6.bkt.clouddn.com/pycharm8.png" alt=""><br>然后会弹出让你选择哪些文件需要被同步，选好后，在下面的commit Message可以输入自己的信息，然后点OK，你的代码就提交到网上了。可以看看<br><img src="http://ono5i4nh6.bkt.clouddn.com/pycharm9.png" alt=""></p>
+<h2 id="三、修改后的文件提交"><a href="#三、修改后的文件提交" class="headerlink" title="三、修改后的文件提交"></a>三、修改后的文件提交</h2><h4 id="1、对修改后的文件或目录点击右键：Git—-gt-Add，先把文件放入暂存区。"><a href="#1、对修改后的文件或目录点击右键：Git—-gt-Add，先把文件放入暂存区。" class="headerlink" title="1、对修改后的文件或目录点击右键：Git—&gt;Add，先把文件放入暂存区。"></a>1、对修改后的文件或目录点击右键：Git—&gt;Add，先把文件放入暂存区。</h4><p><img src="http://ono5i4nh6.bkt.clouddn.com/pycharm10.png" alt=""><br>2、对修改后的文件或目录点击右键：Git—&gt;Commit File，把刚才add放在暂缓区的文件提交。<br><img src="http://ono5i4nh6.bkt.clouddn.com/pycharm11.png" alt=""><br>3、填好commit的信息后，点击下面的commit and Push，可以直接提交到网上。<br><img src="http://ono5i4nh6.bkt.clouddn.com/pycharm12.png" alt=""><br><img src="http://ono5i4nh6.bkt.clouddn.com/pycharm13.png" alt=""><br>多走路，多思考，越努力，越幸运！<br>                                                                                                                            ———————————————YoungerFary</p>
+
+    </div>
+
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">fang</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/2017/06/10/反射你懂么？/" class="pre-post btn btn-default" title="反射你懂么？">
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">反射你懂么？</span>
+        </a>
+    
+    
+        <a href="/2017/06/05/爬虫实战之爬取豆瓣9分榜单/" class="next-post btn btn-default" title="爬虫实战之爬取豆瓣9分榜单">
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">爬虫实战之爬取豆瓣9分榜单</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+    
+    <div id="vcomments" class="valine"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/assets/valine.min.js"></script>
+
+    <script>
+        new Valine({
+            av: AV,
+            el: '#vcomments',
+            appId: 'xOKV9J4UeQAtVkvnJC7Kq2Jn-gzGzoHsz',
+            appKey: 'erIpQac4azoCmgfBB7Dl9maa',
+            placeholder: '说点什么吧',
+            notify: false,
+            verify: false,
+            avatar: 'mm',
+            meta: 'nick,mail'.split(','),
+            pageSize: '10',
+            path: window.location.pathname,
+            lang: ''.toLowerCase()
+        })
+    </script>
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">Table of Contents</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#一、绑定账号"><span class="toc-text">一、绑定账号</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1、File-gt-Settings-gt-Version-Control-gt-Github"><span class="toc-text">1、File-&gt;Settings-&gt;Version Control-&gt;Github</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2、选择Git安装路径"><span class="toc-text">2、选择Git安装路径</span></a></li></ol></li></ol><li class="toc-item toc-level-2"><a class="toc-link" href="#二、创建Github的仓库"><span class="toc-text">二、创建Github的仓库</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1、VCS-gt-Import-Into-Version-Control-gt-Share-Project-On-Github"><span class="toc-text">1、VCS-&gt;Import Into Version Control-&gt;Share Project On Github</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三、修改后的文件提交"><span class="toc-text">三、修改后的文件提交</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1、对修改后的文件或目录点击右键：Git—-gt-Add，先把文件放入暂存区。"><span class="toc-text">1、对修改后的文件或目录点击右键：Git—&gt;Add，先把文件放入暂存区。</span></a></li></ol></li>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12"> 
+                <span>Copyright &copy; 2018
+                </span> | 
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> | 
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+
+</body>
+</html>

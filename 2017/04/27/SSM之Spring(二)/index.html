@@ -1,0 +1,313 @@
+<!DOCTYPE HTML>
+<html lang="">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="Hexo">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://yoursite.com">
+    <!--SEO-->
+
+
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+    <!--Title-->
+
+
+<title>SSM之Spring(二) | Hexo</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header" style="background-image:url(http://7xpw2b.com1.z0.glb.clouddn.com/hexo-sinppet/img/banner.jpg)">
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title="John Doe">
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                <h2> 一路过来，不过游牧自己。。 </h2>
+            
+    	</div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://yoursite.com">Hexo</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>Home</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/前端/"><i class="fa "></i>About me</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/后端/"><i class="fa "></i>后端</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/工具/"><i class="fa "></i>工具</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/archives/"><i class="fa "></i>时间轴</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="SSM之Spring(二)">
+            
+	            SSM之Spring(二)
+            
+        </h1>
+        <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/ ">
+             
+        </a>
+    </span>
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+                    <a href="/tags/Spring" title="Spring">
+                        Spring
+                    </a>
+                
+            
+        </span>
+    </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2017/04/27</span>
+        </span>
+    
+</div>
+
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <p><img src="http://ono5i4nh6.bkt.clouddn.com/Spring.jpg" alt=""><br>继续关于Spring的话题！下面介绍下ioc创建对象三种方式，直接用代码来讲解！<br><a id="more"></a></p>
+<h2 id="一、IOC创建对象的三种方式"><a href="#一、IOC创建对象的三种方式" class="headerlink" title="一、IOC创建对象的三种方式"></a>一、IOC创建对象的三种方式</h2><h3 id="1、通过无参构造方法来创建"><a href="#1、通过无参构造方法来创建" class="headerlink" title="1、通过无参构造方法来创建"></a>1、通过无参构造方法来创建</h3><h4 id="（1）写一个User类"><a href="#（1）写一个User类" class="headerlink" title="（1）写一个User类"></a>（1）写一个User类</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">User</span> </span>&#123;</span><br><span class="line"><span class="keyword">private</span>  String name;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> name;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setName</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">this</span>.name = name;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">getuser</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">	System.out.println(<span class="string">"name="</span>+name);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>里面就一个参数</p>
+<h4 id="（2）写配置文件beans-xml"><a href="#（2）写配置文件beans-xml" class="headerlink" title="（2）写配置文件beans.xml"></a>（2）写配置文件beans.xml</h4><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;bean id=<span class="string">"user"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"cn.user.User"</span>&gt;</span><br><span class="line">       &lt;property name="name" value="张三"&gt;&lt;/property&gt;</span><br><span class="line">       &lt;/bean&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="（3）写Test类"><a href="#（3）写Test类" class="headerlink" title="（3）写Test类"></a>（3）写Test类</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> org.springframework.context.ApplicationContext;</span><br><span class="line"><span class="keyword">import</span> org.springframework.context.support.ClassPathXmlApplicationContext;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> cn.user.User;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	ApplicationContext acApplicationContext=<span class="keyword">new</span> ClassPathXmlApplicationContext(<span class="string">"beans.xml"</span>);</span><br><span class="line">	User us = (User)acApplicationContext.getBean(<span class="string">"user"</span>);</span><br><span class="line">	us.getuser();</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>得到的结果就是<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">name=张三</span><br></pre></td></tr></table></figure></p>
+<h3 id="2、通过有参构造方法来构造"><a href="#2、通过有参构造方法来构造" class="headerlink" title="2、通过有参构造方法来构造"></a>2、通过有参构造方法来构造</h3><h4 id="（1）在原class中先写一个有参构造函数"><a href="#（1）在原class中先写一个有参构造函数" class="headerlink" title="（1）在原class中先写一个有参构造函数"></a>（1）在原class中先写一个有参构造函数</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">User</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">super</span>();</span><br><span class="line">	<span class="keyword">this</span>.name = name;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="（2）然后修改配置文件："><a href="#（2）然后修改配置文件：" class="headerlink" title="（2）然后修改配置文件："></a>（2）然后修改配置文件：</h4><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;bean id=<span class="string">"user1"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"cn.user.User"</span>&gt;</span><br><span class="line">         &lt;constructor-arg index="0" value="李四"&gt;&lt;/constructor-arg&gt;</span><br><span class="line">        &lt;/bean&gt;</span><br></pre></td></tr></table></figure>
+<p>这里就是注意一下id是user1</p>
+<h4 id="（3）在Test中去加载"><a href="#（3）在Test中去加载" class="headerlink" title="（3）在Test中去加载"></a>（3）在Test中去加载</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">	ApplicationContext acApplicationContext=<span class="keyword">new</span> ClassPathXmlApplicationContext(<span class="string">"beans.xml"</span>);</span><br><span class="line">	User us = (User)acApplicationContext.getBean(<span class="string">"user1"</span>);</span><br><span class="line">	us.getuser();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>输出结果：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">name=李四</span><br></pre></td></tr></table></figure></p>
+<p>这就是利用有参构造函数去创建的一个对象！<br>在baens.xml文件中他的配置：<br>1、根据参数下标来设置，index指构造方法参数下标，从0开始<br>2、根据参数名来设置，例：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;constructor-arg name="name" value="李四"&gt;&lt;/constructor-arg&gt;</span><br></pre></td></tr></table></figure></p>
+<p>3、根据参数类型来设置：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;constructor-arg type="java.lang.String" value="李四"&gt;&lt;/constructor-arg&gt;</span><br></pre></td></tr></table></figure></p>
+<h3 id="3、通过工厂方法来创建对象"><a href="#3、通过工厂方法来创建对象" class="headerlink" title="3、通过工厂方法来创建对象"></a>3、通过工厂方法来创建对象</h3><h3 id="1、静态工厂"><a href="#1、静态工厂" class="headerlink" title="1、静态工厂"></a>1、静态工厂</h3><h4 id="（1）写一个工厂类"><a href="#（1）写一个工厂类" class="headerlink" title="（1）写一个工厂类"></a>（1）写一个工厂类</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">UserFactory</span> </span>&#123;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> User <span class="title">NewInstance</span><span class="params">(String name)</span></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="keyword">new</span> User(name);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="（2）写一个配置文件"><a href="#（2）写一个配置文件" class="headerlink" title="（2）写一个配置文件"></a>（2）写一个配置文件</h4><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;bean id=<span class="string">"user2"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"cn.factory.UserFactory"</span> factory-method=<span class="string">"NewInstance"</span>&gt;</span><br><span class="line">       &lt;constructor-arg index=<span class="string">"0"</span> value=<span class="string">"王五"</span>&gt;</span><br><span class="line">       &lt;/constructor-arg&gt;</span><br><span class="line">       &lt;/bean&gt;</span><br></pre></td></tr></table></figure>
+<p>注意在原来的User中写一个无参构造函数，没有这个构造函数就会报错！<br>这样的结果就是：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">name=王五</span><br></pre></td></tr></table></figure></p>
+<h3 id="2、动态工产"><a href="#2、动态工产" class="headerlink" title="2、动态工产"></a>2、动态工产</h3><h4 id="（1）写一个类："><a href="#（1）写一个类：" class="headerlink" title="（1）写一个类："></a>（1）写一个类：</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">UserFactory</span> </span>&#123;</span><br><span class="line"><span class="function"><span class="keyword">public</span>  User <span class="title">NewInstance</span><span class="params">(String name)</span></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="keyword">new</span> User(name);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="2-写配置文件"><a href="#2-写配置文件" class="headerlink" title="(2)写配置文件"></a>(2)写配置文件</h4><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;bean id="userfactory" class="cn.factory.userdynamicFactory" &gt;&lt;/bean&gt;</span><br><span class="line">         &lt;bean id=<span class="string">"user3"</span> factory-bean=<span class="string">"userfactory"</span> factory-method=<span class="string">"NewInstance"</span>&gt;</span><br><span class="line">         &lt;constructor-arg index=<span class="string">"0"</span> value=<span class="string">"王五"</span>&gt;</span><br><span class="line">         &lt;/constructor-arg&gt;</span><br><span class="line">         &lt;/bean&gt;</span><br></pre></td></tr></table></figure>
+<p>由上面的对比，可以看出区别吗？<br>首先，动态工厂的创建方式类中没有static关键字，<br>其次看他的加载方式，是由一个bean加载另一bean的方式！</p>
+<p>学习之路漫漫长，多走路，多思考！<br>                                                                                                                                                                                    ——————YoungerFary        </p>
+
+    </div>
+
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">fang</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/2017/04/29/SSM之Spring(三)/" class="pre-post btn btn-default" title="SSM之Spring(三)">
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">SSM之Spring(三)</span>
+        </a>
+    
+    
+        <a href="/2017/04/24/SSM之Spring(一)/" class="next-post btn btn-default" title="SSM之Spring(一)">
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">SSM之Spring(一)</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+    
+    <div id="vcomments" class="valine"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/assets/valine.min.js"></script>
+
+    <script>
+        new Valine({
+            av: AV,
+            el: '#vcomments',
+            appId: 'xOKV9J4UeQAtVkvnJC7Kq2Jn-gzGzoHsz',
+            appKey: 'erIpQac4azoCmgfBB7Dl9maa',
+            placeholder: '说点什么吧',
+            notify: false,
+            verify: false,
+            avatar: 'mm',
+            meta: 'nick,mail'.split(','),
+            pageSize: '10',
+            path: window.location.pathname,
+            lang: ''.toLowerCase()
+        })
+    </script>
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">Table of Contents</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#一、IOC创建对象的三种方式"><span class="toc-text">一、IOC创建对象的三种方式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、通过无参构造方法来创建"><span class="toc-text">1、通过无参构造方法来创建</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#（1）写一个User类"><span class="toc-text">（1）写一个User类</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#（2）写配置文件beans-xml"><span class="toc-text">（2）写配置文件beans.xml</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#（3）写Test类"><span class="toc-text">（3）写Test类</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、通过有参构造方法来构造"><span class="toc-text">2、通过有参构造方法来构造</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#（1）在原class中先写一个有参构造函数"><span class="toc-text">（1）在原class中先写一个有参构造函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#（2）然后修改配置文件："><span class="toc-text">（2）然后修改配置文件：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#（3）在Test中去加载"><span class="toc-text">（3）在Test中去加载</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3、通过工厂方法来创建对象"><span class="toc-text">3、通过工厂方法来创建对象</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1、静态工厂"><span class="toc-text">1、静态工厂</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#（1）写一个工厂类"><span class="toc-text">（1）写一个工厂类</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#（2）写一个配置文件"><span class="toc-text">（2）写一个配置文件</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、动态工产"><span class="toc-text">2、动态工产</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#（1）写一个类："><span class="toc-text">（1）写一个类：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-写配置文件"><span class="toc-text">(2)写配置文件</span></a></li></ol></li></ol></li></ol>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12"> 
+                <span>Copyright &copy; 2018
+                </span> | 
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> | 
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+
+</body>
+</html>

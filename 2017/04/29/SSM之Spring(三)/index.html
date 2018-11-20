@@ -1,0 +1,339 @@
+<!DOCTYPE HTML>
+<html lang="">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="Hexo">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://yoursite.com">
+    <!--SEO-->
+
+
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+    <!--Title-->
+
+
+<title>SSM之Spring(三) | Hexo</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header" style="background-image:url(http://7xpw2b.com1.z0.glb.clouddn.com/hexo-sinppet/img/banner.jpg)">
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title="John Doe">
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                <h2> 一路过来，不过游牧自己。。 </h2>
+            
+    	</div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://yoursite.com">Hexo</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>Home</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/前端/"><i class="fa "></i>About me</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/后端/"><i class="fa "></i>后端</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/工具/"><i class="fa "></i>工具</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/archives/"><i class="fa "></i>时间轴</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="SSM之Spring(三)">
+            
+	            SSM之Spring(三)
+            
+        </h1>
+        <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/ ">
+             
+        </a>
+    </span>
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+                    <a href="/tags/Spring" title="Spring">
+                        Spring
+                    </a>
+                
+            
+        </span>
+    </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2017/04/29</span>
+        </span>
+    
+</div>
+
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <p><img src="http://ono5i4nh6.bkt.clouddn.com/Spring.jpg" alt=""><br>Spring中的配置文件是实现ioc的一种重要的方式，那这些配置文件都有哪些内容，他们都是如何设置的呢，下面就来列咧这些配置文件该怎么写！IOC依赖是如何注入的！<br><a id="more"></a></p>
+<h2 id="一、配置文件详解"><a href="#一、配置文件详解" class="headerlink" title="一、配置文件详解"></a>一、配置文件详解</h2><h3 id="1、设置别名"><a href="#1、设置别名" class="headerlink" title="1、设置别名"></a>1、设置别名</h3><p>(1)这里是设置别名的一种方式，可设置多个别名,用alias关键字<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;alias name=<span class="string">"user3"</span> alias=<span class="string">"u3"</span>/&gt;</span><br></pre></td></tr></table></figure></p>
+<p>就在配置文件中设置成u3,这时候来说，原来的id是user3,但是在设置时将别名设置成了u3，在Test中，调用u3，这时候和加载user3的效果是一样的！<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">User us = (User)acApplicationContext.getBean(<span class="string">"u3"</span>);</span><br></pre></td></tr></table></figure></p>
+<p>  这时候输出的结果都是：<br>  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">name=王五</span><br></pre></td></tr></table></figure></p>
+<p>  (2)另一种方式是在当前的bean中去设置，通过name去设置别名：<br>  <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;/bean&gt;</span><br><span class="line">       &lt;bean id=<span class="string">"user1"</span> name=<span class="string">"u3,u4"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"cn.user.User"</span>&gt;</span><br><span class="line">       &lt;constructor-arg index="0" value="李四"&gt;&lt;/constructor-arg&gt;</span><br><span class="line">      &lt;/bean&gt;</span><br></pre></td></tr></table></figure></p>
+<p>  如上述代码所示，通过name就可以调用了，但是要注意的是，这里逗号分隔的u3,u4,表示有两个别名，用u3和用u4的效果是一样的！</p>
+<h3 id="2、bean的具体配置方式："><a href="#2、bean的具体配置方式：" class="headerlink" title="2、bean的具体配置方式："></a>2、bean的具体配置方式：</h3><p>下面好好看这段话：<br>id是bean的标识符，要唯一，若没有设置id,name就成了默认标识符，如果配置了id,又配置了name，那name就是别名，name可以设置多个，分隔符是逗号，分号和空格，Class是bean的权限定名=包名加类名，如果不配置id和name,那么根据applicationContext。getBean(class)获取对象</p>
+<h3 id="3、团队协作的时候，通过import来实现"><a href="#3、团队协作的时候，通过import来实现" class="headerlink" title="3、团队协作的时候，通过import来实现"></a>3、团队协作的时候，通过import来实现</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="keyword">import</span> resource=<span class="string">"cn/test/beans.xml"</span>/&gt;</span><br></pre></td></tr></table></figure>
+<p> 这是在另一个文件中写的，这时候只要调用这个文件就好了，有利于团队之间的开发和工作！</p>
+<h2 id="二、依赖的注入"><a href="#二、依赖的注入" class="headerlink" title="二、依赖的注入"></a>二、依赖的注入</h2><p> （DI）dependency injection<br> 依赖：指bean对象创建依赖于容器的创建，Bean对象依赖于资源<br> 注入：指Bean对象依赖的资源由容器来设置和装配</p>
+<h3 id="（1）Spring注入的两类"><a href="#（1）Spring注入的两类" class="headerlink" title="（1）Spring注入的两类"></a>（1）Spring注入的两类</h3><p> 一是构造器注入：见IOC创建对象<br> 二是Spring注入：依赖于setter注入<br> 要求：被注入的属性必须要有set方法，set方法的方法名由set属性首字母大写，若属性是boolean类型，返回没有get方法，则是isXXX</p>
+<h3 id="2-各种注入方式："><a href="#2-各种注入方式：" class="headerlink" title="(2)各种注入方式："></a>(2)各种注入方式：</h3><h4 id="a-常量的注入"><a href="#a-常量的注入" class="headerlink" title="a)常量的注入"></a>a)常量的注入</h4><p> 这里先写一个Student类<br> <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Student</span> </span>&#123;</span><br><span class="line"><span class="keyword">private</span>  String name;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> name;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setName</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">this</span>.name = name;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">show</span><span class="params">()</span></span>&#123;</span><br><span class="line">	System.out.println(<span class="string">"name="</span>+name);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>然后写配置文件<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;bean id=<span class="string">"student"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"cn.student.Student"</span>&gt;</span><br><span class="line">        &lt;property name=<span class="string">"name"</span> value=<span class="string">"张三丰"</span>&gt;</span><br><span class="line">        &lt;/property&gt;</span><br><span class="line">        &lt;/bean&gt;</span><br></pre></td></tr></table></figure></p>
+<p>最后写Test<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">	ApplicationContext ac=<span class="keyword">new</span> ClassPathXmlApplicationContext(<span class="string">"beans.xml"</span>);</span><br><span class="line">	Student stu=(Student)ac.getBean(<span class="string">"student"</span>);</span><br><span class="line">	stu.show();</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>结果<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">name=张三丰</span><br></pre></td></tr></table></figure></p>
+<p>这里要注意下beans.xml文件的放置位置，要放在Src下，如果不是，就会报错：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">class path resource [beans.xml] cannot be opened because it does not exist</span><br></pre></td></tr></table></figure></p>
+<p>我也是没经验找了好久解决了！</p>
+<h4 id="b-bean注入"><a href="#b-bean注入" class="headerlink" title="b)bean注入"></a>b)bean注入</h4><p>就是说我们注入的时候不再是简单的注入，我们可以注入另外一个bean,其实注入的是另外一个对象，这就是相对来说在student中设置一个对象参数：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> Address addr;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setAddr</span><span class="params">(Address addr)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">this</span>.addr = addr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>其中定义了一个Adress类，<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Address</span> </span>&#123;</span><br><span class="line"><span class="keyword">private</span> String addr;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">getAddr</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> addr;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setAddr</span><span class="params">(String addr)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">this</span>.addr = addr;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>然后在配置文件中写他的常量注入和bean注入<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;bean id=<span class="string">"addr"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"cn.student.Address"</span> &gt;</span><br><span class="line">        &lt;property name="addr" value="安徽黄山"&gt;&lt;/property&gt;&lt;/bean&gt;</span><br><span class="line">        &lt;bean id=<span class="string">"student"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"cn.student.Student"</span>&gt;</span><br><span class="line">        &lt;property name="name" value="张三丰"&gt;&lt;/property&gt;</span><br><span class="line">		&lt;property name="addr" ref="addr"&gt;&lt;/property&gt;</span><br></pre></td></tr></table></figure></p>
+<p>如上所示，先写的是Address bean，对bean进行初始化，然后在student bean中进行bean的注入</p>
+<h4 id="c-数组注入"><a href="#c-数组注入" class="headerlink" title="c)数组注入"></a>c)数组注入</h4><p> 要数组注入的话，就要在tudent类中设置一个数组<br> <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"> <span class="keyword">private</span> String[] books;</span><br><span class="line"> <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setBooks</span><span class="params">(String[] books)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">this</span>.books = books</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p> 这时候，在配置文件中要加的配置参数是：<br> <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;property name=<span class="string">"books"</span>&gt;</span><br><span class="line">			&lt;array&gt;</span><br><span class="line">				&lt;value&gt;吸血鬼日记&lt;/value&gt;</span><br><span class="line">				&lt;value&gt;哈利波特&lt;/value&gt;</span><br><span class="line">				&lt;value&gt;傲慢与偏见&lt;/value&gt;</span><br><span class="line">			&lt;/array&gt;</span><br><span class="line">		&lt;/property&gt;</span><br></pre></td></tr></table></figure></p>
+<p>  然后再show()函数中写上遍历<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;books.length;i++)&#123;</span><br><span class="line">	System.out.println(books[i]);&#125;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure></p>
+<p>就可以遍历得到：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">吸血鬼日记</span><br><span class="line">哈利波特</span><br><span class="line">傲慢与偏见</span><br></pre></td></tr></table></figure></p>
+<h4 id="d-List注入"><a href="#d-List注入" class="headerlink" title="d)List注入"></a>d)List注入</h4><p>在student中加入：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> List&lt;String&gt; hobbies;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setHobbies</span><span class="params">(List&lt;String&gt; hobbies)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">this</span>.hobbies = hobbies;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>在bean中加入：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;property name=<span class="string">"hobbies"</span>&gt;</span><br><span class="line">		&lt;list&gt;</span><br><span class="line">		&lt;value&gt;篮球&lt;/value&gt;</span><br><span class="line">		&lt;value&gt;羽毛球&lt;/value&gt;</span><br><span class="line">		&lt;value&gt;music&lt;/value&gt;</span><br><span class="line">		&lt;/list&gt;</span><br><span class="line">		&lt;/property&gt;</span><br></pre></td></tr></table></figure></p>
+<h4 id="e-map注入"><a href="#e-map注入" class="headerlink" title="e)map注入"></a>e)map注入</h4><p>在student中加入一个Map：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> Map&lt;String, String&gt; cards;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setCards</span><span class="params">(Map&lt;String, String&gt; cards)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">this</span>.cards = cards;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>然后再bean中设置<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;property name=<span class="string">"cards"</span>&gt;</span><br><span class="line">		&lt;map&gt;</span><br><span class="line">		&lt;entry key="中国银行"  value="3429876"&gt;&lt;/entry&gt;</span><br><span class="line">		&lt;entry&gt;</span><br><span class="line">	  				&lt;key&gt;&lt;value&gt;建设银行&lt;/value&gt;&lt;/key&gt;</span><br><span class="line">	  				&lt;value&gt;622710023478234234&lt;/value&gt;</span><br><span class="line">	  &lt;/entry&gt;</span><br><span class="line">		&lt;/map&gt;</span><br><span class="line">		&lt;/property&gt;</span><br></pre></td></tr></table></figure></p>
+<h4 id="f-set注入"><a href="#f-set注入" class="headerlink" title="f)set注入"></a>f)set注入</h4><p>在student中加入一个Set,类型是一个String：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> Set&lt;String&gt; games;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setGames</span><span class="params">(Set&lt;String&gt; games)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">this</span>.games = games;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>然后再bean中设置<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;property name=<span class="string">"games"</span>&gt;</span><br><span class="line">		&lt;set&gt;</span><br><span class="line">		&lt;value&gt;LOL&lt;/value&gt;</span><br><span class="line">		&lt;value&gt;dota&lt;/value&gt;</span><br><span class="line">		&lt;/set&gt;</span><br><span class="line">		&lt;/property&gt;</span><br></pre></td></tr></table></figure></p>
+<h4 id="g-NUll注入"><a href="#g-NUll注入" class="headerlink" title="g)NUll注入"></a>g)NUll注入</h4><p>当有些参数可以为空的时候：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> String wife;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setWife</span><span class="params">(String wife)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">this</span>.wife = wife;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>对于大部分学生来说，wife这一项基本上是空的：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;property name="wife"&gt;&lt;null/&gt;&lt;/property&gt;</span><br></pre></td></tr></table></figure></p>
+<p>这时候，输出结果：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wife=<span class="keyword">null</span></span><br></pre></td></tr></table></figure></p>
+<h4 id="h-properties注入"><a href="#h-properties注入" class="headerlink" title="h)properties注入"></a>h)properties注入</h4><p>有没有可能就是直接利用一系列参数。答案是用properties:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> Properties info;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setInfo</span><span class="params">(Properties info)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">this</span>.info = info;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>在bean中我们写一下配置：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;property name=<span class="string">"info"</span>&gt;</span><br><span class="line">		&lt;props&gt;</span><br><span class="line">		&lt;prop key="学号"&gt;20162821&lt;/prop&gt;</span><br><span class="line">		&lt;prop key="sex"&gt;男&lt;/prop&gt;</span><br><span class="line">		&lt;prop key="name"&gt;小明&lt;/prop&gt;</span><br><span class="line">		&lt;/props&gt;</span><br><span class="line">		&lt;/property&gt;</span><br></pre></td></tr></table></figure></p>
+<p>这样就可以组建一个properties了！</p>
+<h4 id="i）p命名空间注入"><a href="#i）p命名空间注入" class="headerlink" title="i）p命名空间注入"></a>i）p命名空间注入</h4><p>前面的student类太过庞大，我们再重新写个    User类：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">User</span> </span>&#123;</span><br><span class="line"><span class="keyword">private</span> String name;</span><br><span class="line"><span class="keyword">private</span> <span class="keyword">int</span> age;</span><br><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="string">"User [name="</span> + name + <span class="string">", age="</span> + age + <span class="string">"]"</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">User</span><span class="params">(String name, <span class="keyword">int</span> age)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">super</span>();</span><br><span class="line">	<span class="keyword">this</span>.name = name;</span><br><span class="line">	<span class="keyword">this</span>.age = age;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">User</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="keyword">super</span>();</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> name;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setName</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">this</span>.name = name;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getAge</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> age;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setAge</span><span class="params">(<span class="keyword">int</span> age)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">this</span>.age = age;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>在配置文件中设置，这时候一定要注意！要在头文件中加入文件设置才行：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xmlns:p=<span class="string">"http://www.springframework.org/schema/p"</span></span><br></pre></td></tr></table></figure></p>
+<p>还有，p命名空间需要设置set方法：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- p命名空间注入 属性依然要设置Set方法 --&gt;</span><br><span class="line">&lt;bean id=<span class="string">"user"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"cn.student.User"</span> p:name=<span class="string">"浪子"</span> p:age=<span class="string">"19"</span>&gt;</span><br><span class="line">&lt;/bean &gt;</span><br></pre></td></tr></table></figure></p>
+<p>可以看到，这里就是直接设置了，非常方便：<br>结果：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">User [name=浪子, age=<span class="number">19</span>]</span><br></pre></td></tr></table></figure></p>
+<h4 id="j-C注入"><a href="#j-C注入" class="headerlink" title="j)C注入"></a>j)C注入</h4><p>一样的，使用User类,这个类必须有带参的构造方法：<br>bean的写法,首先一定要记得加一个头文件：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xmlns:c=<span class="string">"http://www.springframework.org/schema/c"</span></span><br></pre></td></tr></table></figure></p>
+<p>然后进行配置：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;bean id=<span class="string">"user1"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"cn.student.User"</span> c:name=<span class="string">"放羊"</span> c:age=<span class="string">"128"</span>&gt;</span><br><span class="line">&lt;/bean &gt;</span><br></pre></td></tr></table></figure></p>
+<p>这里的输出结果是：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">User [name=放羊, age=<span class="number">128</span>]</span><br></pre></td></tr></table></figure></p>
+<p>这就基本对配置文件的配置方式基本写完了，重视基本功，至少要会用，通过配置文件来创建Bean真的是一种很强健的一种方式！</p>
+<p>学习之路漫漫长，多走路，多思考！<br>                                                                                                                                                     ——————YoungerFary</p>
+
+    </div>
+
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">fang</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/2017/04/30/SSM之Spring(四)/" class="pre-post btn btn-default" title="SSM之Spring(四)">
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">SSM之Spring(四)</span>
+        </a>
+    
+    
+        <a href="/2017/04/27/SSM之Spring(二)/" class="next-post btn btn-default" title="SSM之Spring(二)">
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">SSM之Spring(二)</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+    
+    <div id="vcomments" class="valine"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/assets/valine.min.js"></script>
+
+    <script>
+        new Valine({
+            av: AV,
+            el: '#vcomments',
+            appId: 'xOKV9J4UeQAtVkvnJC7Kq2Jn-gzGzoHsz',
+            appKey: 'erIpQac4azoCmgfBB7Dl9maa',
+            placeholder: '说点什么吧',
+            notify: false,
+            verify: false,
+            avatar: 'mm',
+            meta: 'nick,mail'.split(','),
+            pageSize: '10',
+            path: window.location.pathname,
+            lang: ''.toLowerCase()
+        })
+    </script>
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">Table of Contents</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#一、配置文件详解"><span class="toc-text">一、配置文件详解</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、设置别名"><span class="toc-text">1、设置别名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、bean的具体配置方式："><span class="toc-text">2、bean的具体配置方式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3、团队协作的时候，通过import来实现"><span class="toc-text">3、团队协作的时候，通过import来实现</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、依赖的注入"><span class="toc-text">二、依赖的注入</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#（1）Spring注入的两类"><span class="toc-text">（1）Spring注入的两类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-各种注入方式："><span class="toc-text">(2)各种注入方式：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#a-常量的注入"><span class="toc-text">a)常量的注入</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#b-bean注入"><span class="toc-text">b)bean注入</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#c-数组注入"><span class="toc-text">c)数组注入</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#d-List注入"><span class="toc-text">d)List注入</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#e-map注入"><span class="toc-text">e)map注入</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#f-set注入"><span class="toc-text">f)set注入</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#g-NUll注入"><span class="toc-text">g)NUll注入</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#h-properties注入"><span class="toc-text">h)properties注入</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#i）p命名空间注入"><span class="toc-text">i）p命名空间注入</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#j-C注入"><span class="toc-text">j)C注入</span></a></li></ol></li></ol></li></ol>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12"> 
+                <span>Copyright &copy; 2018
+                </span> | 
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> | 
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+
+</body>
+</html>

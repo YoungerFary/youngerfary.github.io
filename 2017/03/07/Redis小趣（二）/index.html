@@ -1,0 +1,330 @@
+<!DOCTYPE HTML>
+<html lang="">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="Hexo">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://yoursite.com">
+    <!--SEO-->
+
+
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+    <!--Title-->
+
+
+<title>Redis小趣（二） | Hexo</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header" style="background-image:url(http://7xpw2b.com1.z0.glb.clouddn.com/hexo-sinppet/img/banner.jpg)">
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title="John Doe">
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                <h2> 一路过来，不过游牧自己。。 </h2>
+            
+    	</div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://yoursite.com">Hexo</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>Home</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/前端/"><i class="fa "></i>About me</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/后端/"><i class="fa "></i>后端</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/工具/"><i class="fa "></i>工具</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/archives/"><i class="fa "></i>时间轴</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="Redis小趣（二）">
+            
+	            Redis小趣（二）
+            
+        </h1>
+        <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/ ">
+             
+        </a>
+    </span>
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+                    <a href="/tags/Redis" title="Redis">
+                        Redis
+                    </a>
+                
+            
+        </span>
+    </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2017/03/07</span>
+        </span>
+    
+</div>
+
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <p><img src="http://ono5i4nh6.bkt.clouddn.com/redis.png" alt=""><br>上一篇讲的主要是关于字符串的值得一个操作命令，其中还有好多零散的知识点，慢慢再补充！<br><a id="more"></a><br>(设置多少秒或者毫秒后过期)<br>EXPIRE key seconds<br>PEXPIRE key milli<br>seconds<br>设置在指定的Unix时间戳过期<br>EXPIREAT key timestamp(例如每天的日排行)<br>PEXPIREAT key milliontimestamp-timestamp</p>
+<p>删除过期<br>PERSIST key</p>
+<p>查看剩余的生存时间：<br>TTL key<br>PTTL key<br>key 存在但没有设置TTL 返回-1<br>key存在 但还在生存期内，返回剩余的秒或者毫秒<br>key曾经存在，但已经消亡，返回-2</p>
+<p>查找键：<br>KEYS pattern<br>pattern 取值：<br>*任意长度字符<br>？任意一个字符<br>[]字符集合，表示可以是集合中的任意一个</p>
+<p>键类型：<br>TYPE key</p>
+<p>键是否存在：<br>EXISTS key</p>
+<p>键重命名：<br>RENAME key newkey<br>RENAMENX key newkey(不存在，就重命名)</p>
+<p>删除键：<br>DEL key[key…]</p>
+<p>##一、位图：bitmap<br>位图不是真正的数据类型，他是定义在字符串类型中的<br>一个字符串类型的值最多能存储512M字节的内容<br>位上限：2^(9+10+10+3)=2^32b</p>
+<p>设置某一位上的值<br>SETBIT key offset value<br>offset 偏移量，从0开始（注意这里默认从右开始）<br>value不写，默认是0</p>
+<p>获取某一位上的值<br>GETBIT key offset</p>
+<p>返回指定0或者1在指定区间上第一次出现的位置<br>BITPOS key bit[start][end]</p>
+<p>位操作：<br>operation 可以是AND,OR,NOT,XOR这四种操作中的一种<br>BITOP AND[OR,XOR(异或)] destkey key [key …]对一个或者多个key求逻辑与。或，异或操作，最后结果存储到destkey中<br>BITOP NOT destkey key除了not以外，其他都可以接受一个或多个输入<br>当BITOP 处理不同长的字符串时，较短缺少的那部分会被看作0<br>空的key被看作是全0的字符串</p>
+<p>统计指定位置区间值为1的个数<br>BITCOUNT key  [start][end]<br>这个字符串长：BITCOUNT key 0 -1——-与BITCOUNT key相等<br>BITCOUNT key 0 0 表示第0位</p>
+<p>python演示位操作：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">print bin（int（r.get(0b0011)））</span><br><span class="line">print &apos;bitmap&apos;</span><br><span class="line">print r.bitcount(&apos;3&apos;)//结果是8？因为和上面结合，3是键，统计的是位数!!!!不是1的个数</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">r.bitop(&apos;OR&apos;,&apos;key1&apos;,&apos;key2&apos;,&apos;key3&apos;)</span><br></pre></td></tr></table></figure></p>
+<p>utf-8存储中文是用三个字节，GBK用的是两个字节</p>
+<p>登陆不同的库<br>redis-cli –help<br>redis-cli -n 2</p>
+<p>清楚当前库数据<br>FLUSHDB</p>
+<p>清除库中所有数据<br>FLUSHALL</p>
+<p>位图bitmap操作小例子：<br>1、网站用户的上线次数统计（活跃用户）<br>用户ID为key，天为offset,上线置为1<br>ID为500的用户，今年的第一台你上线，第30天上线<br>SETBIT u500 1 1<br>SETBIT u500 30 1<br>BITCOUNT U500<br>key u*</p>
+<p>2、按天来统计网站活跃用户<br>天作为key 用户作为offset，上线置为1<br>求一天时间内活跃用户数<br>SETBIT 20160602 15 1<br>SETBIT 20160601 123 1<br>SETBIT 20160603 123 1<br>求6月1到6月3的活跃用户<br>BITOP OR  20160601 20160602  20160603（只要出现了1，就是上线活跃的）<br>BITCOUNT  20160601-3</p>
+<p>代码示例：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">r.setbit(“u1”，<span class="number">1</span>，<span class="number">1</span>)</span><br><span class="line">r.setbit(“u1”，<span class="number">30</span>，<span class="number">1</span>)</span><br><span class="line">r.setbit(<span class="string">"u2"</span>,<span class="number">110</span>,<span class="number">1</span>)</span><br><span class="line">r.setbit(<span class="string">"u2"</span>,<span class="number">300</span>,<span class="number">1</span>)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">3</span>,<span class="number">365</span>,<span class="number">3</span>)//从<span class="number">3</span><span class="number">-365</span> 每<span class="number">3</span>相隔</span><br><span class="line">  r.setbit(<span class="string">"u101"</span>,i,<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">4</span>,<span class="number">365</span>,<span class="number">2</span>)</span><br><span class="line">  r.setbit(<span class="string">"u105"</span>,i,<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">userlist=r.keys(<span class="string">"u*"</span>)</span><br><span class="line"><span class="keyword">print</span> userlist</span><br><span class="line"></span><br><span class="line">au=[]</span><br><span class="line">Nau=[]</span><br><span class="line"><span class="keyword">for</span> u <span class="keyword">in</span> userlist:</span><br><span class="line">    loginCount=r.bitcount(u)</span><br><span class="line">    <span class="keyword">if</span> loginCount&gt;<span class="number">100</span>:</span><br><span class="line">      au.append((u,loginCount))</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">      Nau.append((u,loginCount))</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> l <span class="keyword">in</span> au:</span><br><span class="line">  <span class="keyword">print</span> l[<span class="number">0</span>]+<span class="string">'is a Active User'</span>+Str(l[<span class="number">1</span>])</span><br><span class="line"><span class="keyword">print</span> <span class="string">"__________________________________"</span></span><br><span class="line"><span class="keyword">for</span> l <span class="keyword">in</span> Nau:</span><br><span class="line">  <span class="keyword">print</span> l[<span class="number">0</span>]+<span class="string">'is a not Active User'</span>+Str(l[<span class="number">1</span>])</span><br></pre></td></tr></table></figure></p>
+<h2 id="二、Redis-列表——Hash散列操作"><a href="#二、Redis-列表——Hash散列操作" class="headerlink" title="二、Redis_列表——Hash散列操作"></a>二、Redis_列表——Hash散列操作</h2><p>List列表<br>（1）基于LinkList实现<br>（2）元素是字符串类型<br>（3）列表头尾增删快，中间增删慢，增删元素是常态<br>（4）元素可以出现重复元素<br>（5）最多包含2^32-1元素</p>
+<p>列表的索引：<br>从左至右，从0开始<br>从右至左，从-1开始</p>
+<p>命令：<br>B—block块，阻塞<br>L—Left 左<br>R—Right 右<br>X—-exist 存在</p>
+<p>左右或者头尾压入栈<br>LPUSH key value[value…]<br>LPUSHX key value<br>RPUSH key value[value…]<br>RPUSHX key value</p>
+<p>左右或者头尾弹出元素<br>LPOP key<br>RPOP key</p>
+<p>从一个列表尾部弹出元素押入到另一个列表的头部<br>RPOP LPUSH source destination</p>
+<p>返回列表中指定范围的元素<br>LRANGE key start stop<br>LRANGE key 0 -1表示返回所有元素<br>获取指定位置的元素<br>LINDEX key index</p>
+<p>设置指定位置元素的值<br>LSET key index value</p>
+<p>列表长度，元素个数<br>LLEN key</p>
+<p>从列表头部开始删除值等于value元素count次<br>LREM key count value<br>count&gt;0:从左往右搜索，移除与value值相等的元素，数量为count<br>count&lt;0:从右往左搜索，移除与value相等的元素，次数为count绝对值<br>count=0:移除表中所有与value值相等的值</p>
+<p>去除指定范围外的元素<br>LTRIM key start stop<br>举例：微博的评论最后500条<br>LTRIM u123::forumid:comments 0 499(相当于可以获得一个分页的数据)<br>本身list里面内容不变，不会删除</p>
+<p>在列表中存在的值前或后插入元素<br>LINSERT key before|after pivot value<br>key和pivot不存在，不进行任何操作。<br>例：RPUSH lst Clojure C LUA<br>LINSERT lst AFTER c Python</p>
+<p>阻塞:如果弹出的列表不存在或者为空，就会阻塞<br>超时时间设置为0，就是永久阻塞，直到有数据产生<br>如果多个客户端阻塞在同一列表上，就先到先服务<br>左右或者头尾阻塞弹出元素：<br>BLPOP key [key……] timeout<br>BRPOP key [key……] timeout</p>
+<p>从列表尾部阻塞弹出元素压入到另一个列表的头部<br>BRPOPLPUSH source destination timeout<br>举例：你的微博，有粉丝，所有粉丝监控阻塞在关注你的列表里，然后你一发微博，就会发到其他关注人手里，先到先得</p>
+<p>多走路，多思考，越努力，越幸运！<br>                                                                                                                            ———————————————YoungerFary</p>
+
+    </div>
+
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">fang</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/2017/03/14/Redis小趣（三）/" class="pre-post btn btn-default" title="Redis小趣（三）">
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">Redis小趣（三）</span>
+        </a>
+    
+    
+        <a href="/2017/03/01/Redis小趣（一）/" class="next-post btn btn-default" title="Redis小趣">
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">Redis小趣</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+    
+    <div id="vcomments" class="valine"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/assets/valine.min.js"></script>
+
+    <script>
+        new Valine({
+            av: AV,
+            el: '#vcomments',
+            appId: 'xOKV9J4UeQAtVkvnJC7Kq2Jn-gzGzoHsz',
+            appKey: 'erIpQac4azoCmgfBB7Dl9maa',
+            placeholder: '说点什么吧',
+            notify: false,
+            verify: false,
+            avatar: 'mm',
+            meta: 'nick,mail'.split(','),
+            pageSize: '10',
+            path: window.location.pathname,
+            lang: ''.toLowerCase()
+        })
+    </script>
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">Table of Contents</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#二、Redis-列表——Hash散列操作"><span class="toc-text">二、Redis_列表——Hash散列操作</span></a></li></ol>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12"> 
+                <span>Copyright &copy; 2018
+                </span> | 
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> | 
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+
+</body>
+</html>

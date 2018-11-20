@@ -1,0 +1,324 @@
+<!DOCTYPE HTML>
+<html lang="">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="Hexo">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://yoursite.com">
+    <!--SEO-->
+
+
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+    <!--Title-->
+
+
+<title>如何设计一个分布式系统 | Hexo</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header" style="background-image:url(http://7xpw2b.com1.z0.glb.clouddn.com/hexo-sinppet/img/banner.jpg)">
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title="John Doe">
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                <h2> 一路过来，不过游牧自己。。 </h2>
+            
+    	</div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://yoursite.com">Hexo</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>Home</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/前端/"><i class="fa "></i>About me</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/后端/"><i class="fa "></i>后端</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/工具/"><i class="fa "></i>工具</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/archives/"><i class="fa "></i>时间轴</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="如何设计一个分布式系统">
+            
+	            如何设计一个分布式系统
+            
+        </h1>
+        <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/ ">
+             
+        </a>
+    </span>
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+                    <a href="/tags/分布式系统" title="分布式系统">
+                        分布式系统
+                    </a>
+                
+            
+        </span>
+    </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2017/04/14</span>
+        </span>
+    
+</div>
+
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <p><img src="http://ono5i4nh6.bkt.clouddn.com/u=2930943318,3510066750&amp;fm=214&amp;gp=0.jpg" alt=""><br>&emsp;&emsp;最近因为一些原因，一直在看不同的东西，分布式这个课题一直都是我想去深入了解的一个东西，既然学习了一点，就将感想记录下来吧！<br><a id="more"></a></p>
+<h1 id="一、什么是分布式系统："><a href="#一、什么是分布式系统：" class="headerlink" title="一、什么是分布式系统："></a>一、什么是分布式系统：</h1><p>&emsp;&emsp;分布式系统说白了，就是很多机器组成的集群，靠彼此之间的网络通信，担当的角色可能不同，共同完成同一个事情的系统。就是说讲一个任务可以分到不同机子上的不同操作系统之上去运行！这样带来的效率会非常的高，分工合作，一件事情几个人干，不就更快！</p>
+<p>&emsp;&emsp;一个分布式系统到底有哪些呢，按”实体“来划分的话，就是如下这几种：<br>&emsp;&emsp;1、节点 – 系统中按照协议完成计算工作的一个逻辑实体，可能是执行某些工作的进程或机器。<br>&emsp;&emsp;2、网络 – 系统的数据传输通道，用来彼此通信。通信是具有方向性的。<br>&emsp;&emsp;3、存储 – 系统中持久化数据的数据库或者文件存储。<br><br>        如图所示，一个简单的示意 ！<br><img src="http://ono5i4nh6.bkt.clouddn.com/20140703205919171" alt=""></p>
+<h2 id="二、分布式系统特性"><a href="#二、分布式系统特性" class="headerlink" title="二、分布式系统特性"></a>二、分布式系统特性</h2><p>&emsp;&emsp;最著名的就是CAP了吧！<br>&emsp;&emsp;C：  Consistency(all nodes see the same data at the same time) 一致性<br>&emsp;&emsp;A:   Availability (a guarantee that every request receives a response about whether it was successful or failed) 可用性<br>&emsp;&emsp;P：  Partition tolerance (the system continues to operate despite arbitrary message loss or failure of part of the system) 分区容忍性<br>&emsp;&emsp;根据实践证明，这是一个三者兼得的一个组合，至于其中缘由，我就不质疑了，因为毕竟是大牛经验！</p>
+<h3 id="（1）一致性："><a href="#（1）一致性：" class="headerlink" title="（1）一致性："></a>（1）一致性：</h3><p>&emsp;&emsp;保持所有节点的存储数据的一个统一模型，主要有两种：<br>A：强一致性<br>&emsp;&emsp;就是所有节点的数据高度一致，无论从哪个节点读取，都是一样的。无需担心同一时刻会获得不同的数据。想要去同步数据，使得所有的数据一样，这样耗费的资源是比较大额，代价比较高！</p>
+<p>B: 弱一致性<br>&emsp;&emsp;弱一致性主要也分两种：单调一致性和最终一致性<br>&emsp;&emsp;（1）单调一致性强调数据是按照时间的新旧，单调向最新的数据靠近，不会回退，如：<br>&emsp;&emsp;数据存在三个版本v1-&gt;v2-&gt;v3，获取只能向v3靠近(如取到的是v2，就不可能再次获得v1)<br>&emsp;&emsp;应用场景：好像交易系统，存取钱的+/-操作必须是马上一致的，否则会令很多人误解。<br>&emsp;&emsp;（2）最终一致性强调数据经过一个时间窗口之后，只要多尝试几次，最终的状态是一致的，是最新的数据<br>&emsp;&emsp;应用场景：比如发布一个Blog,修改了一些东西，不会马上生效，但刷新几次之后就可以看到，这就是最终一致性！</p>
+<h3 id="（2）可用性："><a href="#（2）可用性：" class="headerlink" title="（2）可用性："></a>（2）可用性：</h3><p>&emsp;&emsp;所谓的可用性，就是如果你发送了一个请求，就可以得到回复无论成功还是失败（不会超时）!保证系统的正常运行！</p>
+<h3 id="（3）分区容忍性："><a href="#（3）分区容忍性：" class="headerlink" title="（3）分区容忍性："></a>（3）分区容忍性：</h3><p> &emsp;&emsp;在系统某些节点或网络有异常的情况下，系统依旧可以继续服务。这主要是牵涉到负载均衡和副本支撑问题！</p>
+<h2 id="三、分布式设计策略："><a href="#三、分布式设计策略：" class="headerlink" title="三、分布式设计策略："></a>三、分布式设计策略：</h2><p>&emsp;&emsp;1. 重试机制：一般发起rpc或者http，都会遇到请求超时而失败情况，所以一般的处理逻辑就是将请求包在一个重试循环块里，如下：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//试个几次</span></span><br><span class="line"><span class="keyword">int</span> retry = <span class="number">3</span>;  </span><br><span class="line"><span class="keyword">while</span>(!request() &amp;&amp; retry--)  </span><br><span class="line">    sched_yield();   <span class="comment">// or usleep(100)</span></span><br></pre></td></tr></table></figure></p>
+<p>但如果真的是网络问题，不能连接，那发几次也没用，但是这是可以防止网络的暂时抖动的！</p>
+<ol start="2">
+<li><p>心跳机制：<br>&emsp;&emsp;以固定的频率向其他节点汇报当前节点状态的方式。收到心跳，一般可以认为一个节点和现在的网络拓扑是良好的。当然，心跳汇报时，一般也会携带一些附加的状态、元数据信息，以便管理。收到心跳了，表示网路或者节点可以，但是如果没有收到，不能认为节点已挂，也有可能是网络的问题！<br>所以，”心跳“只能告诉你正常的状态是ok，它不能发现节点是否真的死亡，有可能还在继续服务。</p>
+</li>
+<li><p>副本：<br>&emsp;&emsp;我们说在集群中，如果一份数据只有一份，那如果存储这个数据的节点发生了宕机或者坏了，那数据岂不是要丢失？那最安全的做法就是多存几份，存在不同的节点之上，这是解决数据丢失等一些特殊情况的途径。还可以就是当对数据进行查询或者修改的话，就可以找寻多个节点中的一个节点，这样效率大大提高！但是呢，带来的开销也是不可避免的。例如数据的一致性问题和可用性问题，如果副本数量有3分，那么就会同步写3分到其他节点，这样就会牵涉到io和网络的问题，但数据才是最重要的！</p>
+</li>
+<li><p>中心化/无中心化：<br>&emsp;&emsp;中心化：有一个节点或几个节点充当整个系统的核心，其他节点与中心点交互。例如HDFS的NameNode ,MapReduce 的jobtracker!<br>无中心化：zookeeper,系统中无领导者，节点之间彼此通信完成任务，不过协议复杂，需要同步各节点信息。</p>
+</li>
+</ol>
+<h2 id="四、设计实践：如何均匀分发数据问题"><a href="#四、设计实践：如何均匀分发数据问题" class="headerlink" title="四、设计实践：如何均匀分发数据问题"></a>四、设计实践：如何均匀分发数据问题</h2><ol>
+<li><p>通过哈希取模：<br>&emsp;&emsp;通过哈希函数（id）计算求余，余数作为处理该数据的服务器索引编号处理<br>&emsp;&emsp;优点:简单  缺点：可能存储倾斜，在某个节点分布过重，或者扩容困难，如果宕机，那原来映射关系就会改变，这样必须重建，很麻烦！</p>
+</li>
+<li><p>一致性哈希：<br>&emsp;&emsp;Consistent Hash 是使用一个哈希函数计算数据或数据特征的哈希值，令该哈希函数的输出值域为一个封闭的环，最大值+1=最小值。将节点随机分布到这个环上，每个节点负责处理从自己开始顺时针至下一个节点的全部哈希值域上的数据，如图：<br><img src="http://ono5i4nh6.bkt.clouddn.com/20140703205842687" alt="一致性哈希图解"><br>&emsp;&emsp;致性哈希的优点在于可以任意动态添加、删除节点，每次添加、删除一个节点仅影响一致性哈希环上相邻的节点。 为了尽可能均匀的分布节点和数据，一种常见的改进算法是引入虚节点的概念，系统会创建许多虚拟节点，个数远大于当前节点的个数，均匀分布到一致性哈希值域环上。读写数据时，首先通过数据的哈希值在环上找到对应的虚节点，然后查找到对应的real节点。这样在扩容和容错时，大量读写的压力会再次被其他部分节点分摊，主要解决了压力集中的问题。如图：<br><br><img src="http://ono5i4nh6.bkt.clouddn.com/20140703205846500" alt="关于负载均衡"><br><br><br>下面会有一篇关于这个算法的专题，请期待！</p>
+</li>
+<li><p>数据范围的划分：<br>&emsp;&emsp;某些id和key数据量分布不是很均匀，比如某些id的数据量特别大，这时候可以按group来分，如id  0~10000,8000以上访问量大，就可以这样分组：0~8000作为一组，8000~9000作为一组，9000~10000作为一组!<br>&emsp;&emsp;缺点：无法通过计算来获取，需要引入一些映射信息</p>
+</li>
+<li><p>数据块划分，数据固定块大小，例如HDFS=128M，一般无数据倾斜问题。</p>
+</li>
+</ol>
+<h2 id="五、机制："><a href="#五、机制：" class="headerlink" title="五、机制："></a>五、机制：</h2><h3 id="1-Paxos"><a href="#1-Paxos" class="headerlink" title="1.Paxos:"></a>1.Paxos:</h3><p>&emsp;&emsp;是一个强一致性，高可用性的去中心化分布式协议<br>  proposer:提议者，有多个，proposer提出议案，此处定为value,value可以不同，甚至矛盾，但最后只有一个value被批准！<br>  Acceptor：批准者。 Acceptor 有 N 个， Proposer 提出的 value 必须获得超过半数(N/2+1)的 Acceptor批准后才能通过。Acceptor 之间对等独立。<br>  Learner：学习者。Learner 学习被批准的 value。所谓学习就是通过读取各个 Proposer 对 value的选择结果， 如果某个value 被超过半数 Proposer 通过， 则 Learner 学习到了这个 value。从而学习者需要至少读取 N/2+1 个 Accpetor，至多读取 N 个Acceptor 的结果后，能学习到一个通过的 value。<br>  开源中实现最好的就是zookeeper!</p>
+<h3 id="2-Lease机制："><a href="#2-Lease机制：" class="headerlink" title="2.Lease机制："></a>2.Lease机制：</h3><p>&emsp;&emsp;在分布式环境中，此机制描述为：<br>Lease 是由授权者授予的在一段时间内的承诺。授权者一旦发出 lease，则无论接受方是否收到，也无论后续接收方处于何种状态，只要 lease 不过期，授权者一定遵守承诺，按承诺的时间、内容执行。接收方在有效期内可以使用颁发者的承诺，只要 lease 过期，接收方放弃授权，不再继续执行，要重新申请Lease。<br>&emsp;&emsp;用法举例：<br>&emsp;&emsp;（1）客户端请求服务器，服务器发送一个lease给客户端，客户端可以缓存下来，若有客户端请求数据，则一直阻塞知道Lease结束！<br>&emsp;&emsp;（2）Spark中的双主问题：如果网络出现问题，可能再选出一个Master，但原来还正常，他就会继续服务，这时候会出现双主问题。这时候通过Lease,来规定节点可以当Master时间，若没有可用的Lease,自动退化成slaver,若出现“双主”，其中一个Master会因为Lease到期退化为slaver.</p>
+<p>&emsp;&emsp;当然还有一些其他的选主算法，这里就先不写了<br>此博文并非原创，原来的博文写的很好，我只是简化了他的很多语言，游有兴趣可以看看：！<a href="http://blog.csdn.net/gugemichael/article/details/36688043" target="_blank" rel="noopener">分布式系统设计系列 – 基本原理及高可用策略</a></p>
+
+    </div>
+
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">fang</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/2017/04/24/SSM之Spring(一)/" class="pre-post btn btn-default" title="SSM之Spring(一)">
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">SSM之Spring(一)</span>
+        </a>
+    
+    
+        <a href="/2017/04/10/深入理解java虚拟机/" class="next-post btn btn-default" title="深入理解java虚拟机（一）">
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">深入理解java虚拟机（一）</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+    
+    <div id="vcomments" class="valine"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/assets/valine.min.js"></script>
+
+    <script>
+        new Valine({
+            av: AV,
+            el: '#vcomments',
+            appId: 'xOKV9J4UeQAtVkvnJC7Kq2Jn-gzGzoHsz',
+            appKey: 'erIpQac4azoCmgfBB7Dl9maa',
+            placeholder: '说点什么吧',
+            notify: false,
+            verify: false,
+            avatar: 'mm',
+            meta: 'nick,mail'.split(','),
+            pageSize: '10',
+            path: window.location.pathname,
+            lang: ''.toLowerCase()
+        })
+    </script>
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">Table of Contents</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#一、什么是分布式系统："><span class="toc-text">一、什么是分布式系统：</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#二、分布式系统特性"><span class="toc-text">二、分布式系统特性</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#（1）一致性："><span class="toc-text">（1）一致性：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（2）可用性："><span class="toc-text">（2）可用性：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（3）分区容忍性："><span class="toc-text">（3）分区容忍性：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三、分布式设计策略："><span class="toc-text">三、分布式设计策略：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#四、设计实践：如何均匀分发数据问题"><span class="toc-text">四、设计实践：如何均匀分发数据问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#五、机制："><span class="toc-text">五、机制：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-Paxos"><span class="toc-text">1.Paxos:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-Lease机制："><span class="toc-text">2.Lease机制：</span></a></li></ol></li></ol></li></ol>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12"> 
+                <span>Copyright &copy; 2018
+                </span> | 
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> | 
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,311 @@
+<!DOCTYPE HTML>
+<html lang="">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="Hexo">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://yoursite.com">
+    <!--SEO-->
+
+
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+    <!--Title-->
+
+
+<title>Redis小趣（四） | Hexo</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header" style="background-image:url(http://7xpw2b.com1.z0.glb.clouddn.com/hexo-sinppet/img/banner.jpg)">
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title="John Doe">
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                <h2> 一路过来，不过游牧自己。。 </h2>
+            
+    	</div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://yoursite.com">Hexo</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>Home</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/前端/"><i class="fa "></i>About me</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/后端/"><i class="fa "></i>后端</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/工具/"><i class="fa "></i>工具</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/archives/"><i class="fa "></i>时间轴</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="Redis小趣（四）">
+            
+	            Redis小趣（四）
+            
+        </h1>
+        <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/ ">
+             
+        </a>
+    </span>
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+                    <a href="/tags/Redis" title="Redis">
+                        Redis
+                    </a>
+                
+            
+        </span>
+    </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2017/03/21</span>
+        </span>
+    
+</div>
+
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <p><img src="http://ono5i4nh6.bkt.clouddn.com/redis.png" alt=""><br>对于值得类型都基本完了，那接下来就得聊聊持久化的问题！<br><a id="more"></a></p>
+<h2 id="一、Redis持久化"><a href="#一、Redis持久化" class="headerlink" title="一、Redis持久化"></a>一、Redis持久化</h2><h4 id="1、什么是持久化："><a href="#1、什么是持久化：" class="headerlink" title="1、什么是持久化："></a>1、什么是持久化：</h4><p>将数据从掉电易失的内存存放到能够永久存储的设备上</p>
+<h4 id="2、Redis为什么要持久化"><a href="#2、Redis为什么要持久化" class="headerlink" title="2、Redis为什么要持久化"></a>2、Redis为什么要持久化</h4><p>（1）基于内存的<br>（2）缓存服务器，需要么？看情况，缓存服务器宕了吗，所以还是要的，没有就会重新加载<br>（3）内存数据库，需要么？需要，存储业务数据<br>（4）消息队列，需要么？看情况，重要的就持久化</p>
+<h4 id="3、Redis持久化方式："><a href="#3、Redis持久化方式：" class="headerlink" title="3、Redis持久化方式："></a>3、Redis持久化方式：</h4><p>RDB（Redis DB）（数据）<br>AOF(AppendOnlyFile)（存的是命令，默认情况下不开启）</p>
+<h4 id="4、RDB持久化"><a href="#4、RDB持久化" class="headerlink" title="4、RDB持久化"></a>4、RDB持久化</h4><p>RDB持久化功能可以将服务器包含的所有数据库数据以二进制文件的形式保存到硬盘里<br>redis服务器—–创建RDB文件(配置文件，dump.rdb)<br>在redis服务器创建RDB文件的情况中，一下三种最常见的：<br>1、服务器执行客户端发送的SAVE命令<br>2、服务器执行客户端发送的BGSAVE命令(BG,background后台执行，不会阻塞你的服务)<br>3、使用save配置选项设置的自动保存条件被满足，服务器将自动执行BGSAVE<br>前两种需要手动执行，第三种是由redis服务器自动执行<br>接着来介绍这三种情况的相同与不同之处：<br>手动穿件RDB文件，也就是手动发送SAVE命令或者BGSAVE命令<br>（1）通过使用客户端向服务器发送SAVE命令，可以命令服务器取创建一个新的RDB文件<br>（2）redis&gt;SAVE<br>（3）在执行savem命令的时候，redis服务器将会被阻塞，无法处理客户端发送的命令请求，在SAVE执行完之后，才开始执行处理客户端请求<br>（4）如果RDB文件已经存在，那么服务器将自动使用新的RDB文件去代替旧的 RDB文件（定期的保存dunm.rdb文件）<br>BGSAVE：是一个异步的过程<br>redis服务器来fork()一个子进程去处理，对于客户来说，会直接返回OK，在日志中可以查看到每一次的操作</p>
+<p>一些配置都在6379.conf中<br>创建子进程会消耗额外的内存，所以SAVE创建RDB的速度回避BGSAVE快，要在凌晨3点，则用save比较好，要在上线时，则用BGSAVE</p>
+<p>自动去设置创建RDB文件<br>SAVE 时间（秒） 次数<br>举个例子：<br>SAVE 300 10<br>表示：距离上次300s,且数据库总共发生了不少于10次修改，那么执行BGSAVE命令<br>另外，用户还可以设置多个save选项来设置多个自动保存条件，当任何一个条件被满足时，就会自动执行BGSAVE命令!<br>每次创建RDB文件之后，服务器会实现自动化而设置的时间计数器和次数计数器就会被清零。并重新开始计数，所以保存多个结果不会叠加<br>在6379.conf中更改</p>
+<h4 id="5、RDB持久化缺点："><a href="#5、RDB持久化缺点：" class="headerlink" title="5、RDB持久化缺点："></a>5、RDB持久化缺点：</h4><p>创建RDB文件需要将服务所有的数据库的数据保存起来，这是一个非常消耗资源和时间的操作，所以要隔一段时间才创建一新的RDB文件，也就是说创建RDB文件的操作布<br>操作不能过于频繁，否则会严重影响服务器性能。所以要用AOF来弥补这个缺点<br>数据丢失的例子：<br>AOF持久化有一个巨大的优势，那就是用户可以根据自己的需要对AOF持久化进行调整，让redis在遭遇意外的时候不丢失任何数据，或者只丢失一秒中，这样比RDB持久化<br>遭遇意外停机遭受的损失小的多<br>（1）AOF持久化保存数据库的方法是：每当有修改数据库的命令被执行时，服务器就会将执行的命令写入到AOF文件的末尾。<br>（2）只要重新执行AOF文件里的命令，就可以达到还原数据库的目的</p>
+<h4 id="6、安全性问题："><a href="#6、安全性问题：" class="headerlink" title="6、安全性问题："></a>6、安全性问题：</h4><p>（1）虽然服务器执行一个修改数据库的命令，就会被执行的命令写入到AOF数据库，但并不意味着AOF文件持久化不会丢失任何东西<br>（2）在常见的操作系统中，执行write函数，会将一些内容写入到某个文件里面时，为了提高效率，不会直接往硬盘里写，而是将内容放在内存缓冲区，被填满时，<br>或者用户执行fsync调用或者fdatasyn调用时裁剪缓冲区的数据写入到硬盘<br>(3)所以对于AOF持久化来说，当一条命令被正真写到硬盘时，这条命令才不会因为停机而意外丢失<br>（4）因此，AOF持久化在遭遇停机意外丢失命令的数量，取决于命令被写入硬盘的时间<br>（5）越早将命令写入，则丢失数据越少，越晚，越多！</p>
+<p>redis的三种情况，提供了appendfsync选项，这个选项有三个值：always,everysec或者no<br>always:每写入一个命令，就调用一次appendfsync选项，将缓冲去的命令也写到硬盘里，这样，即使意外停机，也不会丢失任何已经成功执行的命令<br>everysec:每一秒，最多丢失一秒的数据<br>NO：服务器不主动调用fdatasync,由操作系统决定，所以丢失的数量是不确定的<br>运行速度：always慢 everysec和no都很快<br>默认值：everysec</p>
+<h4 id="7、AOF文件中的冗余命令"><a href="#7、AOF文件中的冗余命令" class="headerlink" title="7、AOF文件中的冗余命令"></a>7、AOF文件中的冗余命令</h4><p>（1）AOF文件的体积会越来越大<br>（2）为了使其大小在合理地范围之内，避免其胡乱增长，redis提供了AOF重写功能，可以产生一个新的AOF文件<br>    ——新的AOF文件记录的数据库数据和原有的AOF文件记录的数据库数据完全一样<br>    ——新的AOF文件会用尽可能少的命令来记录数据库数据，因此新的AOF文件会比原有的AOF文件体积小的多<br>    ——AOF重写期间，服务器不会被阻塞，可以正常处理客户端请求<br>    有两种方法可以触发AOF重写：<br>    1、客户端向服务器发送BGREWRITEAOF命令<br>    2、通过设置配置选项来让服务器自动执行BGREWRITEAOF命令，他们分别是：<br>    auto-aof-rewrite-min-size<size>触发AOF重写的所需的最小以及：只要AOF文件体积大于等于size时，服务器才会考虑进行AOF重写，用于避免体积过小的AOFW<br>    的文件进行重写<br>    auto-aof-rewrite-percentade 100 达到100%进行重写</size></p>
+<h4 id="8、总结：比较"><a href="#8、总结：比较" class="headerlink" title="8、总结：比较"></a>8、总结：比较</h4><pre><code>RDB持久化：（1） 全量备份，一次保管整个数据库（2）保存的时间较长（3）数据还原速度快（4）执行SAVE命令时会阻塞服务器，但手动和触发的BGSAVEB不会阻塞（5）更适合数据备份
+AOF持久化：（1）增量备份，一次保存一个修改数据库的命令（2）保存的间隔默认为一秒钟（3）数据还原速度一般，冗余命令越多，还原速度越慢（4）无论时平时还是AOF重写的时候，都不会阻塞服务（后台进程）（5）更适合保存数据，通常意义上的持久化。在appendfsync always模式下进行时，redis的持久化方式和一般的SQL数据库持久化方式时一样的
+好消息：可以同时使用两种持久化，需要根据你的需求来判断，还原数据优先用AOF
+所以说Redis数据库安全性比不上SQL数据库的安全性是一个误解，当在always模式下运行的时候，redis持久化和一般的SQL数据库的持久化方式是一样的
+
+多走路，多思考，越努力，越幸运！
+                                                                                                                            ———————————————YoungerFary
+</code></pre>
+    </div>
+
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">fang</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/2017/03/23/Redis小趣（五）/" class="pre-post btn btn-default" title="Redis小趣（五）">
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">Redis小趣（五）</span>
+        </a>
+    
+    
+        <a href="/2017/03/14/Redis小趣（三）/" class="next-post btn btn-default" title="Redis小趣（三）">
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">Redis小趣（三）</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+    
+    <div id="vcomments" class="valine"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/assets/valine.min.js"></script>
+
+    <script>
+        new Valine({
+            av: AV,
+            el: '#vcomments',
+            appId: 'xOKV9J4UeQAtVkvnJC7Kq2Jn-gzGzoHsz',
+            appKey: 'erIpQac4azoCmgfBB7Dl9maa',
+            placeholder: '说点什么吧',
+            notify: false,
+            verify: false,
+            avatar: 'mm',
+            meta: 'nick,mail'.split(','),
+            pageSize: '10',
+            path: window.location.pathname,
+            lang: ''.toLowerCase()
+        })
+    </script>
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">Table of Contents</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#一、Redis持久化"><span class="toc-text">一、Redis持久化</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1、什么是持久化："><span class="toc-text">1、什么是持久化：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2、Redis为什么要持久化"><span class="toc-text">2、Redis为什么要持久化</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3、Redis持久化方式："><span class="toc-text">3、Redis持久化方式：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4、RDB持久化"><span class="toc-text">4、RDB持久化</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5、RDB持久化缺点："><span class="toc-text">5、RDB持久化缺点：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6、安全性问题："><span class="toc-text">6、安全性问题：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7、AOF文件中的冗余命令"><span class="toc-text">7、AOF文件中的冗余命令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8、总结：比较"><span class="toc-text">8、总结：比较</span></a></li></ol></li></ol>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12"> 
+                <span>Copyright &copy; 2018
+                </span> | 
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> | 
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+
+</body>
+</html>

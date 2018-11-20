@@ -1,0 +1,314 @@
+<!DOCTYPE HTML>
+<html lang="">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="Hexo">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://yoursite.com">
+    <!--SEO-->
+
+
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+    <!--Title-->
+
+
+<title>SSM之MyBatis（四） | Hexo</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header" style="background-image:url(http://7xpw2b.com1.z0.glb.clouddn.com/hexo-sinppet/img/banner.jpg)">
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title="John Doe">
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                <h2> 一路过来，不过游牧自己。。 </h2>
+            
+    	</div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://yoursite.com">Hexo</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>Home</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/前端/"><i class="fa "></i>About me</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/后端/"><i class="fa "></i>后端</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/工具/"><i class="fa "></i>工具</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/archives/"><i class="fa "></i>时间轴</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="SSM之MyBatis（四）">
+            
+	            SSM之MyBatis（四）
+            
+        </h1>
+        <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/ ">
+             
+        </a>
+    </span>
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+                    <a href="/tags/MyBatis" title="MyBatis">
+                        MyBatis
+                    </a>
+                
+            
+        </span>
+    </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2017/05/15</span>
+        </span>
+    
+</div>
+
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <p><img src="http://ono5i4nh6.bkt.clouddn.com/mybatis.jpg" alt=""><br>在实际查询活动中，会牵涉到很多的查询条件，或者有动态的SQL和一些模糊的查询，那是如何去做到的呢？如姓名的模糊匹配，年龄规定要在哪个区间，这样的都是比较有限制的查询！还有如果对一系列的操作采用存储过程的形式应该怎么去做？下面看看如何去做！<br><a id="more"></a><br>先提需求，然后根据需求去用代码去讲解！</p>
+<h2 id="一、-动态SQL与模糊查询"><a href="#一、-动态SQL与模糊查询" class="headerlink" title="一、 动态SQL与模糊查询"></a>一、 动态SQL与模糊查询</h2><h4 id="1、提出需求"><a href="#1、提出需求" class="headerlink" title="1、提出需求:"></a>1、提出需求:</h4><p>实现多条件查询用户(姓名模糊匹配, 年龄在指定的最小值到最大值之间)，比如查询姓名带o的，查询年龄在13-19岁的，这都是模糊查询！</p>
+<h4 id="2、准备数据表和数据"><a href="#2、准备数据表和数据" class="headerlink" title="2、准备数据表和数据:"></a>2、准备数据表和数据:</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">create table <span class="title">d_user</span><span class="params">(  </span></span></span><br><span class="line"><span class="function"><span class="params">	id <span class="keyword">int</span> primary key auto_increment,  </span></span></span><br><span class="line"><span class="function"><span class="params">	name varchar(<span class="number">10</span>)</span>,</span></span><br><span class="line"><span class="function">	age <span class="title">int</span><span class="params">(<span class="number">3</span>)</span></span></span><br><span class="line"><span class="function">)</span>;</span><br><span class="line"></span><br><span class="line"><span class="function">insert into <span class="title">d_user</span><span class="params">(name,age)</span> <span class="title">values</span><span class="params">(<span class="string">'Tom'</span>,<span class="number">12</span>)</span></span>;  </span><br><span class="line"><span class="function">insert into <span class="title">d_user</span><span class="params">(name,age)</span> <span class="title">values</span><span class="params">(<span class="string">'Bob'</span>,<span class="number">13</span>)</span></span>;  </span><br><span class="line"><span class="function">insert into <span class="title">d_user</span><span class="params">(name,age)</span> <span class="title">values</span><span class="params">(<span class="string">'Jack'</span>,<span class="number">18</span>)</span></span>;</span><br></pre></td></tr></table></figure>
+<p>这里创建了一张d_user的表，有两个属性，一个name,一个age!</p>
+<h4 id="2、创建User-表实体类"><a href="#2、创建User-表实体类" class="headerlink" title="2、创建User(表实体类)"></a>2、创建User(表实体类)</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">User</span></span>&#123;</span><br><span class="line">  <span class="keyword">private</span> <span class="keyword">int</span> id;</span><br><span class="line"><span class="keyword">private</span> String name;</span><br><span class="line"><span class="keyword">private</span> <span class="keyword">int</span> age;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="3-创建ConditionUser-查询条件实体类"><a href="#3-创建ConditionUser-查询条件实体类" class="headerlink" title="3.创建ConditionUser(查询条件实体类)"></a>3.创建ConditionUser(查询条件实体类)</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ConditionUser</span></span>&#123;</span><br><span class="line">  <span class="keyword">private</span> String name;</span><br><span class="line"><span class="keyword">private</span> <span class="keyword">int</span> minAge;</span><br><span class="line"><span class="keyword">private</span> <span class="keyword">int</span> maxAge;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="4、写userMapper-xml-映射文件"><a href="#4、写userMapper-xml-映射文件" class="headerlink" title="4、写userMapper.xml(映射文件)"></a>4、写userMapper.xml(映射文件)</h4><p>写一个userMapper.xml文件<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=<span class="string">"1.0"</span> encoding=<span class="string">"UTF-8"</span> ?&gt;</span><br><span class="line">&lt;!DOCTYPE mapper PUBLIC <span class="string">"-//mybatis.org//DTD Mapper 3.0//EN"</span></span><br><span class="line">	<span class="string">"http://mybatis.org/dtd/mybatis-3-mapper.dtd"</span>&gt;</span><br><span class="line">&lt;mapper namespace=<span class="string">"com.day03_mybatis.test6.userMapper"</span>&gt;</span><br><span class="line">&lt;select id=<span class="string">"getUser"</span> parameterType=<span class="string">"com.day03_mybatis.test6.ConditionUser"</span> resultType=<span class="string">"com.day03_mybatis.test6.User"</span>&gt;</span><br><span class="line">			select * from d_user where age&gt;=#&#123;minAge&#125; and age&amp;lt;=#&#123;maxAge&#125;</span><br><span class="line">		&lt;if test='name!="%null%"'&gt;and name like #&#123;name&#125;&lt;/if&gt;</span><br><span class="line">	&lt;/select&gt;</span><br><span class="line">&lt;/mapper&gt;</span><br></pre></td></tr></table></figure></p>
+<p>如上所示，我们可以知道输入参数是：parameterType ConditionUser这个类中的minAge和maxAge作为参数传入！返回是个User，姓名匹配是<if test="name!=" %null%""="">and name like #{name}</if>这种匹配方式！</p>
+<h4 id="5、写UserTest-测试"><a href="#5、写UserTest-测试" class="headerlink" title="5、写UserTest(测试)"></a>5、写UserTest(测试)</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">UserTest</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line"></span><br><span class="line">		Reader reader = Resources.getResourceAsReader(<span class="string">"conf.xml"</span>);</span><br><span class="line"></span><br><span class="line">		SqlSessionFactory sessionFactory = <span class="keyword">new</span> SqlSessionFactoryBuilder().build(reader);</span><br><span class="line"></span><br><span class="line">		SqlSession sqlSession = sessionFactory.openSession();</span><br><span class="line"></span><br><span class="line">		String statement = <span class="string">"com.atguigu.day03_mybatis.test6.userMapper.getUser"</span>;</span><br><span class="line"></span><br><span class="line">		List&lt;User&gt; list = sqlSession.selectList(statement, <span class="keyword">new</span> ConditionUser(<span class="string">"%a%"</span>, <span class="number">1</span>, <span class="number">12</span>));</span><br><span class="line"></span><br><span class="line">		System.out.println(list);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>如图，可以查询出带名字中带a和年龄在1-12岁之间的数据！</p>
+<h4 id="6、总结：MyBatis中可用的动态SQL标签"><a href="#6、总结：MyBatis中可用的动态SQL标签" class="headerlink" title="6、总结：MyBatis中可用的动态SQL标签"></a>6、总结：MyBatis中可用的动态SQL标签</h4><p>if choose(when,otherwise) trim(where,set) foreach</p>
+<h2 id="二、调用存储过程"><a href="#二、调用存储过程" class="headerlink" title="二、调用存储过程"></a>二、调用存储过程</h2><h4 id="1、提出需求-1"><a href="#1、提出需求-1" class="headerlink" title="1、提出需求"></a>1、提出需求</h4><p>查询得到男性或女性的数量, 如果传入的是0就女性否则是男性！就是说，如果传入0,查询女性的数量，如果传入1，查询男性的数量</p>
+<h4 id="2、准备数据库表和存储过程"><a href="#2、准备数据库表和存储过程" class="headerlink" title="2、准备数据库表和存储过程:"></a>2、准备数据库表和存储过程:</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">create table <span class="title">p_user</span><span class="params">(  </span></span></span><br><span class="line"><span class="function"><span class="params">	id <span class="keyword">int</span> primary key auto_increment,  </span></span></span><br><span class="line"><span class="function"><span class="params">	name varchar(<span class="number">10</span>)</span>,</span></span><br><span class="line"><span class="function">	sex <span class="title">char</span><span class="params">(<span class="number">2</span>)</span></span></span><br><span class="line"><span class="function">)</span>;</span><br><span class="line"></span><br><span class="line"><span class="function">insert into <span class="title">p_user</span><span class="params">(name,sex)</span> <span class="title">values</span><span class="params">(<span class="string">'A'</span>,<span class="string">"男"</span>)</span></span>;  </span><br><span class="line"><span class="function">insert into <span class="title">p_user</span><span class="params">(name,sex)</span> <span class="title">values</span><span class="params">(<span class="string">'B'</span>,<span class="string">"女"</span>)</span></span>;  </span><br><span class="line"><span class="function">insert into <span class="title">p_user</span><span class="params">(name,sex)</span> <span class="title">values</span><span class="params">(<span class="string">'C'</span>,<span class="string">"男"</span>)</span></span>;  </span><br><span class="line"></span><br><span class="line">#创建存储过程(查询得到男性或女性的数量, 如果传入的是0就女性否则是男性)</span><br><span class="line">DELIMITER $</span><br><span class="line">CREATE PROCEDURE mybatis.ges_user_count(IN sex_id INT, OUT user_count INT)</span><br><span class="line">BEGIN  </span><br><span class="line">IF sex_id=<span class="number">0</span> THEN</span><br><span class="line"><span class="function">SELECT <span class="title">COUNT</span><span class="params">(*)</span> FROM mybatis.p_user WHERE p_user.sex</span>=<span class="string">'女'</span> INTO user_count;</span><br><span class="line">ELSE</span><br><span class="line"><span class="function">SELECT <span class="title">COUNT</span><span class="params">(*)</span> FROM mybatis.p_user WHERE p_user.sex</span>=<span class="string">'男'</span> INTO user_count;</span><br><span class="line">END IF;</span><br><span class="line">END</span><br><span class="line">$</span><br><span class="line"></span><br><span class="line">#调用存储过程</span><br><span class="line">DELIMITER ;</span><br><span class="line">SET <span class="meta">@user</span>_count = <span class="number">0</span>;</span><br><span class="line">CALL mybatis.ges_user_count(<span class="number">1</span>, <span class="meta">@user</span>_count);</span><br><span class="line">SELECT <span class="meta">@user</span>_count;</span><br></pre></td></tr></table></figure>
+<p>如上所示，我们创建了一张p_user表，然后定义了一个存储过程，CREATE PROCEDURE mybatis.ges_user_count，这个名字是mybatis.ges_user_count，传入的用IN ,传入sex_id，输出用 OUT，用user_count，然后用IF判断，和Then去写，整个用SELECT···INTO去赋值，统计用Count,最后还有调用存储过程范例：<br>用CALL +过程名+传入参数！注意变量的传入方式！</p>
+<h4 id="3、创建表的实体类"><a href="#3、创建表的实体类" class="headerlink" title="3、创建表的实体类"></a>3、创建表的实体类</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">User</span> </span>&#123;</span><br><span class="line">	<span class="keyword">private</span> String id;</span><br><span class="line">	<span class="keyword">private</span> String name;</span><br><span class="line">	<span class="keyword">private</span> String sex;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="4、userMapper-xml"><a href="#4、userMapper-xml" class="headerlink" title="4、userMapper.xml"></a>4、userMapper.xml</h4><p>直接编写xml文件：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;mapper namespace=<span class="string">"com.mybatis.test7.userMapper"</span>&gt;</span><br><span class="line">	&lt;!--</span><br><span class="line">		查询得到男性或女性的数量, 如果传入的是<span class="number">0</span>就女性否则是男性</span><br><span class="line">		CALL mybatis.get_user_count(<span class="number">1</span>, <span class="meta">@user</span>_count);</span><br><span class="line">	 --&gt;</span><br><span class="line">	 &lt;select id=<span class="string">"getCount"</span> statementType=<span class="string">"CALLABLE"</span> parameterMap=<span class="string">"getCountMap"</span>&gt;</span><br><span class="line">	 	call mybatis.get_user_count(?,?)</span><br><span class="line">	 &lt;/select&gt;</span><br><span class="line">	 &lt;parameterMap type=<span class="string">"java.util.Map"</span> id=<span class="string">"getCountMap"</span>&gt;</span><br><span class="line">	 	&lt;parameter property=<span class="string">"sex_id"</span> mode=<span class="string">"IN"</span> jdbcType=<span class="string">"INTEGER"</span>/&gt;</span><br><span class="line">	 	&lt;parameter property=<span class="string">"user_count"</span> mode=<span class="string">"OUT"</span> jdbcType=<span class="string">"INTEGER"</span>/&gt;</span><br><span class="line">	 &lt;/parameterMap&gt;</span><br><span class="line">&lt;/mapper&gt;</span><br></pre></td></tr></table></figure></p>
+<p>如上所示，调用存储过程，用statementType标识这是一个CALLABLE语句，然后参数是parameterMap，mode标识他是输入还是输出！jdbcType标识他是什么类型的数据！</p>
+<h4 id="5、测试调用"><a href="#5、测试调用" class="headerlink" title="5、测试调用"></a>5、测试调用</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Map&lt;String, Integer&gt; paramMap = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">paramMap.put(<span class="string">"sex_id"</span>, <span class="number">0</span>);</span><br><span class="line">session.selectOne(statement, paramMap);</span><br><span class="line">Integer userCount = paramMap.get(<span class="string">"user_count"</span>);</span><br><span class="line">System.out.println(userCount);</span><br></pre></td></tr></table></figure>
+<p>我们将这种用键值的方式去存，这样就可以得到最后的count值</p>
+<h4 id="6、参数解释"><a href="#6、参数解释" class="headerlink" title="6、参数解释"></a>6、参数解释</h4><p>（1）parameterMap:引用<parametermap><br>（2）statementType:指定Statement的真实类型：CALLABLE执行调用过程的真实语句<br>（3）<parametermap>：定义多个参数的键值对<br>（4）type:需要传递的参数的真实类型 java.util.Map<br>（5）<parameter>：指定一个参数key-value</parameter></parametermap></parametermap></p>
+<p>多走路，多思考，越努力，越幸运！<br>                                                                                                                            ———————————————YoungerFary</p>
+
+    </div>
+
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">fang</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/2017/05/16/hadoop（一）/" class="pre-post btn btn-default" title="Hadoop生态系统简介">
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">Hadoop生态系统简介</span>
+        </a>
+    
+    
+        <a href="/2017/05/14/SSM之MyBatis（三）/" class="next-post btn btn-default" title="SSM之MyBatis（三）">
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">SSM之MyBatis（三）</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+    
+    <div id="vcomments" class="valine"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/assets/valine.min.js"></script>
+
+    <script>
+        new Valine({
+            av: AV,
+            el: '#vcomments',
+            appId: 'xOKV9J4UeQAtVkvnJC7Kq2Jn-gzGzoHsz',
+            appKey: 'erIpQac4azoCmgfBB7Dl9maa',
+            placeholder: '说点什么吧',
+            notify: false,
+            verify: false,
+            avatar: 'mm',
+            meta: 'nick,mail'.split(','),
+            pageSize: '10',
+            path: window.location.pathname,
+            lang: ''.toLowerCase()
+        })
+    </script>
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">Table of Contents</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#一、-动态SQL与模糊查询"><span class="toc-text">一、 动态SQL与模糊查询</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1、提出需求"><span class="toc-text">1、提出需求:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2、准备数据表和数据"><span class="toc-text">2、准备数据表和数据:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2、创建User-表实体类"><span class="toc-text">2、创建User(表实体类)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-创建ConditionUser-查询条件实体类"><span class="toc-text">3.创建ConditionUser(查询条件实体类)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4、写userMapper-xml-映射文件"><span class="toc-text">4、写userMapper.xml(映射文件)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5、写UserTest-测试"><span class="toc-text">5、写UserTest(测试)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6、总结：MyBatis中可用的动态SQL标签"><span class="toc-text">6、总结：MyBatis中可用的动态SQL标签</span></a></li></ol></li></ol><li class="toc-item toc-level-2"><a class="toc-link" href="#二、调用存储过程"><span class="toc-text">二、调用存储过程</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1、提出需求-1"><span class="toc-text">1、提出需求</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2、准备数据库表和存储过程"><span class="toc-text">2、准备数据库表和存储过程:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3、创建表的实体类"><span class="toc-text">3、创建表的实体类</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4、userMapper-xml"><span class="toc-text">4、userMapper.xml</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5、测试调用"><span class="toc-text">5、测试调用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6、参数解释"><span class="toc-text">6、参数解释</span></a></li></ol></li>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12"> 
+                <span>Copyright &copy; 2018
+                </span> | 
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> | 
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+
+</body>
+</html>

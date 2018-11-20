@@ -1,0 +1,328 @@
+<!DOCTYPE HTML>
+<html lang="">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="Hexo">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://yoursite.com">
+    <!--SEO-->
+
+
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+    <!--Title-->
+
+
+<title>SSM之MyBatis（三） | Hexo</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header" style="background-image:url(http://7xpw2b.com1.z0.glb.clouddn.com/hexo-sinppet/img/banner.jpg)">
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title="John Doe">
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                <h2> 一路过来，不过游牧自己。。 </h2>
+            
+    	</div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://yoursite.com">Hexo</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>Home</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/前端/"><i class="fa "></i>About me</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/后端/"><i class="fa "></i>后端</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/工具/"><i class="fa "></i>工具</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/archives/"><i class="fa "></i>时间轴</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="SSM之MyBatis（三）">
+            
+	            SSM之MyBatis（三）
+            
+        </h1>
+        <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/ ">
+             
+        </a>
+    </span>
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+                    <a href="/tags/MyBatis" title="MyBatis">
+                        MyBatis
+                    </a>
+                
+            
+        </span>
+    </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2017/05/14</span>
+        </span>
+    
+</div>
+
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <p><img src="http://ono5i4nh6.bkt.clouddn.com/mybatis.jpg" alt=""><br>在一般的开发中，很多小细节我们还是要去注意的，其中就有一个问题，例如：就是如果字段名和实体类的属性名不一致，这就会造成冲突问题，那如何去解决这种冲突问题呢？其次我们还要处理下表中的一对一和一对多的问题！<br><a id="more"></a></p>
+<h2 id="一、解决字段名与实体类属性名不相同的冲突"><a href="#一、解决字段名与实体类属性名不相同的冲突" class="headerlink" title="一、解决字段名与实体类属性名不相同的冲突"></a>一、解决字段名与实体类属性名不相同的冲突</h2><p>我们就通过代码示例去看看如何处理这种问题：<br>首先我们准备一下数据库中的表：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">CREATE TABLE <span class="title">orders</span><span class="params">(</span></span></span><br><span class="line"><span class="function"><span class="params">	order_id INT PRIMARY KEY AUTO_INCREMENT,</span></span></span><br><span class="line"><span class="function"><span class="params">	order_no VARCHAR(<span class="number">20</span>)</span>,</span></span><br><span class="line"><span class="function">	order_price FLOAT</span></span><br><span class="line"><span class="function">)</span>;</span><br><span class="line"><span class="function">INSERT INTO <span class="title">orders</span><span class="params">(order_no, order_price)</span> <span class="title">VALUES</span><span class="params">(<span class="string">'aaaa'</span>, <span class="number">23</span>)</span></span>;</span><br><span class="line"><span class="function">INSERT INTO <span class="title">orders</span><span class="params">(order_no, order_price)</span> <span class="title">VALUES</span><span class="params">(<span class="string">'bbbb'</span>, <span class="number">33</span>)</span></span>;</span><br><span class="line"><span class="function">INSERT INTO <span class="title">orders</span><span class="params">(order_no, order_price)</span> <span class="title">VALUES</span><span class="params">(<span class="string">'cccc'</span>, <span class="number">22</span>)</span></span>;</span><br></pre></td></tr></table></figure></p>
+<p>这是在数据库中创建了一张orders表，这张表有order_id，order_no，order_price三个元素！<br>相应的 ，我们也需要这个实体类：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Order</span> </span>&#123;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">int</span> id;</span><br><span class="line">	<span class="keyword">private</span> String orderNo;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">float</span> price;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>这样就定义的Order的对象类！那，一般的思路都是要将这个类的属性与表中的属性有一个映射关系，但是，我们可以看到属性名他们并不一样：<br>id与order_id，orderNo与order_no，price与order_price，这些属性名都是不同的，那如何去同步这个名字呢？解决方法有两种：</p>
+<h4 id="方式一-通过在sql语句中定义别名"><a href="#方式一-通过在sql语句中定义别名" class="headerlink" title="方式一: 通过在sql语句中定义别名"></a>方式一: 通过在sql语句中定义别名</h4><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;select id=<span class="string">"selectOrder"</span> parameterType=<span class="string">"int"</span> resultType=<span class="string">"_Order"</span>&gt;</span><br><span class="line">	select order_id id, order_no orderNo,order_price price from orders where order_id=#&#123;id&#125;</span><br><span class="line">&lt;/select&gt;</span><br></pre></td></tr></table></figure>
+<p>这就是第一种方式，直接在语句中去定义一个别名！这些别名就是类中的属性名！</p>
+<h4 id="方式二-通过"><a href="#方式二-通过" class="headerlink" title="方式二: 通过"></a>方式二: 通过<resultmap></resultmap></h4><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;select id=<span class="string">"selectOrderResultMap"</span> parameterType=<span class="string">"int"</span> resultMap=<span class="string">"orderResultMap"</span>&gt;</span><br><span class="line">	select * from orders where order_id=#&#123;id&#125;</span><br><span class="line">&lt;/select&gt;</span><br><span class="line">&lt;resultMap type=<span class="string">"_Order"</span> id=<span class="string">"orderResultMap"</span>&gt;</span><br><span class="line">	&lt;id property=<span class="string">"id"</span> column=<span class="string">"order_id"</span>/&gt;</span><br><span class="line">	&lt;result property=<span class="string">"orderNo"</span> column=<span class="string">"order_no"</span>/&gt;</span><br><span class="line">	&lt;result property=<span class="string">"price"</span> column=<span class="string">"order_price"</span>/&gt;</span><br><span class="line">&lt;/resultMap&gt;</span><br></pre></td></tr></table></figure>
+<p>这里我们可以看到，我们是把他作为一个结果去处理的，在resultmap中去将这个冲突去解决，注意为什么resultmap中第一行是id呢，这是一个规定，主键用的id,其余统一用的result!</p>
+<h2 id="二、实现关联表查询"><a href="#二、实现关联表查询" class="headerlink" title="二、实现关联表查询"></a>二、实现关联表查询</h2><h3 id="一对一查询："><a href="#一对一查询：" class="headerlink" title="一对一查询："></a>一对一查询：</h3><p>关联表问题：很多时候我们查询的表都不单单是一张表，牵涉到多张表的信息，那么就要去解决这种这种关联问题！下面还是通过一个代码示例去解决！</p>
+<h4 id="1、提出问题需求："><a href="#1、提出问题需求：" class="headerlink" title="1、提出问题需求："></a>1、提出问题需求：</h4><p>根据班级id查询班级信息(带老师的信息)，合理设计就是要设计两张表，一张是班级表，一张是老师表，班级表里有老师id的信息，对应着老师的一个id信息！</p>
+<h4 id="2、创建表和数据"><a href="#2、创建表和数据" class="headerlink" title="2、创建表和数据"></a>2、创建表和数据</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">CREATE TABLE <span class="title">teacher</span><span class="params">(</span></span></span><br><span class="line"><span class="function"><span class="params">	t_id INT PRIMARY KEY AUTO_INCREMENT,</span></span></span><br><span class="line"><span class="function"><span class="params">	t_name VARCHAR(<span class="number">20</span>)</span></span></span><br><span class="line"><span class="function">)</span>;</span><br><span class="line"><span class="function">CREATE TABLE <span class="title">class</span><span class="params">(</span></span></span><br><span class="line"><span class="function"><span class="params">	c_id INT PRIMARY KEY AUTO_INCREMENT,</span></span></span><br><span class="line"><span class="function"><span class="params">	c_name VARCHAR(<span class="number">20</span>)</span>,</span></span><br><span class="line"><span class="function">	teacher_id INT</span></span><br><span class="line"><span class="function">)</span>;</span><br><span class="line"><span class="function">ALTER TABLE class ADD CONSTRAINT fk_teacher_id FOREIGN <span class="title">KEY</span> <span class="params">(teacher_id)</span> REFERENCES <span class="title">teacher</span><span class="params">(t_id)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="function">INSERT INTO <span class="title">teacher</span><span class="params">(t_name)</span> <span class="title">VALUES</span><span class="params">(<span class="string">'LS1'</span>)</span></span>;</span><br><span class="line"><span class="function">INSERT INTO <span class="title">teacher</span><span class="params">(t_name)</span> <span class="title">VALUES</span><span class="params">(<span class="string">'LS2'</span>)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="function">INSERT INTO <span class="title">class</span><span class="params">(c_name, teacher_id)</span> <span class="title">VALUES</span><span class="params">(<span class="string">'bj_a'</span>, <span class="number">1</span>)</span></span>;</span><br><span class="line"><span class="function">INSERT INTO <span class="title">class</span><span class="params">(c_name, teacher_id)</span> <span class="title">VALUES</span><span class="params">(<span class="string">'bj_b'</span>, <span class="number">2</span>)</span></span>;</span><br></pre></td></tr></table></figure>
+<p>这里就是简单创建了两张表，class表中的teacher_id对应着的就是teacher表中的t_id!</p>
+<h4 id="3、定义实体类"><a href="#3、定义实体类" class="headerlink" title="3、定义实体类"></a>3、定义实体类</h4><p>接着我们定义两个实体类class和teacher:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Teacher</span> </span>&#123;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">int</span> id;</span><br><span class="line">	<span class="keyword">private</span> String name;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>和Classes类<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Classes</span> </span>&#123;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">int</span> id;</span><br><span class="line">	<span class="keyword">private</span> String name;</span><br><span class="line">	<span class="keyword">private</span> Teacher teacher;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="4、定义sql映射文件ClassMapper-xml"><a href="#4、定义sql映射文件ClassMapper-xml" class="headerlink" title="4、定义sql映射文件ClassMapper.xml"></a>4、定义sql映射文件ClassMapper.xml</h4><p>方式一：嵌套结果：使用嵌套结果映射来处理重复的联合结果的子集封装联表查询的数据(去除重复的数据)<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;select id=<span class="string">"getClass"</span> parameterType=<span class="string">"int"</span> resultMap=<span class="string">"ClassResultMap"</span>&gt;</span><br><span class="line">	select * from class c, teacher t where c.teacher_id=t.t_id and  c.c_id=#&#123;id&#125;</span><br><span class="line">&lt;/select&gt;</span><br><span class="line">&lt;resultMap type=<span class="string">"_Classes"</span> id=<span class="string">"ClassResultMap"</span>&gt;</span><br><span class="line">	&lt;id property=<span class="string">"id"</span> column=<span class="string">"c_id"</span>/&gt;</span><br><span class="line">	&lt;result property=<span class="string">"name"</span> column=<span class="string">"c_name"</span>/&gt;</span><br><span class="line">	&lt;association property=<span class="string">"teacher"</span> javaType=<span class="string">"_Teacher"</span>&gt;</span><br><span class="line">		&lt;id property=<span class="string">"id"</span> column=<span class="string">"t_id"</span>/&gt;</span><br><span class="line">		&lt;result property=<span class="string">"name"</span> column=<span class="string">"t_name"</span>/&gt;</span><br><span class="line">	&lt;/association&gt;</span><br><span class="line">&lt;/resultMap&gt;</span><br></pre></td></tr></table></figure></p>
+<p>讲解下这是什么意思，首先我们得到的是一个resultMap的结果集，然后再结果集中我们注意的是其链接的是teacher对象，关键字用的是association，property是teacher，后面是类型javaType，这里最主要的就是这个association！</p>
+<p>方式二：嵌套查询：通过执行另外一个SQL映射语句来返回预期的复杂类型<br>    SELECT <em> FROM class WHERE c_id=1;<br>    SELECT </em> FROM teacher WHERE t_id=1   //1 是上一个查询得到的teacher_id的值<br>这里我们可以知道，分成了两步，第一步找到了class,第二步根据id去找teacher的信息，事先没有链接！<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;select id=<span class="string">"getClass2"</span> parameterType=<span class="string">"int"</span> resultMap=<span class="string">"ClassResultMap2"</span>&gt;</span><br><span class="line">	select * from class where c_id=#&#123;id&#125;</span><br><span class="line"> &lt;/select&gt;</span><br><span class="line"> &lt;resultMap type=<span class="string">"_Classes"</span> id=<span class="string">"ClassResultMap2"</span>&gt;</span><br><span class="line">	&lt;id property=<span class="string">"id"</span> column=<span class="string">"c_id"</span>/&gt;</span><br><span class="line">	&lt;result property=<span class="string">"name"</span> column=<span class="string">"c_name"</span>/&gt;</span><br><span class="line">	&lt;association property=<span class="string">"teacher"</span> column=<span class="string">"teacher_id"</span> select=<span class="string">"getTeacher"</span>&gt;</span><br><span class="line">&lt;/association&gt;</span><br><span class="line"> &lt;/resultMap&gt;</span><br><span class="line"> &lt;select id=<span class="string">"getTeacher"</span> parameterType=<span class="string">"int"</span> resultType=<span class="string">"_Teacher"</span>&gt;</span><br><span class="line">	SELECT t_id id, t_name name FROM teacher WHERE t_id=#&#123;id&#125;</span><br><span class="line"> &lt;/select&gt;</span><br></pre></td></tr></table></figure></p>
+<p> 这里我们仔细看resultMap中最后的association标签后面的，column得到的是teacher的id,select表示他要去哪查询！</p>
+<h4 id="5、测试"><a href="#5、测试" class="headerlink" title="5、测试"></a>5、测试</h4> <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"> <span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testOO</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	SqlSession sqlSession = factory.openSession();</span><br><span class="line">	Classes c = sqlSession.selectOne(<span class="string">"com.day03_mybatis.test5.OOMapper.getClass"</span>, <span class="number">1</span>);</span><br><span class="line">	System.out.println(c);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testOO2</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	SqlSession sqlSession = factory.openSession();</span><br><span class="line">	Classes c = sqlSession.selectOne(<span class="string">"com.day03_mybatis.test5.OOMapper.getClass2"</span>, <span class="number">1</span>);</span><br><span class="line">	System.out.println(c);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这里我们对关键字做个总结：<br>1、assosiation:用于一对一的关联查询<br>2、property:对象属性的名称<br>3、javaType:对象属性的类型<br>4、column:所对应的外间字段名称<br>5、select:使用另一个查询分装的结果</p>
+<h3 id="一对多关联"><a href="#一对多关联" class="headerlink" title="一对多关联"></a>一对多关联</h3><h4 id="1、提出需求："><a href="#1、提出需求：" class="headerlink" title="1、提出需求："></a>1、提出需求：</h4><p>根据classId查询对应的班级信息,包括学生,老师，我们知道一个班级中有多个学生，一个老师对应一个班级！这是他们之间的关系！</p>
+<h4 id="2、数据库建表"><a href="#2、数据库建表" class="headerlink" title="2、数据库建表"></a>2、数据库建表</h4><p>在原来的基础上创建一张学生表：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">CREATE TABLE <span class="title">student</span><span class="params">(</span></span></span><br><span class="line"><span class="function"><span class="params">	s_id INT PRIMARY KEY AUTO_INCREMENT,</span></span></span><br><span class="line"><span class="function"><span class="params">	s_name VARCHAR(<span class="number">20</span>)</span>,</span></span><br><span class="line"><span class="function">	class_id INT</span></span><br><span class="line"><span class="function">)</span>;</span><br><span class="line"><span class="function">INSERT INTO <span class="title">student</span><span class="params">(s_name, class_id)</span> <span class="title">VALUES</span><span class="params">(<span class="string">'xs_A'</span>, <span class="number">1</span>)</span></span>;</span><br><span class="line"><span class="function">INSERT INTO <span class="title">student</span><span class="params">(s_name, class_id)</span> <span class="title">VALUES</span><span class="params">(<span class="string">'xs_B'</span>, <span class="number">1</span>)</span></span>;</span><br><span class="line"><span class="function">INSERT INTO <span class="title">student</span><span class="params">(s_name, class_id)</span> <span class="title">VALUES</span><span class="params">(<span class="string">'xs_C'</span>, <span class="number">1</span>)</span></span>;</span><br><span class="line"><span class="function">INSERT INTO <span class="title">student</span><span class="params">(s_name, class_id)</span> <span class="title">VALUES</span><span class="params">(<span class="string">'xs_D'</span>, <span class="number">2</span>)</span></span>;</span><br><span class="line"><span class="function">INSERT INTO <span class="title">student</span><span class="params">(s_name, class_id)</span> <span class="title">VALUES</span><span class="params">(<span class="string">'xs_E'</span>, <span class="number">2</span>)</span></span>;</span><br><span class="line"><span class="function">INSERT INTO <span class="title">student</span><span class="params">(s_name, class_id)</span> <span class="title">VALUES</span><span class="params">(<span class="string">'xs_F'</span>, <span class="number">2</span>)</span></span>;</span><br></pre></td></tr></table></figure></p>
+<p>如上，ABC属1班，DEF属于2班！</p>
+<h4 id="3、定义实体类："><a href="#3、定义实体类：" class="headerlink" title="3、定义实体类："></a>3、定义实体类：</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Student</span> </span>&#123;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">int</span> id;</span><br><span class="line">	<span class="keyword">private</span> String name;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Classes</span> </span>&#123;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">int</span> id;</span><br><span class="line">	<span class="keyword">private</span> String name;</span><br><span class="line">	<span class="keyword">private</span> Teacher teacher;</span><br><span class="line">	<span class="keyword">private</span> List&lt;Student&gt; students;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="4、定义sql映射文件ClassMapper-xml-1"><a href="#4、定义sql映射文件ClassMapper-xml-1" class="headerlink" title="4、定义sql映射文件ClassMapper.xml"></a>4、定义sql映射文件ClassMapper.xml</h4><p>这个也有两种方式，道理都是和上面一样的</p>
+<h4 id="1-方式一-嵌套结果-使用嵌套结果映射来处理重复的联合结果的子集"><a href="#1-方式一-嵌套结果-使用嵌套结果映射来处理重复的联合结果的子集" class="headerlink" title="(1)方式一: 嵌套结果: 使用嵌套结果映射来处理重复的联合结果的子集"></a>(1)方式一: 嵌套结果: 使用嵌套结果映射来处理重复的联合结果的子集</h4><p>SELECT * FROM class c, teacher t,student s WHERE c.teacher_id=t.t_id AND c.C_id=s.class_id AND  c.c_id=1<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;select id=<span class="string">"getClass3"</span> parameterType=<span class="string">"int"</span> resultMap=<span class="string">"ClassResultMap3"</span>&gt;</span><br><span class="line">	select * from class c, teacher t,student s where c.teacher_id=t.t_id and c.C_id=s.class_id and  c.c_id=#&#123;id&#125;</span><br><span class="line">&lt;/select&gt;</span><br><span class="line">&lt;resultMap type=<span class="string">"_Classes"</span> id=<span class="string">"ClassResultMap3"</span>&gt;</span><br><span class="line">	&lt;id property=<span class="string">"id"</span> column=<span class="string">"c_id"</span>/&gt;</span><br><span class="line">	&lt;result property=<span class="string">"name"</span> column=<span class="string">"c_name"</span>/&gt;</span><br><span class="line">	&lt;association property=<span class="string">"teacher"</span> column=<span class="string">"teacher_id"</span> javaType=<span class="string">"_Teacher"</span>&gt;</span><br><span class="line">		&lt;id property=<span class="string">"id"</span> column=<span class="string">"t_id"</span>/&gt;</span><br><span class="line">		&lt;result property=<span class="string">"name"</span> column=<span class="string">"t_name"</span>/&gt;</span><br><span class="line">	&lt;/association&gt;</span><br><span class="line">	&lt;!-- ofType指定students集合中的对象类型 --&gt;</span><br><span class="line">	&lt;collection property=<span class="string">"students"</span> ofType=<span class="string">"_Student"</span>&gt;</span><br><span class="line">		&lt;id property=<span class="string">"id"</span> column=<span class="string">"s_id"</span>/&gt;</span><br><span class="line">		&lt;result property=<span class="string">"name"</span> column=<span class="string">"s_name"</span>/&gt;</span><br><span class="line">	&lt;/collection&gt;</span><br><span class="line">&lt;/resultMap&gt;</span><br></pre></td></tr></table></figure></p>
+<p>如上所示，老师和班级是一对一的关系，而班级和学生是一对多的关系，所以我们用了collection关键字，这是个集合，ofType指定students集合中的对象类型，<br>后面是一样的映射！</p>
+<h4 id="（2）方式二：嵌套查询：通过执行另外一个SQL映射语句来返回预期的复杂类型"><a href="#（2）方式二：嵌套查询：通过执行另外一个SQL映射语句来返回预期的复杂类型" class="headerlink" title="（2）方式二：嵌套查询：通过执行另外一个SQL映射语句来返回预期的复杂类型"></a>（2）方式二：嵌套查询：通过执行另外一个SQL映射语句来返回预期的复杂类型</h4><pre><code>SELECT * FROM class WHERE c_id=1;
+SELECT * FROM teacher WHERE t_id=1   //1 是上一个查询得到的teacher_id的值
+SELECT * FROM student WHERE class_id=1  //1是第一个查询得到的c_id字段的值
+</code></pre><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;select id=<span class="string">"getClass4"</span> parameterType=<span class="string">"int"</span> resultMap=<span class="string">"ClassResultMap4"</span>&gt;</span><br><span class="line">	select * from class where c_id=#&#123;id&#125;</span><br><span class="line"> &lt;/select&gt;</span><br><span class="line"> &lt;resultMap type=<span class="string">"_Classes"</span> id=<span class="string">"ClassResultMap4"</span>&gt;</span><br><span class="line">	&lt;id property=<span class="string">"id"</span> column=<span class="string">"c_id"</span>/&gt;</span><br><span class="line">	&lt;result property=<span class="string">"name"</span> column=<span class="string">"c_name"</span>/&gt;</span><br><span class="line">	&lt;association property="teacher" column="teacher_id" javaType="_Teacher" select="getTeacher2"&gt;&lt;/association&gt;</span><br><span class="line">	&lt;collection property="students" ofType="_Student" column="c_id" select="getStudent"&gt;&lt;/collection&gt;</span><br><span class="line"> &lt;/resultMap&gt;</span><br><span class="line"> &lt;select id=<span class="string">"getTeacher2"</span> parameterType=<span class="string">"int"</span> resultType=<span class="string">"_Teacher"</span>&gt;</span><br><span class="line">	SELECT t_id id, t_name name FROM teacher WHERE t_id=#&#123;id&#125;</span><br><span class="line"> &lt;/select&gt;</span><br><span class="line"> &lt;select id=<span class="string">"getStudent"</span> parameterType=<span class="string">"int"</span> resultType=<span class="string">"_Student"</span>&gt;</span><br><span class="line">	SELECT s_id id, s_name name FROM student WHERE class_id=#&#123;id&#125;</span><br><span class="line"> &lt;/select&gt;</span><br></pre></td></tr></table></figure>
+<p> 如上所示定义的是不同的select,传过去的column是teacher_id和c_id，其余都差不多！</p>
+<h4 id="5、测试-1"><a href="#5、测试-1" class="headerlink" title="5、测试"></a>5、测试</h4> <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"> <span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testOM</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	SqlSession sqlSession = factory.openSession();</span><br><span class="line">	Classes c = sqlSession.selectOne(<span class="string">"com.day03_mybatis.test5.OOMapper.getClass3"</span>, <span class="number">1</span>);</span><br><span class="line">	System.out.println(c);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testOM2</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	SqlSession sqlSession = factory.openSession();</span><br><span class="line">	Classes c = sqlSession.selectOne(<span class="string">"com.day03_mybatis.test5.OOMapper.getClass4"</span>, <span class="number">1</span>);</span><br><span class="line">	System.out.println(c);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>关键字解释：<br>1、collection:做一对多关联查询的<br>2、ofType:指定集合中元素对象的类型！</p>
+<p>多走路，多思考，越努力，越幸运！<br>                                                                                                                            ———————————————YoungerFary</p>
+
+    </div>
+
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">fang</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/2017/05/15/SSM之MyBatis（四）/" class="pre-post btn btn-default" title="SSM之MyBatis（四）">
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">SSM之MyBatis（四）</span>
+        </a>
+    
+    
+        <a href="/2017/05/08/SSM之MyBatis（二）/" class="next-post btn btn-default" title="SSM之MyBatis（二）">
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">SSM之MyBatis（二）</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+    
+    <div id="vcomments" class="valine"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/assets/valine.min.js"></script>
+
+    <script>
+        new Valine({
+            av: AV,
+            el: '#vcomments',
+            appId: 'xOKV9J4UeQAtVkvnJC7Kq2Jn-gzGzoHsz',
+            appKey: 'erIpQac4azoCmgfBB7Dl9maa',
+            placeholder: '说点什么吧',
+            notify: false,
+            verify: false,
+            avatar: 'mm',
+            meta: 'nick,mail'.split(','),
+            pageSize: '10',
+            path: window.location.pathname,
+            lang: ''.toLowerCase()
+        })
+    </script>
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">Table of Contents</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#一、解决字段名与实体类属性名不相同的冲突"><span class="toc-text">一、解决字段名与实体类属性名不相同的冲突</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#方式一-通过在sql语句中定义别名"><span class="toc-text">方式一: 通过在sql语句中定义别名</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#方式二-通过"><span class="toc-text">方式二: 通过</span></a></li></ol></li></ol><li class="toc-item toc-level-2"><a class="toc-link" href="#二、实现关联表查询"><span class="toc-text">二、实现关联表查询</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#一对一查询："><span class="toc-text">一对一查询：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1、提出问题需求："><span class="toc-text">1、提出问题需求：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2、创建表和数据"><span class="toc-text">2、创建表和数据</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3、定义实体类"><span class="toc-text">3、定义实体类</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4、定义sql映射文件ClassMapper-xml"><span class="toc-text">4、定义sql映射文件ClassMapper.xml</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5、测试"><span class="toc-text">5、测试</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#一对多关联"><span class="toc-text">一对多关联</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1、提出需求："><span class="toc-text">1、提出需求：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2、数据库建表"><span class="toc-text">2、数据库建表</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3、定义实体类："><span class="toc-text">3、定义实体类：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4、定义sql映射文件ClassMapper-xml-1"><span class="toc-text">4、定义sql映射文件ClassMapper.xml</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-方式一-嵌套结果-使用嵌套结果映射来处理重复的联合结果的子集"><span class="toc-text">(1)方式一: 嵌套结果: 使用嵌套结果映射来处理重复的联合结果的子集</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#（2）方式二：嵌套查询：通过执行另外一个SQL映射语句来返回预期的复杂类型"><span class="toc-text">（2）方式二：嵌套查询：通过执行另外一个SQL映射语句来返回预期的复杂类型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5、测试-1"><span class="toc-text">5、测试</span></a></li></ol></li></ol></li>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12"> 
+                <span>Copyright &copy; 2018
+                </span> | 
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> | 
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+
+</body>
+</html>

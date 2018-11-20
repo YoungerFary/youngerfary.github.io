@@ -1,0 +1,319 @@
+<!DOCTYPE HTML>
+<html lang="">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="Hexo">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://yoursite.com">
+    <!--SEO-->
+
+
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+    <!--Title-->
+
+
+<title>爬虫实战之爬取豆瓣9分榜单 | Hexo</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header" style="background-image:url(http://7xpw2b.com1.z0.glb.clouddn.com/hexo-sinppet/img/banner.jpg)">
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title="John Doe">
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                <h2> 一路过来，不过游牧自己。。 </h2>
+            
+    	</div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://yoursite.com">Hexo</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>Home</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/前端/"><i class="fa "></i>About me</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/后端/"><i class="fa "></i>后端</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/工具/"><i class="fa "></i>工具</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/archives/"><i class="fa "></i>时间轴</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="爬虫实战之爬取豆瓣9分榜单">
+            
+	            爬虫实战之爬取豆瓣9分榜单
+            
+        </h1>
+        <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/ ">
+             
+        </a>
+    </span>
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+                    <a href="/tags/python&amp;Scrapy" title="python&amp;Scrapy">
+                        python&amp;Scrapy
+                    </a>
+                
+            
+        </span>
+    </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2017/06/05</span>
+        </span>
+    
+</div>
+
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <p><img src="http://ono5i4nh6.bkt.clouddn.com/%E7%88%AC%E8%99%AB.jpg" alt=""><br>额，首先声明我是安装好了Scrapy的，然后主要是用工具pycharm去编写代码，为什么要写这个豆瓣这个呢，因为觉得很有代表性，对入门非常有启发!<br><a id="more"></a></p>
+<h2 id="一、豆瓣读书9分书榜单爬取"><a href="#一、豆瓣读书9分书榜单爬取" class="headerlink" title="一、豆瓣读书9分书榜单爬取"></a>一、豆瓣读书9分书榜单爬取</h2><p>爬取得网站地址下：(<a href="https://www.douban.com/doulist/1264675" target="_blank" rel="noopener">https://www.douban.com/doulist/1264675</a>)<br>首先要在命令行创建一个scrapy工程：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scrapy startproject doubanbook</span><br></pre></td></tr></table></figure></p>
+<p>然后你的目录下就有一个文件夹为doubanbook目录，按照提示，我们cd进目录，然后按提示输入，这里我们爬虫取名为dbbook，网址就是上面的网址:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scrapy genspider dbbook https://www.douban.com/doulist/<span class="number">1264675</span>/</span><br></pre></td></tr></table></figure></p>
+<p>然后打开pycharm，新建打开这个文件夹工程，这个如何打开就自己去搜吧！<br>打开后，我们在最顶层的目录上新建一个python文件，取名为main，这是运行的主程序（其实就一行代码，运行爬虫）<br>输入：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> scrapy <span class="keyword">import</span> cmdline</span><br><span class="line">cmdline.execute(<span class="string">"scrapy crawl dbbook"</span>.split())</span><br></pre></td></tr></table></figure></p>
+<p>然后我们进入spider-dbbook，然后把start_urls里面重复的部分删除（如果你一开始在命令行输入网址的时候，没输入<a href="http://www.那就不用改动）然后把allowed_domains注掉" target="_blank" rel="noopener">http://www.那就不用改动）然后把allowed_domains注掉</a><br>并且，把parse里面改成<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print response.body</span><br></pre></td></tr></table></figure></p>
+<p>好了，到此第一个爬虫的框架就搭完了，我们运行一下代码。（注意这里选择main.py）<br><img src="http://ono5i4nh6.bkt.clouddn.com/db2.png" alt=""><br>运行一下，发现没打印东西，看看，原来是403<br><img src="http://ono5i4nh6.bkt.clouddn.com/db3.png" alt="403"><br>说明爬虫被屏蔽了，这里要加一个请求头部，模拟浏览器登录</p>
+<p>在settings.py里加入如下内容就可以模拟浏览器了<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">USER_AGENT = <span class="string">'Mozilla/5.0 (Windows NT 6.3; WOW64; rv:45.0) Gecko/20100101 Firefox/45.0'</span></span><br></pre></td></tr></table></figure></p>
+<p>我们再运行，发现网页内容已经被爬取下来了,已经有了网页信息！<br>但这样没用啊，我们要的不是这些！</p>
+<h2 id="二、编写xpath提取标题名和作者名"><a href="#二、编写xpath提取标题名和作者名" class="headerlink" title="二、编写xpath提取标题名和作者名"></a>二、编写xpath提取标题名和作者名</h2><p>这里我们就要得分，标题名和作者名<br>观察网页源代码，用f12，我们可以快速找到，这里不细讲怎么找信息的过程了，或者直接右键检查就行！<br><img src="http://ono5i4nh6.bkt.clouddn.com/db4.png" alt=""><br>根据先大后小的原则，我们先用bd doulist-subject，把每个书找到，然后，循环对里面的信息进行提取<br><img src="http://ono5i4nh6.bkt.clouddn.com/db5.png" alt=""><br>提取书大框架：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'//div[@class="bd doulist-subject"]'</span></span><br></pre></td></tr></table></figure></p>
+<p>提取题目：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'div[@class="title"]/a/text()'</span></span><br></pre></td></tr></table></figure></p>
+<p>提取得分：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'div[@class="rating"]/span[@class="rating_nums"]/text()'</span></span><br></pre></td></tr></table></figure></p>
+<p>提取作者：（这里用正则方便点）<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'&lt;div class="abstract"&gt;(.*?)&lt;br'</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="三、编写代码"><a href="#三、编写代码" class="headerlink" title="三、编写代码"></a>三、编写代码</h2><p>经过之前的学习，应该很容易写出下面的代码吧：作者那里用正则更方便提取<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">selector = scrapy.Selector(response)</span><br><span class="line">        books = selector.xpath(<span class="string">'//div[@class="bd doulist-subject"]'</span>)</span><br><span class="line">        <span class="keyword">for</span> each <span class="keyword">in</span> books:</span><br><span class="line">            title = each.xpath(<span class="string">'div[@class="title"]/a/text()'</span>).extract()[<span class="number">0</span>]</span><br><span class="line">            rate = each.xpath(<span class="string">'div[@class="rating"]/span[@class="rating_nums"]/text()'</span>).extract()[<span class="number">0</span>]</span><br><span class="line">            author = re.search(<span class="string">'&lt;div class="abstract"&gt;(.*?)&lt;br'</span>,each.extract(),re.S).group(<span class="number">1</span>)</span><br><span class="line">            <span class="keyword">print</span> <span class="string">'标题:'</span> + title</span><br><span class="line">            <span class="keyword">print</span> <span class="string">'评分:'</span> + rate</span><br><span class="line">            <span class="keyword">print</span> author</span><br><span class="line">            <span class="keyword">print</span> <span class="string">''</span></span><br></pre></td></tr></table></figure></p>
+<p>response的位置，那里就是我们要对数据处理的地方。我们写好代码，这里注意：<br>1、不是用etree来提取了，改为scrapy.Selector了<br>2、xpath如果要提取内容，需要在后面加上.extract()，略为不适应，但是习惯还好。<br>我们看看结果，结果不好看，简直不能忍！<br><img src="http://ono5i4nh6.bkt.clouddn.com/db6.png" alt=""><br>加入两条代码美化下：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">title = title.replace(<span class="string">' '</span>,<span class="string">''</span>).replace(<span class="string">'\n'</span>,<span class="string">''</span>)</span><br><span class="line"> author = author.replace(<span class="string">' '</span>,<span class="string">''</span>).replace(<span class="string">'\n'</span>,<span class="string">''</span>)</span><br></pre></td></tr></table></figure></p>
+<p>这就美观多了！<br> 好了，剩下的事情就是如何把结果写入文件或数据库了，这里我采用写入文件，因为如果是写入数据库，我又得花时间讲数据库的一些基本知识和操作，还是放在以后再说吧。</p>
+<h2 id="四、存储"><a href="#四、存储" class="headerlink" title="四、存储"></a>四、存储</h2><h3 id="items-py"><a href="#items-py" class="headerlink" title="items.py"></a>items.py</h3><p>好了，我们终于要讲里面别的.py文件了，关于这个items.py，你只要考虑它就是一个存储数据的容器，可以考虑成一个结构体，你所有需要提取的信息都在这里面存着。<br>这里我们需要存储3个变量，title，rate，author，所以我在里面加入三个变量，就这么简单：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">title = scrapy.Field()</span><br><span class="line">rate = scrapy.Field()</span><br><span class="line">author = scrapy.Field()</span><br></pre></td></tr></table></figure></p>
+<h3 id="pipelines-py"><a href="#pipelines-py" class="headerlink" title="pipelines.py"></a>pipelines.py</h3><p>一般来说，如果你要操作数据库什么的，需要在这里处理items，这里有个process_item的函数，你可以把items写入数据库，但是今天我们用不到数据库，scrapy自带了一个很好的功能就是Feed exports，它支持多种格式的自动输出。所以我们直接用这个就好了，pipelines维持不变</p>
+<h3 id="settings-py"><a href="#settings-py" class="headerlink" title="settings.py"></a>settings.py</h3><p>Feed 输出需要2个环境变量：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">FEED_FORMAT ：指示输出格式，csv/xml/json/</span><br><span class="line">FEED_URI : 指示输出位置，可以是本地，也可以是FTP服务器</span><br><span class="line"></span><br><span class="line">FEED_URI = <span class="string">u'file:///G://douban.csv'</span></span><br><span class="line">FEED_FORMAT = <span class="string">'CSV'</span></span><br></pre></td></tr></table></figure></p>
+<p>FEED_URI改成自己的就行了!</p>
+<h3 id="dbbook-py修改"><a href="#dbbook-py修改" class="headerlink" title="dbbook.py修改"></a>dbbook.py修改</h3><p>其实也就加了3条命令，是把数据写入item<br><img src="http://ono5i4nh6.bkt.clouddn.com/db7.png" alt=""><br>当然，你要使用item，需要把item类引入<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> doubanbook.items <span class="keyword">import</span> DoubanbookItem</span><br></pre></td></tr></table></figure></p>
+<p>下面的yield可以让scrapy自动去处理item<br>好拉，再运行一下，可以看见G盘出现了一个douban.csv的文件,打开就可以看到结果了！<br><img src="http://ono5i4nh6.bkt.clouddn.com/db8.png" alt=""></p>
+<h2 id="五、爬取剩下页面"><a href="#五、爬取剩下页面" class="headerlink" title="五、爬取剩下页面"></a>五、爬取剩下页面</h2><p>这还只保存了一个页面，那剩下的页面怎么办呢？难道要一个个复制网址？？当然不是，我们重新观察网页，可以发现有个后页的链接，里面包含着后一页的网页链接，我们把它提取出来就行了。<br><img src="http://ono5i4nh6.bkt.clouddn.com/db9.png" alt=""><br>因为只有这里会出现<span class="next">标签，所以用xpath轻松提取<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'//span[@class="next"]/link/@href'</span></span><br></pre></td></tr></table></figure></span></p>
+<p>然后提取后 我们scrapy的爬虫怎么处理呢？<br>答案还是yield，<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">yield</span> scrapy.http.Request(url,callback=self.parse)</span><br></pre></td></tr></table></figure></p>
+<p>这样爬虫就会自动执行url的命令了，处理方式还是使用我们的parse函数<br>改后的代码这样：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="keyword">import</span> scrapy</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="keyword">from</span> doubanbook.items <span class="keyword">import</span> DoubanbookItem</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">DbbookSpider</span><span class="params">(scrapy.Spider)</span>:</span></span><br><span class="line">    name = <span class="string">"dbbook"</span></span><br><span class="line">   <span class="comment"># allowed_domains = ["https://www.douban.com/doulist/1264675/"]</span></span><br><span class="line">    start_urls = [<span class="string">'https://www.douban.com/doulist/1264675//'</span>]</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">parse</span><span class="params">(self, response)</span>:</span></span><br><span class="line">       item=DoubanbookItem()</span><br><span class="line">       selector=scrapy.Selector(response)</span><br><span class="line">       books=selector.xpath(<span class="string">'//div[@class="bd doulist-subject"]'</span>)</span><br><span class="line">       <span class="keyword">for</span> each <span class="keyword">in</span> books:</span><br><span class="line">            title=each.xpath(<span class="string">'div[@class="title"]/a/text()'</span>).extract()[<span class="number">0</span>]</span><br><span class="line">            item[<span class="string">'rate'</span>]=each.xpath(<span class="string">'div[@class="rating"]/span[@class="rating_nums"]/text()'</span>).extract()[<span class="number">0</span>]</span><br><span class="line">            author= re.search(<span class="string">'&lt;div class="abstract"&gt;(.*?)&lt;br&gt;'</span>,each.extract(),re.S).group(<span class="number">1</span>)</span><br><span class="line">            item[<span class="string">'title'</span>] = title.replace(<span class="string">' '</span>, <span class="string">''</span>).replace(<span class="string">'\n'</span>, <span class="string">''</span>)</span><br><span class="line">            item[<span class="string">'author'</span>] = author.replace(<span class="string">' '</span>, <span class="string">''</span>).replace(<span class="string">'\n'</span>, <span class="string">''</span>)</span><br><span class="line">         <span class="comment">#   print 'title:'+title</span></span><br><span class="line">          <span class="comment">#  print 'Score:'+rate</span></span><br><span class="line">           <span class="comment"># print 'author:'+author</span></span><br><span class="line">            <span class="comment">#print ''</span></span><br><span class="line">            <span class="keyword">yield</span> item</span><br><span class="line">            nextPage=selector.xpath(<span class="string">'//span[@class="next"]/link/@href'</span>).extract()</span><br><span class="line">            <span class="keyword">if</span> nextPage:</span><br><span class="line">                next=nextPage[<span class="number">0</span>]</span><br><span class="line">                <span class="keyword">print</span> next</span><br><span class="line">                <span class="keyword">yield</span> scrapy.http.Request(next,callback=self.parse)</span><br></pre></td></tr></table></figure></p>
+<p>这里要加一个判断，因为在最后一页，“后一页”的链接就没了。<br>这样就发现书目全被爬下来了！<br>好了，这个豆瓣9分图书的爬虫结束了，相信通过这个例子，我们已经能对付大多数网页的内容了，scrapy也差不多能上手，至少编写一般的爬虫是so easy了！</p>
+<p>多走路，多思考，越努力，越幸运！<br>                                                                                                                            ———————————————YoungerFary</p>
+
+    </div>
+
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">fang</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/2017/06/07/Pycharm连接Github/" class="pre-post btn btn-default" title="Pycharm连接Github">
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">Pycharm连接Github</span>
+        </a>
+    
+    
+        <a href="/2017/06/02/爬虫系列（三）/" class="next-post btn btn-default" title="爬虫系列（三）">
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">爬虫系列（三）</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+    
+    <div id="vcomments" class="valine"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/assets/valine.min.js"></script>
+
+    <script>
+        new Valine({
+            av: AV,
+            el: '#vcomments',
+            appId: 'xOKV9J4UeQAtVkvnJC7Kq2Jn-gzGzoHsz',
+            appKey: 'erIpQac4azoCmgfBB7Dl9maa',
+            placeholder: '说点什么吧',
+            notify: false,
+            verify: false,
+            avatar: 'mm',
+            meta: 'nick,mail'.split(','),
+            pageSize: '10',
+            path: window.location.pathname,
+            lang: ''.toLowerCase()
+        })
+    </script>
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">Table of Contents</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#一、豆瓣读书9分书榜单爬取"><span class="toc-text">一、豆瓣读书9分书榜单爬取</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、编写xpath提取标题名和作者名"><span class="toc-text">二、编写xpath提取标题名和作者名</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三、编写代码"><span class="toc-text">三、编写代码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#四、存储"><span class="toc-text">四、存储</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#items-py"><span class="toc-text">items.py</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#pipelines-py"><span class="toc-text">pipelines.py</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#settings-py"><span class="toc-text">settings.py</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#dbbook-py修改"><span class="toc-text">dbbook.py修改</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#五、爬取剩下页面"><span class="toc-text">五、爬取剩下页面</span></a></li></ol>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12"> 
+                <span>Copyright &copy; 2018
+                </span> | 
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> | 
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+
+</body>
+</html>

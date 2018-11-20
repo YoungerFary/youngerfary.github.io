@@ -1,0 +1,311 @@
+<!DOCTYPE HTML>
+<html lang="">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="Hexo">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://yoursite.com">
+    <!--SEO-->
+
+
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+    <!--Title-->
+
+
+<title>SSM之MyBatis（二） | Hexo</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header" style="background-image:url(http://7xpw2b.com1.z0.glb.clouddn.com/hexo-sinppet/img/banner.jpg)">
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title="John Doe">
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                <h2> 一路过来，不过游牧自己。。 </h2>
+            
+    	</div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://yoursite.com">Hexo</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>Home</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/前端/"><i class="fa "></i>About me</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/后端/"><i class="fa "></i>后端</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/工具/"><i class="fa "></i>工具</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/archives/"><i class="fa "></i>时间轴</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="SSM之MyBatis（二）">
+            
+	            SSM之MyBatis（二）
+            
+        </h1>
+        <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/ ">
+             
+        </a>
+    </span>
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+                    <a href="/tags/MyBatis" title="MyBatis">
+                        MyBatis
+                    </a>
+                
+            
+        </span>
+    </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2017/05/08</span>
+        </span>
+    
+</div>
+
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <p><img src="http://ono5i4nh6.bkt.clouddn.com/mybatis.jpg" alt=""><br>下面讲讲如何通过MyBatis来进行一个增删改查的操作！CRUD！<br><a id="more"></a><br>首先，我们得想这些文件都会放到哪，当然是放到userMapper.xml中了。</p>
+<h4 id="1、定义sql映射的xml文件"><a href="#1、定义sql映射的xml文件" class="headerlink" title="1、定义sql映射的xml文件"></a>1、定义sql映射的xml文件</h4><p>首先看这些代码：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;insert id=<span class="string">"insertUser"</span> parameterType=<span class="string">"com.ibatis.bean.User"</span>&gt;</span><br><span class="line">	<span class="function">insert into <span class="title">users</span><span class="params">(name, age)</span> <span class="title">values</span><span class="params">(#&#123;name&#125;, #&#123;age&#125;)</span></span>;</span><br><span class="line">&lt;/insert&gt;</span><br><span class="line"></span><br><span class="line">&lt;delete id=<span class="string">"deleteUser"</span> parameterType=<span class="string">"int"</span>&gt;</span><br><span class="line">	delete from users where id=#&#123;id&#125;</span><br><span class="line">&lt;/delete&gt;</span><br><span class="line"></span><br><span class="line">&lt;update id=<span class="string">"updateUser"</span> parameterType=<span class="string">"com.ibatis.bean.User"</span>&gt;</span><br><span class="line">	update users set name=#&#123;name&#125;,age=#&#123;age&#125; where id=#&#123;id&#125;</span><br><span class="line">&lt;/update&gt;</span><br><span class="line"></span><br><span class="line">&lt;select id=<span class="string">"selectUser"</span> parameterType=<span class="string">"int"</span> resultType=<span class="string">"com.ibatis.bean.User"</span>&gt;</span><br><span class="line">	select * from users where id=#&#123;id&#125;</span><br><span class="line">&lt;/select&gt;</span><br><span class="line">&lt;select id=<span class="string">"selectAllUsers"</span> resultType=<span class="string">"com.ibatis.bean.User"</span>&gt;</span><br><span class="line">	select * from users</span><br><span class="line">&lt;/select&gt;</span><br></pre></td></tr></table></figure></p>
+<p>其中User这个是一个类，定义了name,age和其get,set方法！<br>首先我们看insert,这里插入的不是单个元素，这里插入的是一个User对象，这时候，我们可以看到下面给的是name,age赋值，这个就是直接对应对象中的元素了！<br>接着我们看delete,这里要求的是按照id号去删除我们的对象，所以需要传入的是一个id,id类型是int型，标签关键字是parameterType，我们传进来的都是这样一个参数！<br>看看select，这里我们发现，如果是要按照id去查询，就要设置parameterType为一个int值，这时候返回的是什么呢？我们把这个关键字设为resultType,是一个<br>User对象，这时候我们发现这个是一个结果集，是一个对象来接受！<br>这个文件写完之后该干嘛呢？</p>
+<h4 id="2、在config-xml文件中注册这个userMapper-xml"><a href="#2、在config-xml文件中注册这个userMapper-xml" class="headerlink" title="2、在config.xml文件中注册这个userMapper.xml"></a>2、在config.xml文件中注册这个userMapper.xml</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;mapper resource=<span class="string">" com/ibatis/bean/userMapper.xml"</span>/&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="3、在dao中去调用"><a href="#3、在dao中去调用" class="headerlink" title="3、在dao中去调用"></a>3、在dao中去调用</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> User <span class="title">getUserById</span><span class="params">(<span class="keyword">int</span> id)</span> </span>&#123;</span><br><span class="line">	SqlSession session = sessionFactory.openSession();</span><br><span class="line">	User user = session.selectOne(URI+<span class="string">".selectUser"</span>, id);</span><br><span class="line">	<span class="keyword">return</span> user;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在test中，我们只要传一个id过来，就可以得到一个User对象！</p>
+<h4 id="4、使用注解去实现"><a href="#4、使用注解去实现" class="headerlink" title="4、使用注解去实现"></a>4、使用注解去实现</h4><p>这是一种比较能够简单去理解的一种方式，而且很好写：<br>首先我们去定义一个sql映射的接口：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">UserMapper</span> </span>&#123;</span><br><span class="line">	<span class="meta">@Insert</span>(<span class="string">"insert into users(name, age) values(#&#123;name&#125;, #&#123;age&#125;)"</span>)</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">insertUser</span><span class="params">(User user)</span></span>;</span><br><span class="line"></span><br><span class="line">	<span class="meta">@Delete</span>(<span class="string">"delete from users where id=#&#123;id&#125;"</span>)</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">deleteUserById</span><span class="params">(<span class="keyword">int</span> id)</span></span>;</span><br><span class="line"></span><br><span class="line">	<span class="meta">@Update</span>(<span class="string">"update users set name=#&#123;name&#125;,age=#&#123;age&#125; where id=#&#123;id&#125;"</span>)</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">updateUser</span><span class="params">(User user)</span></span>;</span><br><span class="line"></span><br><span class="line">	<span class="meta">@Select</span>(<span class="string">"select * from users where id=#&#123;id&#125;"</span>)</span><br><span class="line">	<span class="function"><span class="keyword">public</span> User <span class="title">getUserById</span><span class="params">(<span class="keyword">int</span> id)</span></span>;</span><br><span class="line"></span><br><span class="line">	<span class="meta">@Select</span>(<span class="string">"select * from users"</span>)</span><br><span class="line">	<span class="function"><span class="keyword">public</span> List&lt;User&gt; <span class="title">getAllUser</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>我们可以看到，只要调用者里的某一个函数，就相当于映射到相应的Sql语句上去了，需要什么参数传什么参数，需要用什么接受就用什么接收，当然，我们不要忘了去注册！<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;mapper <span class="class"><span class="keyword">class</span></span>=<span class="string">"com.ibatis.crud.ano.UserMapper"</span>/&gt;</span><br></pre></td></tr></table></figure></p>
+<p>这里就是将接口和配置mapper一起结合起来了！<br>最后我们再在dao类中去调用！<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> User <span class="title">getUserById</span><span class="params">(<span class="keyword">int</span> id)</span> </span>&#123;</span><br><span class="line">	SqlSession session = sessionFactory.openSession();</span><br><span class="line">	UserMapper mapper = session.getMapper(UserMapper.class);</span><br><span class="line">	User user = mapper.getUserById(id);</span><br><span class="line">	<span class="keyword">return</span> user;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="5、几个可以优化的地方"><a href="#5、几个可以优化的地方" class="headerlink" title="5、几个可以优化的地方"></a>5、几个可以优化的地方</h4><h5 id="（1）连接数据库的配置单独放在一个properties文件中"><a href="#（1）连接数据库的配置单独放在一个properties文件中" class="headerlink" title="（1）连接数据库的配置单独放在一个properties文件中"></a>（1）连接数据库的配置单独放在一个properties文件中</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">## db.properties</span><br><span class="line">driver=com.mysql.jdbc.Driver</span><br><span class="line">url=jdbc:mysql:<span class="comment">//localhost:3306/mybatis</span></span><br><span class="line">name=root</span><br><span class="line">password=root</span><br></pre></td></tr></table></figure>
+<p>分离，这样以后修改都是非常方便的，注意这里写的方式是没有等号的，甚至说这种形式没有格式！</p>
+<h5 id="（2）为实体类定义别名-简化sql映射xml文件中的引用"><a href="#（2）为实体类定义别名-简化sql映射xml文件中的引用" class="headerlink" title="（2）为实体类定义别名,简化sql映射xml文件中的引用"></a>（2）为实体类定义别名,简化sql映射xml文件中的引用</h5><p>有时候，我们会发现有很多类前面有一大串包名，如果每次去敲岂不累死，就算复制也感觉麻烦到晕厥，所以，我们采取一种取别名的方式去，去简化我们的取名方式：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;typeAliases&gt;</span><br><span class="line">	&lt;typeAlias type=<span class="string">"com.ibatis.bean.User"</span> alias=<span class="string">"_User"</span>/&gt;</span><br><span class="line">&lt;/typeAliases&gt;</span><br></pre></td></tr></table></figure></p>
+<p>两个元素，一个type，一个alias,type是原名，alias是别名！<br>这样我们后面就可以用—User去代替我们的一大串的名字！</p>
+<h4 id="（3）在src下加入log4j的配置文件-打印日志信息"><a href="#（3）在src下加入log4j的配置文件-打印日志信息" class="headerlink" title="（3）在src下加入log4j的配置文件,打印日志信息"></a>（3）在src下加入log4j的配置文件,打印日志信息</h4><p>首先，我们得添加jar:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">log4j-<span class="number">1.2</span>.16.jar</span><br></pre></td></tr></table></figure></p>
+<p>添加日志功能有两种方式：<br>方式一：log4j.properties<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">log4j.properties，</span><br><span class="line">log4j.rootLogger=DEBUG, Console</span><br><span class="line">#Console</span><br><span class="line">log4j.appender.Console=org.apache.log4j.ConsoleAppender</span><br><span class="line">log4j.appender.Console.layout=org.apache.log4j.PatternLayout</span><br><span class="line">log4j.appender.Console.layout.ConversionPattern=%d [%t] %-<span class="number">5</span>p [%c] - %m%n</span><br><span class="line">log4j.logger.java.sql.ResultSet=INFO</span><br><span class="line">log4j.logger.org.apache=INFO</span><br><span class="line">log4j.logger.java.sql.Connection=DEBUG</span><br><span class="line">log4j.logger.java.sql.Statement=DEBUG</span><br><span class="line">log4j.logger.java.sql.PreparedStatement=DEBUG</span><br></pre></td></tr></table></figure></p>
+<p> 方式二:log4j.xml<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=<span class="string">"1.0"</span> encoding=<span class="string">"UTF-8"</span> ?&gt;</span><br><span class="line">&lt;!DOCTYPE log4j:configuration SYSTEM <span class="string">"log4j.dtd"</span>&gt;</span><br><span class="line">&lt;log4j:configuration xmlns:log4j=<span class="string">"http://jakarta.apache.org/log4j/"</span>&gt;</span><br><span class="line">	&lt;appender name=<span class="string">"STDOUT"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"org.apache.log4j.ConsoleAppender"</span>&gt;</span><br><span class="line">		&lt;layout <span class="class"><span class="keyword">class</span></span>=<span class="string">"org.apache.log4j.PatternLayout"</span>&gt;</span><br><span class="line">			&lt;param name=<span class="string">"ConversionPattern"</span></span><br><span class="line">				value=<span class="string">"%-5p %d&#123;MM-dd HH:mm:ss,SSS&#125; %m  (%F:%L) \n"</span> /&gt;</span><br><span class="line">		&lt;/layout&gt;</span><br><span class="line">	&lt;/appender&gt;</span><br><span class="line">	&lt;logger name=<span class="string">"java.sql"</span>&gt;</span><br><span class="line">		&lt;level value=<span class="string">"debug"</span> /&gt;</span><br><span class="line">	&lt;/logger&gt;</span><br><span class="line">	&lt;logger name=<span class="string">"org.apache.ibatis"</span>&gt;</span><br><span class="line">		&lt;level value=<span class="string">"debug"</span> /&gt;</span><br><span class="line">	&lt;/logger&gt;</span><br><span class="line">	&lt;root&gt;</span><br><span class="line">		&lt;level value=<span class="string">"debug"</span> /&gt;</span><br><span class="line">		&lt;appender-ref ref=<span class="string">"STDOUT"</span> /&gt;</span><br><span class="line">	&lt;/root&gt;</span><br><span class="line">&lt;/log4j:configuration&gt;</span><br></pre></td></tr></table></figure></p>
+<p>这时候我们就可以在控制台看到打印的日志信息，对调程序有很大的帮助！</p>
+<p>多走路，多思考，越努力，越幸运！<br>                                                                                                                            ———————————————YoungerFary</p>
+
+    </div>
+
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">fang</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/2017/05/14/SSM之MyBatis（三）/" class="pre-post btn btn-default" title="SSM之MyBatis（三）">
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">SSM之MyBatis（三）</span>
+        </a>
+    
+    
+        <a href="/2017/05/04/SSM之Mybatis（一）/" class="next-post btn btn-default" title="SSM之MyBatis（一）">
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">SSM之MyBatis（一）</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+    
+    <div id="vcomments" class="valine"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/assets/valine.min.js"></script>
+
+    <script>
+        new Valine({
+            av: AV,
+            el: '#vcomments',
+            appId: 'xOKV9J4UeQAtVkvnJC7Kq2Jn-gzGzoHsz',
+            appKey: 'erIpQac4azoCmgfBB7Dl9maa',
+            placeholder: '说点什么吧',
+            notify: false,
+            verify: false,
+            avatar: 'mm',
+            meta: 'nick,mail'.split(','),
+            pageSize: '10',
+            path: window.location.pathname,
+            lang: ''.toLowerCase()
+        })
+    </script>
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">Table of Contents</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#1、定义sql映射的xml文件"><span class="toc-text">1、定义sql映射的xml文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2、在config-xml文件中注册这个userMapper-xml"><span class="toc-text">2、在config.xml文件中注册这个userMapper.xml</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3、在dao中去调用"><span class="toc-text">3、在dao中去调用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4、使用注解去实现"><span class="toc-text">4、使用注解去实现</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5、几个可以优化的地方"><span class="toc-text">5、几个可以优化的地方</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#（1）连接数据库的配置单独放在一个properties文件中"><span class="toc-text">（1）连接数据库的配置单独放在一个properties文件中</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#（2）为实体类定义别名-简化sql映射xml文件中的引用"><span class="toc-text">（2）为实体类定义别名,简化sql映射xml文件中的引用</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#（3）在src下加入log4j的配置文件-打印日志信息"><span class="toc-text">（3）在src下加入log4j的配置文件,打印日志信息</span></a></li></ol>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12"> 
+                <span>Copyright &copy; 2018
+                </span> | 
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> | 
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,315 @@
+<!DOCTYPE HTML>
+<html lang="">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="Hexo">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://yoursite.com">
+    <!--SEO-->
+
+
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+    <!--Title-->
+
+
+<title>SSM之MyBatis（五） | Hexo</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header" style="background-image:url(http://7xpw2b.com1.z0.glb.clouddn.com/hexo-sinppet/img/banner.jpg)">
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title="John Doe">
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                <h2> 一路过来，不过游牧自己。。 </h2>
+            
+    	</div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://yoursite.com">Hexo</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>Home</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/前端/"><i class="fa "></i>About me</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/后端/"><i class="fa "></i>后端</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/工具/"><i class="fa "></i>工具</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/archives/"><i class="fa "></i>时间轴</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="SSM之MyBatis（五）">
+            
+	            SSM之MyBatis（五）
+            
+        </h1>
+        <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/ ">
+             
+        </a>
+    </span>
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+                    <a href="/tags/MyBatis" title="MyBatis">
+                        MyBatis
+                    </a>
+                
+            
+        </span>
+    </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2017/05/16</span>
+        </span>
+    
+</div>
+
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <p><img src="http://ono5i4nh6.bkt.clouddn.com/mybatis.jpg" alt=""><br>这一节主要讲关于MyBatis缓存的问题！在MyBatis中，提供了一级缓存和二级缓存的支持，我们就这两方面来看看MyBatis是如何工作的！<br><a id="more"></a></p>
+<h2 id="MyBatis缓存"><a href="#MyBatis缓存" class="headerlink" title="MyBatis缓存"></a>MyBatis缓存</h2><h4 id="1、理解MyBatis缓存"><a href="#1、理解MyBatis缓存" class="headerlink" title="1、理解MyBatis缓存"></a>1、理解MyBatis缓存</h4><p>正如大多数持久层框架一样，MyBatis 同样提供了一级缓存和二级缓存的支持,下面对这些进行一个介绍：<br>（1）一级缓存: 基于PerpetualCache 的 HashMap本地缓存，其存储作用域为 Session，当 Session flush 或 close 之后，该Session中的所有 Cache 就将清空。<br>（2）二级缓存与一级缓存其机制相同，默认也是采用 PerpetualCache，HashMap存储，不同在于其存储作用域为 Mapper(Namespace)，并且可自定义存储源，如 Ehcache。<br>（3）对于缓存数据更新机制，当某一个作用域(一级缓存Session/二级缓存Namespaces)的进行了 C/U/D 操作后，默认该作用域下所有 select 中的缓存将被clear。</p>
+<h4 id="2、Mybatis一级缓存"><a href="#2、Mybatis一级缓存" class="headerlink" title="2、Mybatis一级缓存"></a>2、Mybatis一级缓存</h4><h5 id="1）提出需求"><a href="#1）提出需求" class="headerlink" title="1）提出需求:"></a>1）提出需求:</h5><p>根据id查询对应的用户记录对象</p>
+<h5 id="2-准备数据库表和数据"><a href="#2-准备数据库表和数据" class="headerlink" title="2). 准备数据库表和数据"></a>2). 准备数据库表和数据</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">CREATE TABLE <span class="title">c_user</span><span class="params">(</span></span></span><br><span class="line"><span class="function"><span class="params">	id INT PRIMARY KEY AUTO_INCREMENT,</span></span></span><br><span class="line"><span class="function"><span class="params">	NAME VARCHAR(<span class="number">20</span>)</span>,</span></span><br><span class="line"><span class="function">	age INT</span></span><br><span class="line"><span class="function">)</span>;</span><br><span class="line"><span class="function">INSERT INTO <span class="title">c_user</span><span class="params">(NAME, age)</span> <span class="title">VALUES</span><span class="params">(<span class="string">'Tom'</span>, <span class="number">12</span>)</span></span>;</span><br><span class="line"><span class="function">INSERT INTO <span class="title">c_user</span><span class="params">(NAME, age)</span> <span class="title">VALUES</span><span class="params">(<span class="string">'Jack'</span>, <span class="number">11</span>)</span></span>;</span><br></pre></td></tr></table></figure>
+<h5 id="3-创建表的实体类"><a href="#3-创建表的实体类" class="headerlink" title="3). 创建表的实体类"></a>3). 创建表的实体类</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">User</span> <span class="keyword">implements</span> <span class="title">Serializable</span></span>&#123;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">int</span> id;</span><br><span class="line">	<span class="keyword">private</span> String name;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">int</span> age;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="4-编写userMapper-xml"><a href="#4-编写userMapper-xml" class="headerlink" title="4) 编写userMapper.xml"></a>4) 编写userMapper.xml</h4><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=<span class="string">"1.0"</span> encoding=<span class="string">"UTF-8"</span> ?&gt;</span><br><span class="line">&lt;!DOCTYPE mapper PUBLIC <span class="string">"-//mybatis.org//DTD Mapper 3.0//EN"</span> <span class="string">"http://mybatis.org/dtd/mybatis-3-mapper.dtd"</span>&gt;</span><br><span class="line">&lt;mapper namespace=<span class="string">"com.mybatis.test8.userMapper"</span>&gt;</span><br><span class="line"></span><br><span class="line">	&lt;select id=<span class="string">"getUser"</span> parameterType=<span class="string">"int"</span> resultType=<span class="string">"_CUser"</span>&gt;</span><br><span class="line">		select * from c_user where id=#&#123;id&#125;</span><br><span class="line">	&lt;/select&gt;</span><br><span class="line"></span><br><span class="line">	&lt;update id=<span class="string">"updateUser"</span> parameterType=<span class="string">"_CUser"</span>&gt;</span><br><span class="line">		update c_user set</span><br><span class="line">		name=#&#123;name&#125;, age=#&#123;age&#125; where id=#&#123;id&#125;</span><br><span class="line">	&lt;/update&gt;</span><br><span class="line">&lt;/mapper&gt;</span><br></pre></td></tr></table></figure>
+<p>看select，传入的是int,传回的是CUser的对象，update传入的是User对象！</p>
+<h4 id="5）测试"><a href="#5）测试" class="headerlink" title="5）测试"></a>5）测试</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testCache1</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	SqlSession session = MybatisUtils.getSession();</span><br><span class="line">	String statement = <span class="string">"com.atguigu.mybatis.test8.userMapper.getUser"</span>;</span><br><span class="line">	User user = session.selectOne(statement, <span class="number">1</span>);</span><br><span class="line">	System.out.println(user);</span><br><span class="line"></span><br><span class="line">	<span class="comment">/*</span></span><br><span class="line"><span class="comment">	 * 一级缓存默认就会被使用</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="comment">/*</span></span><br><span class="line"><span class="comment">	user = session.selectOne(statement, 1);</span></span><br><span class="line"><span class="comment">	System.out.println(user);</span></span><br><span class="line"><span class="comment">	*/</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">/*</span></span><br><span class="line"><span class="comment">	 1. 必须是同一个Session,如果session对象已经close()过了就不可能用了</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="comment">/*</span></span><br><span class="line"><span class="comment">	session = MybatisUtils.getSession();</span></span><br><span class="line"><span class="comment">	user = session.selectOne(statement, 1);</span></span><br><span class="line"><span class="comment">	System.out.println(user);</span></span><br><span class="line"><span class="comment">	*/</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">/*</span></span><br><span class="line"><span class="comment">	 2. 查询条件是一样的</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="comment">/*</span></span><br><span class="line"><span class="comment">	user = session.selectOne(statement, 2);</span></span><br><span class="line"><span class="comment">	System.out.println(user);</span></span><br><span class="line"><span class="comment">	*/</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">/*</span></span><br><span class="line"><span class="comment">	 3. 没有执行过session.clearCache()清理缓存</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="comment">/*</span></span><br><span class="line"><span class="comment">	session.clearCache();</span></span><br><span class="line"><span class="comment">	user = session.selectOne(statement, 2);</span></span><br><span class="line"><span class="comment">	System.out.println(user);</span></span><br><span class="line"><span class="comment">	*/</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">/*</span></span><br><span class="line"><span class="comment">	 4. 没有执行过增删改的操作(这些操作都会清理缓存)</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="comment">/*</span></span><br><span class="line"><span class="comment">	session.update("com.atguigu.mybatis.test8.userMapper.updateUser",</span></span><br><span class="line"><span class="comment">			new User(2, "user", 23));</span></span><br><span class="line"><span class="comment">	user = session.selectOne(statement, 2);</span></span><br><span class="line"><span class="comment">	System.out.println(user);</span></span><br><span class="line"><span class="comment">	*/</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这里可以看看我在这里做的一些注释：一级缓存的一些条件<br>1）一级缓存: 也就Session级的缓存 是默认开启的一种状态<br>2）必须是同一个Session,如果session对象已经close()过了就不可能用了<br>3）查询条件是一样的<br>4）没有执行过session.clearCache()清理缓存<br>5）没有执行过增删改的操作(这些操作都会清理缓存)</p>
+<h4 id="3、Mybatis二级缓存"><a href="#3、Mybatis二级缓存" class="headerlink" title="3、Mybatis二级缓存"></a>3、Mybatis二级缓存</h4><p>那怎样去定义这个二级缓存呢？这么做：</p>
+<h4 id="1）添加一个在userMapper-xml中"><a href="#1）添加一个在userMapper-xml中" class="headerlink" title="1）添加一个在userMapper.xml中"></a>1）添加一个<cache>在userMapper.xml中</cache></h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;mapper namespace=<span class="string">"com.mybatis.test8.userMapper"</span>&gt;</span><br><span class="line">	&lt;cache/&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="2-测试"><a href="#2-测试" class="headerlink" title="2) 测试"></a>2) 测试</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testCache2</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	String statement = <span class="string">"com.mybatis.test8.userMapper.getUser"</span>;</span><br><span class="line"></span><br><span class="line">	SqlSession session = MybatisUtils.getSession();</span><br><span class="line">	User user = session.selectOne(statement, <span class="number">1</span>);</span><br><span class="line">	session.commit();</span><br><span class="line">	System.out.println(<span class="string">"user="</span>+user);</span><br><span class="line"></span><br><span class="line">	SqlSession session2 = MybatisUtils.getSession();</span><br><span class="line">	user = session2.selectOne(statement, <span class="number">1</span>);</span><br><span class="line">	session.commit();</span><br><span class="line">	System.out.println(<span class="string">"user2="</span>+user);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="3-补充说明"><a href="#3-补充说明" class="headerlink" title="3)补充说明"></a>3)补充说明</h4><ol>
+<li>映射语句文件中的所有select语句将会被缓存。</li>
+<li>映射语句文件中的所有insert，update和delete语句会刷新缓存。</li>
+<li>缓存会使用Least Recently Used（LRU，最近最少使用的）算法来收回。</li>
+<li>缓存会根据指定的时间间隔来刷新。</li>
+<li>缓存会存储1024个对象<h4 id="4-关于缓存策略"><a href="#4-关于缓存策略" class="headerlink" title="4)关于缓存策略"></a>4)关于缓存策略</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;cache</span><br><span class="line">eviction=<span class="string">"FIFO"</span>  <span class="comment">//回收策略为先进先出</span></span><br><span class="line">flushInterval=<span class="string">"60000"</span> <span class="comment">//自动刷新时间60s</span></span><br><span class="line">size=<span class="string">"512"</span> <span class="comment">//最多缓存512个引用对象</span></span><br><span class="line">readOnly=<span class="string">"true"</span>/&gt; <span class="comment">//只读</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>这里可以设置缓存的一个策略！策略标识都在后面有注释！</p>
+<p>多走路，多思考，越努力，越幸运！<br>                                                                                                                            ———————————————YoungerFary</p>
+
+    </div>
+
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">fang</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/2017/05/28/爬虫手记/" class="pre-post btn btn-default" title="爬虫手记">
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">爬虫手记</span>
+        </a>
+    
+    
+        <a href="/2017/05/16/hadoop（一）/" class="next-post btn btn-default" title="Hadoop生态系统简介">
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">Hadoop生态系统简介</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+    
+    <div id="vcomments" class="valine"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/assets/valine.min.js"></script>
+
+    <script>
+        new Valine({
+            av: AV,
+            el: '#vcomments',
+            appId: 'xOKV9J4UeQAtVkvnJC7Kq2Jn-gzGzoHsz',
+            appKey: 'erIpQac4azoCmgfBB7Dl9maa',
+            placeholder: '说点什么吧',
+            notify: false,
+            verify: false,
+            avatar: 'mm',
+            meta: 'nick,mail'.split(','),
+            pageSize: '10',
+            path: window.location.pathname,
+            lang: ''.toLowerCase()
+        })
+    </script>
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">Table of Contents</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#MyBatis缓存"><span class="toc-text">MyBatis缓存</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1、理解MyBatis缓存"><span class="toc-text">1、理解MyBatis缓存</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2、Mybatis一级缓存"><span class="toc-text">2、Mybatis一级缓存</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1）提出需求"><span class="toc-text">1）提出需求:</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-准备数据库表和数据"><span class="toc-text">2). 准备数据库表和数据</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-创建表的实体类"><span class="toc-text">3). 创建表的实体类</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-编写userMapper-xml"><span class="toc-text">4) 编写userMapper.xml</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5）测试"><span class="toc-text">5）测试</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3、Mybatis二级缓存"><span class="toc-text">3、Mybatis二级缓存</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1）添加一个在userMapper-xml中"><span class="toc-text">1）添加一个在userMapper.xml中</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-测试"><span class="toc-text">2) 测试</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-补充说明"><span class="toc-text">3)补充说明</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-关于缓存策略"><span class="toc-text">4)关于缓存策略</span></a></li></ol></li></ol>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12"> 
+                <span>Copyright &copy; 2018
+                </span> | 
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> | 
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+
+</body>
+</html>

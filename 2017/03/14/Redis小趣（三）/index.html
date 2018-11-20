@@ -1,0 +1,335 @@
+<!DOCTYPE HTML>
+<html lang="">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="Hexo">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://yoursite.com">
+    <!--SEO-->
+
+
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+    <!--Title-->
+
+
+<title>Redis小趣（三） | Hexo</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header" style="background-image:url(http://7xpw2b.com1.z0.glb.clouddn.com/hexo-sinppet/img/banner.jpg)">
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title="John Doe">
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                <h2> 一路过来，不过游牧自己。。 </h2>
+            
+    	</div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://yoursite.com">Hexo</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>Home</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/前端/"><i class="fa "></i>About me</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/后端/"><i class="fa "></i>后端</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/工具/"><i class="fa "></i>工具</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/archives/"><i class="fa "></i>时间轴</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="Redis小趣（三）">
+            
+	            Redis小趣（三）
+            
+        </h1>
+        <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/ ">
+             
+        </a>
+    </span>
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+                    <a href="/tags/Redis" title="Redis">
+                        Redis
+                    </a>
+                
+            
+        </span>
+    </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2017/03/14</span>
+        </span>
+    
+</div>
+
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <p><img src="http://ono5i4nh6.bkt.clouddn.com/redis.png" alt=""><br>上一篇讲了位图和列表的操作，所以今天就讲讲hash散列：<br><a id="more"></a></p>
+<h2 id="一、Hash散列"><a href="#一、Hash散列" class="headerlink" title="一、Hash散列"></a>一、Hash散列</h2><p>由field 和关联的value组成的map键值对<br>field和value是字符串类型<br>一个hash中最多包含2^32-1键值对<br>举例：<br>一个key message ,其值是：map{id=10086,sender=peter,…}<br>这里有一种思路，很多零散的key value，可以被hash散列！<br>例如一个人，那我直接以人名为key ,其余通过hash去存，sex=男，age=24等</p>
+<p>所有关于Hash散列的，其首字母就是H<br>设置单个字段：<br>HSET key field value<br>HSETNX key field value (在key中，field字段不存在的时候，直接创建)</p>
+<p>设置多个字段<br>HMSET key field value(field value….)</p>
+<p>返回字段<br>HLEN key</p>
+<p>判断字段是否存在<br>HEXISTS key field<br>key或者field不存在，返回0</p>
+<p>返回字段值<br>HGET key field</p>
+<p>返回多个字段值<br>HMGET key field(field…)</p>
+<p>返回所有的键值对<br>HGETALL key</p>
+<p>返回所有的字段名<br>HKEYS key</p>
+<p>返回所有值<br>HVALS key</p>
+<p>在字段对应的值上进行整数的增量计算<br>HINCRBY  key field increment</p>
+<p>在字段对应的值上进行浮点的增量计算<br>HINCRBYFLOAT  key field increment</p>
+<p>删除指定的字段<br>HDEL key field[field…]<br>举例略</p>
+<p>hash用途：<br>（1）节约空间<br>（2）每创建一个键，它都会为这个键存储一些附加的管理信息（比如键的类型，这个键最后一次被访问的时间等）<br>（3）所以数据库里键越多，redis在附加信息方面就消耗越多内存，花在管理数据库键上的CPU也会越多在字段对应的值下行进行浮点数的增量计算<br>局限性：<br>所有的过期信息是作用在键上的，不是在字段上的</p>
+<p>不适合hash的情况<br>（1）使用二进制位操作命令：英文Redis目前支持对字符串进行SETBIT,GETBIT,BITOP等操作，如果你想使用，只能用字符串键，虽然hash散列也能保存二进制数据<br>（2）使用过期功能键：因为Reais的过期功能键只能对键进行过期操作，而不能对散列字段进行过期操作。因此，如果你要对键值对使用过期功能的话，那么只能把键值对存储在字符串里</p>
+<p>案例：<br>微博的好友关注<br>用户ID为key,Field为好友ID，value为关注事件<br>USER:1000，user：606 20150808<br>用户维度统计<br>统计数包括：关注数，粉丝数，喜欢商品数，发帖数<br>用户为KEY,不同维度为field,value为统计数<br>比如关注了5个人<br>HSET user:1000000 follow 5<br>HINCRBY user:100000 follow 1</p>
+<h2 id="二、set集合"><a href="#二、set集合" class="headerlink" title="二、set集合"></a>二、set集合</h2><p>（1）无序的，去重的<br>（2）元素是字符串类型<br>（3）最多包含2^32-1集合</p>
+<p>命令<br>增加一个或多个元素<br>SADD key member[member]这里的s表示set<br>如果元素已经存在，则自动忽略<br>举例：<br>SADD friends peter<br>SADD friends jack tom john<br>SADD friends may tom</p>
+<p>移除一个或多个元素<br>SREM key member<br>元素不存在，则自动忽略<br>举例：<br>SREM friends peter<br>返回集合里的所有元素：SMEMBERS key（因为无序，所以有可能每次顺序都不同，结果不同）<br>如果元素过多。例如百万个，需要比哪里，会造成服务器阻塞，生产环境应避免使用<br>检查给定元素是否存在于集合：SISMEMBER key member</p>
+<p>随机返回集合中指定个数的<br>（1）SRANDMEMBER key[count]<br>（2）如果count为正数，且小于集合基数，则返回count个元素的数组，每个元素都不同，如果其大于集合基数，那么返回整个集合<br>（3）如果count为负数，返回一个数组，数组中的元素可能会重复多次，二而数组的长度为count的绝对值<br>（4）如果count为0，返回空<br>（5）若count不指定，随机返回一个元素</p>
+<p>返回集合中元素的个数：SCARD key<br>键的结果会保存信息，集合长度就记录在里面，所以不需要遍历<br>随机从集合中移除并返回这个被移除的元素：spop key<br>把元素从源集合移到目标集合：SMOVE source destination member</p>
+<p>set的集合操作<br>差集<br>SDIF key [key…] 从第一个KEY的集合中取出宇其他集合和自己相交的那部分<br>SDIFSTORE destination key [key…],将差集结果存储在目标KEY中</p>
+<p>交集<br>SINTER key [key…]取所有集合交集部分<br>SINTER destination key [key…]将交集结果存储到目标key中</p>
+<p>并集<br>SUNION key [key…]，取所有集合并集<br>SUNIONSTORE key [key…]，将交集结果存储到目标key中</p>
+<p>案例：新浪微博的共同关注<br>需求：当用户访问另一个用户的时候，会显示出两恶搞用户共同关注那些相同的用户<br>设计：将每个用户关注的用户放到集合里，求交集即可！<br>实现如下：<br>peter={“john”,”jack”,”may”}<br>ben={“jhon”,”jack”,”tom”}<br>则共同关注是<br>SINTERSTORE shared Peter ben</p>
+<h2 id="三、SortedSet-有序的集合"><a href="#三、SortedSet-有序的集合" class="headerlink" title="三、SortedSet 有序的集合"></a>三、SortedSet 有序的集合</h2><p>(1)类似于Set集合<br>(2)有序的，去重的<br>（3）元素是字符串类型<br>（4）每个元素都关联着一个浮点数分值，按照分值从小到大的顺序排列集合中的原色，分值可以相同<br>（5）最多包含2^32-1集合<br>可以根据赞的数量排行榜就出来了<br>Z开头</p>
+<p>命令<br>增加一个或多个元素<br>ZADD key score member[score member…] 分值，值<br>例：ZADD fruits 3.2 apple</p>
+<p>删除一个或多个元素：<br>ZREM key member,若元素不存在，自动忽略</p>
+<p>显示分值：<br>ZSCORE key member</p>
+<p>增加或减少分值<br>ZINCRBY key incremnt member<br>increment是负数就是减少<br>例子：ZINCREBY fruits 1.5 apple</p>
+<p>返回元素的排名<br>ZRANK key member<br>例如：<br>ZRANK fruits apple<br>逆序排名<br>ZREVRANK key member</p>
+<p>返回指定索引区间的元素：（这里注意是；索引，不是分值）<br>ZRANGE key start stop[WITHSCORES]<br>如果score相同，则按字典序排<br>按照默认score从小到达，如果需要Score从大到小排列，则使用ZREVRANGE<br>ZRANGE fruits 0 2</p>
+<p>返回指定分值区间的元素：<br>ZRANGEBYSCORE key min max[WITHSCORES] [LIMIT OFFSET COUNT]<br>返回score 默认属于[min,max]之间，元素按照score升序排列，score相同字典序<br>limit中offset表示跳过多少元素，count是返回几个，类似mysql<br>使用小括号，修改区间为开区间<br>-inf和+inf表示负无穷和正无穷<br>ZRANGEBYSCORE fruits (4 7<br>ZRANGEBYSCORE fruits -inf +inf<br>相反ZREVRANGEBYSCORE降序</p>
+<p>移除指定排名范围的元素：<br>ZREMRANGEBYRANK key start stop<br>ZREMRANGEBYRANK fruits 0 1<br>移除指定分值范围的元素：<br>ZREMRANGEBYSCORE key start stop</p>
+<p>返回集合中元素的个数：<br>ZCARD key(返回的非常快，这部分信息是存在key中的)复杂度  o(1)<br>返回指定范围中元素的个数：<br>ZCOUNT key min max<br>例如：<br>ZCOUNT fruits 4 7<br>ZCOUNT fruits (4 7</p>
+<p>并集（还要考虑元素和分数的次序）<br>ZUNIONSTORE destination numkeys key[key…] [WEIGHTS weight] [AGGREGATE] SUM[MIN][MAX]<br>numkeys 指定key的数量<br>WEIGHT选项，与前面设定的key相对应，每一个Score都要乘以这个权<br>AGGREGATE选项，指定并集结果的聚合方式<br>SUM：将所有集合某一个元素的score值之和作为结果集中该成员的score值<br>MIN:将所有集合某一个元素的score值中最小值作为结果集中该成员的score值<br>MAX：将所有集合某一个元素的score值中最大值作为结果集中该成员的score值<br>如果有相同元素，分值相加，若是aggregate MIN,就是取其中的最小值，weight 1 0.5就是第一个权重占1，第二个占0.5</p>
+<p>交集：<br>ZINTERSTORE  destination numkeys key[key…] [WEIGHTS weight] [AGGREGATE] SUM[MIN][MAX]<br>numkeys 指定key的数量<br>WEIGHT选项，与前面设定的key相对应，每一个Score都要乘以这个权<br>AGGREGATE选项，指定并集结果的聚合方式<br>SUM：将所有集合某一个元素的score值之和作为结果集中该成员的score值<br>MIN:将所有集合某一个元素的score值中最小值作为结果集中该成员的score值<br>MAX：将所有集合某一个元素的score值中最大值作为结果集中该成员的score值</p>
+<p>例如网易音乐排行榜：、<br>每首歌的名字作为元素<br>每首歌的播放次数作为分值<br>ZREVRANGE来获取播放最多的歌曲</p>
+<p>新浪微博翻页，新闻网站，博客，论坛都需要分页<br>blog这个key中使用时间戳作为score<br>ZADD blog 1407000000 ‘今天天气不错’<br>ZADD blog 1507000000 ‘今天心情不错’<br>ZADD blog 1560000000 ‘使用REdis小案例’<br>ZREVRANGE blog 10 20<br>单日版 周版，月版</p>
+<p>京东图书畅销榜<br>ZADD bookboard-001 1000 ‘java’ 1500 ‘redis’ 2000 ‘hadoop<br>ZADD bookboard-002 1025 ‘java’ 1544 ‘redis’ 2650 ‘hadoop’<br>ZADD bookboard-003 1620 ‘java’ 1564 ‘redis’ 2800 ‘hadoop’<br>ZUNIONSTORE bookboard-001:003 3 bookboard-001 bookboard-002 bookboard-003 AGGREGATE MAX<br>并集 使用max<br>注意：使用并集的计算的集合较多，会造成Redis服务器阻塞，最好放在空闲时间或者备用计算服务器上进行计算</p>
+<p>多走路，多思考，越努力，越幸运！<br>                                                                                                                            ———————————————YoungerFary</p>
+
+    </div>
+
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">fang</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/2017/03/21/Redis小趣（四）/" class="pre-post btn btn-default" title="Redis小趣（四）">
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">Redis小趣（四）</span>
+        </a>
+    
+    
+        <a href="/2017/03/07/Redis小趣（二）/" class="next-post btn btn-default" title="Redis小趣（二）">
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">Redis小趣（二）</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+    
+    <div id="vcomments" class="valine"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/assets/valine.min.js"></script>
+
+    <script>
+        new Valine({
+            av: AV,
+            el: '#vcomments',
+            appId: 'xOKV9J4UeQAtVkvnJC7Kq2Jn-gzGzoHsz',
+            appKey: 'erIpQac4azoCmgfBB7Dl9maa',
+            placeholder: '说点什么吧',
+            notify: false,
+            verify: false,
+            avatar: 'mm',
+            meta: 'nick,mail'.split(','),
+            pageSize: '10',
+            path: window.location.pathname,
+            lang: ''.toLowerCase()
+        })
+    </script>
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">Table of Contents</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#一、Hash散列"><span class="toc-text">一、Hash散列</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、set集合"><span class="toc-text">二、set集合</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三、SortedSet-有序的集合"><span class="toc-text">三、SortedSet 有序的集合</span></a></li></ol>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12"> 
+                <span>Copyright &copy; 2018
+                </span> | 
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> | 
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+
+</body>
+</html>
