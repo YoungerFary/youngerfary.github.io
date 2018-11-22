@@ -1,0 +1,328 @@
+<!DOCTYPE HTML>
+<html lang="">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="Hexo">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://yoursite.com">
+    <!--SEO-->
+
+
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+    <!--Title-->
+
+
+<title>手撕SpringBoot（二） | Hexo</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header" style="background-image:url(http://snippet.shenliyang.com/img/banner.jpg)">
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title="John Doe">
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                 <img src="/img/branding.png" alt="Snippet 博客主题" class="img-responsive center-block">
+            
+    	</div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://yoursite.com">Hexo</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>Home</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/前端/"><i class="fa "></i>前端</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/后端/"><i class="fa "></i>后端</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/工具/"><i class="fa "></i>工具</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/archives/"><i class="fa "></i>时间轴</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="手撕SpringBoot（二）">
+            
+	            手撕SpringBoot（二）
+            
+        </h1>
+        <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/ ">
+             
+        </a>
+    </span>
+    
+
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+                    <a href="/tags/SpringBoot" title="SpringBoot">
+                        SpringBoot
+                    </a>
+                
+            
+        </span>
+    </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2018/08/20</span>
+        </span>
+        
+    
+</div>
+
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <p><img src="http://ono5i4nh6.bkt.clouddn.com/SpringBoot%E6%A0%87%E9%A2%98%E5%9B%BE.jpeg" alt=""></p>
+<h2 id="SpringBoot使用SpringDataJPA完成CRUD"><a href="#SpringBoot使用SpringDataJPA完成CRUD" class="headerlink" title="SpringBoot使用SpringDataJPA完成CRUD"></a>SpringBoot使用SpringDataJPA完成CRUD</h2><a id="more"></a>
+<p>在我们平时的项目中，数据的存储以及访问都是最为核心的关键部分，现在有很多企业采用主流的数据库，如关系型数据库：MySQL，oracle，sqlserver。非关系型数据库：redis，mongodb等。SpringBoot为我们提供了很多种的数据源库来做数据存储和读取。本文以MySQL为例来讲本章内容。所以本章的目的就是使用SpringBoot去访问我们的数据库，结合SpringJPA完成CRUD简单操作。<br>还是和上一章相同，但是构建的时候除了要web组件，还需要导入的是Mysql和JPA的组件，基本如下图所示：<br><img src="http://ono5i4nh6.bkt.clouddn.com/SpringBoot%EF%BC%88%E4%BA%8C%EF%BC%891.png" alt="SpringBoot（二）2"><br>在pom.xml中记得要注释掉scope标签。</p>
+<h3 id="配置数据源和JPA"><a href="#配置数据源和JPA" class="headerlink" title="配置数据源和JPA"></a>配置数据源和JPA</h3><p>springBoot中吗，用yml文件可以替代xml中一系列复杂的标签，所以我们的配置都可以在yml中去编写，我们在properties.yml中去配置数据源信息，也就是DataSource，具体示例可以看下面：<br><img src="http://ono5i4nh6.bkt.clouddn.com/SpringBoot2.png" alt=""><br>在本地数据库中我们可以建立一张表，这张表是代表着你要建立的实例：<br><img src="http://ono5i4nh6.bkt.clouddn.com/SpringBoot3.png" alt=""><br>相应的，我们可以建立实例，也就是对象类去对应数据库表中的数据：<br>在这，介绍一种比较好的数据库表转变成实体类的好方法，当然，一般企业都会有比较好的工具去生成。这里针对学习者，我们可以用一些比较简通用的方法：</p>
+<p>###数据库表转化为实体类的方法：<br>（1）先设置右方DataBase，可设置URL，账号密码等，如下：<br><img src="http://ono5i4nh6.bkt.clouddn.com/SpringBoot4.png" alt=""><br><img src="http://ono5i4nh6.bkt.clouddn.com/SpringBoot5.jpg" alt=""><br>（2）配置hibernate文件（可百度）<br>配置一下hibernate配置文件。<br>在资源文件下新建一个hibernate.cfg.xml配置文件。并输入以下内容。<br><img src="http://ono5i4nh6.bkt.clouddn.com/SpringBoot6.png" alt=""><br>xml文件如下：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">xml version=<span class="string">'1.0'</span> encoding=<span class="string">'utf-8'</span>?&gt;</span><br><span class="line">&lt;!DOCTYPE hibernate-configuration PUBLIC</span><br><span class="line">        <span class="string">"-//Hibernate/Hibernate Configuration DTD 3.0//EN"</span></span><br><span class="line">        <span class="string">"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd"</span>&gt;</span><br><span class="line">&lt;hibernate-configuration&gt;</span><br><span class="line">    &lt;session-factory&gt;</span><br><span class="line">        &lt;!-- Database connection settings --&gt;</span><br><span class="line">        &lt;property name="connection.driver_class"&gt;com.mysql.jdbc.Driver&lt;/property&gt;</span><br><span class="line">        &lt;property name=<span class="string">"connection.url"</span>&gt;jdbc:mysql:<span class="comment">//localhost/test&lt;/property&gt;</span></span><br><span class="line">        &lt;property name="connection.username"&gt;root&lt;/property&gt;</span><br><span class="line">        &lt;property name="connection.password"&gt;123456&lt;/property&gt;</span><br><span class="line">        &lt;!-- <span class="function">JDBC connection <span class="title">pool</span> <span class="params">(use the built-in)</span> --&gt;</span></span><br><span class="line"><span class="function">        &lt;!--</span></span><br><span class="line">        &lt;property name="connection.pool_size"&gt;1&lt;/property&gt;</span><br><span class="line">         --&gt;</span><br><span class="line">        &lt;!-- SQL dialect --&gt;</span><br><span class="line">        &lt;property name="dialect"&gt;org.hibernate.dialect.MySQLDialect&lt;/property&gt;</span><br><span class="line">        &lt;!-- Enable Hibernate<span class="string">'s automatic session context management --&gt;</span></span><br><span class="line"><span class="string">        &lt;property name="current_session_context_class"&gt;thread&lt;/property&gt;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">        &lt;!-- Echo all executed SQL to stdout --&gt;</span></span><br><span class="line"><span class="string">        &lt;property name="show_sql"&gt;true&lt;/property&gt;</span></span><br><span class="line"><span class="string">        &lt;!-- Drop and re-create the database schema on startup --&gt;</span></span><br><span class="line"><span class="string">        &lt;!--</span></span><br><span class="line"><span class="string">        &lt;property name="hbm2ddl.auto"&gt;update&lt;/property&gt;</span></span><br><span class="line"><span class="string">        --&gt;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    &lt;/session-factory&gt;</span></span><br><span class="line"><span class="string">&lt;/hibernate-configuration&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>如图：<br><img src="http://ono5i4nh6.bkt.clouddn.com/SpringBoot7.png" alt=""><br>调出生成实体类的配置工具<br><img src="http://ono5i4nh6.bkt.clouddn.com/SpringBoot8.png" alt=""><br>保存后。在主面板左侧有persistence，在hibernate图标上点击右键-Generate Persistence Mapping-By Database Scheme。<br><img src="http://ono5i4nh6.bkt.clouddn.com/SpringBoot9.png" alt=""><br>配置选项<br>（1）数据源选择<br>（2）生成实体类的位置<br>（3）实体类的前缀和后缀<br>（4）可以全选表，或是全不选表<br>（5）可以生成hibernate的实体类对应的xml文件<br>（6）展开表之后可以修改对应之间的类型。<br><img src="http://ono5i4nh6.bkt.clouddn.com/SpringBoot11.png" alt=""><br>然后选中需要执行的数据库表。<br><img src="http://ono5i4nh6.bkt.clouddn.com/SpringBoot12.png" alt=""><br>查看导出的效果<br><img src="http://ono5i4nh6.bkt.clouddn.com/SpringBoot13.png" alt=""><br><img src="http://ono5i4nh6.bkt.clouddn.com/SpringBoot14.png" alt=""><br>(为了好理解，图有点多)<br>总结就是：生成实体类工具：View–Tool windows–Persistence，保存后。在主面板左侧有persistence，在hibernate图标上点击右键-Generate Persistence Mapping-By Database Scheme。然后选择路径和表。</p>
+<h3 id="编写JPA"><a href="#编写JPA" class="headerlink" title="编写JPA"></a>编写JPA</h3><p>继承JpaRepository。泛型参数，第一个是实体，第二个是主键类型。继承关系,如下所示，JpaRepository-PagingAndSortingRepository,QueryByExampleExecutor，其中PagingAndSortingRepository又继承了CrudRepository（这个中包含了CRUD操作），PagingAndSortingRepository又多实现了两个分页的函数，QueryByExampleExecutor是为排序提供的操作.<br><img src="http://ono5i4nh6.bkt.clouddn.com/SpringBoot15.jpg" alt=""><br>图10<br>我们UserJPA继承了JpaRepository接口（SpringDataJPA提供的简单数据操作接口）、JpaSpecificationExecutor（SpringDataJPA提供的复杂查询接口）、Serializable（序列化接口）。<br>我们并不需要做其他的任何操作了，因为SpringBoot以及SpringDataJPA会为我们全部搞定，SpringDataJPA内部使用了类代理的方式让继承了它接口的子接口都以spring管理的Bean的形式存在，也就是说我们可以直接使用@Autowired注解在spring管理bean使用<br>然后service去编写查询删除添加等方法，JPA都能简单提供,以删除方法为例<br><img src="http://ono5i4nh6.bkt.clouddn.com/SpringBoot16.png" alt=""><br>最后访问controller就可以查看了：<br><img src="http://ono5i4nh6.bkt.clouddn.com/SpringBoot17.png" alt=""></p>
+<p>思考，所走路，越努力，越幸运！<br>                                                                                                                                ————-YoungerFary</p>
+
+    </div>
+    
+        <div class="reward">
+    <div class="reward-wrap">赏
+        <div class="reward-box">
+            
+            
+                <span class="reward-type">
+                    <img class="wechat" src="../img/reward-wepay.jpg"><b>微信打赏</b>
+                </span>
+            
+        </div>
+    </div>
+    <p class="reward-tip">赞赏是不耍流氓的鼓励</p>
+</div>
+
+
+    
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">Snippet</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/2018/08/31/手撕SpringBoot(三)/" class="pre-post btn btn-default" title="手撕SpringBoot（三）">
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">手撕SpringBoot（三）</span>
+        </a>
+    
+    
+        <a href="/2018/07/20/手撕SpringBoot（一）/" class="next-post btn btn-default" title="手撕SpringBoot（一）">
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">手撕SpringBoot（一）</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+    
+    <div id="vcomments" class="valine"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/assets/valine.min.js"></script>
+
+    <script>
+        new Valine({
+            av: AV,
+            el: '#vcomments',
+            appId: 'xOKV9J4UeQAtVkvnJC7Kq2Jn-gzGzoHsz',
+            appKey: 'erIpQac4azoCmgfBB7Dl9maa',
+            placeholder: '说点什么吧',
+            notify: false,
+            verify: false,
+            avatar: 'mm',
+            meta: 'nick,mail'.split(','),
+            pageSize: '10',
+            path: window.location.pathname,
+            lang: ''.toLowerCase()
+        })
+    </script>
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">Table of Contents</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#SpringBoot使用SpringDataJPA完成CRUD"><span class="toc-text">SpringBoot使用SpringDataJPA完成CRUD</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#配置数据源和JPA"><span class="toc-text">配置数据源和JPA</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#编写JPA"><span class="toc-text">编写JPA</span></a></li></ol></li></ol>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+</div>
+
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy; 2017
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+</body>
+</html>
